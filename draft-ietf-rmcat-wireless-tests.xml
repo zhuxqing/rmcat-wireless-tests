@@ -379,15 +379,14 @@
           between the mobile user and fixed user consists of a LTE radio
           access, an Evolved Packet Core (EPC) and an Internet connection. The
           mobile user is connected to the EPC using LTE radio access
-          technology which is further connected to the Internet. The fixed
-          user is connected to the Internet via wired connection with no
-          bottleneck (practically infinite bandwidth). The Internet and wired
-          connection in this setup does not add any network impairments to the
-	  test, it only adds 10ms of one-way transport propagation delay.
-	  [TODO: address reviewer's comment on "infinite bandwidth".
-	  Suggestion: The fixed user is connected to the Internet via wired
-	  connection with sufficiently high bandwidth, e.g., 10 Gbps, so that
-	  the system is resource-limited on the wireless interface. ]
+	  technology which is further connected to the Internet. 
+	  
+	  The fixed user is connected to the Internet via wired connection
+	  with sufficiently high bandwidth, for instance, 10 Gbps, so that
+	  the system is resource-limited on the wireless interface. 
+	  The Internet and wired connection in this setup does not introduce
+	  any network impairments to the test; it only adds 10ms of one-way
+	  propagation delay.
   	 </t>
 
           <t>The path from the fixed user to mobile user is defines as
@@ -482,12 +481,15 @@
                     </list></t>
                 </list></t>
 
-              <t>Other traffic model:<list style="symbols">
+	    <t>Other traffic model:
+		<list style="symbols">
                   <t>Downlink simulation: Maximum of 4Mbps/cell (web browsing
-                  or FTP traffic)</t>
+	          or FTP traffic following default TCP congestion control
+		  <xref target="RFC5681"/>)</t>
 
                   <t>Unlink simulation: Maximum of 2Mbps/cell (web browsing or
-                  FTP traffic)</t>
+		  FTP traffic following default TCP congestion control
+                  <xref target="RFC5681"/>)</t>
                 </list></t>
             </list></t>
         </section>
@@ -523,25 +525,36 @@
         <section title="Simulation Setup">
           <t>The desired simulation setup is same as Varying Network Load test
           case defined in <xref target="VNL"></xref> except following
-          changes-<list style="numbers">
-              <t>Radio environment : Same as defined in <xref
-              target="SS-VNL"></xref> except the following<list style="letters">
-                  <t>Deployment and propagation model : 3GPP case 3<xref
-                  target="Deployment"></xref></t>
+	  changes: 
+	  
+	  <list style="numbers">
+              <t>Radio environment: Same as defined in <xref target="SS-VNL"></xref>
+		  except the following: 
+		  <list style="letters">
+		  <t>Deployment and propagation model : 3GPP case 3
+				  <xref target="Deployment"></xref></t>
 
                   <t>Cell radius: 577.3333 Meters</t>
 
                   <t>Mobility: 3km/h</t>
-                </list></t>
+                  </list>
+	      </t>
 
-              <t>User intensity = {0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9, 5.6,
-              6.3, 7.0}</t>
+              <t>User intensity = {0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9, 5.6, 6.3, 7.0}</t>
 
-              <t>Media traffic model: Same as defined in <xref
-              target="SS-VNL"></xref></t>
+              <t>Media traffic model: Same as defined in <xref target="SS-VNL"></xref></t>
 
-              <t>Other traffic model: None</t>
-            </list></t>
+	      <t>Other traffic model: 
+		  <list style="symbols">
+                  <t>Downlink simulation: Maximum of 4Mbps/cell (web browsing
+	          or FTP traffic following default TCP congestion control
+		  <xref target="RFC5681"/>)</t>
+
+                  <t>Unlink simulation: Maximum of 2Mbps/cell (web browsing or
+		  FTP traffic following default TCP congestion control
+                  <xref target="RFC5681"/>)</t>
+		  </list></t>
+             </list></t>
         </section>
       </section>
 
@@ -749,8 +762,9 @@
               		<t>Type of sources: long-lived TCP or CBR over UDP</t>
                         <t>Traffic direction: See <xref target="subsec-4-1-3"></xref></t>
                         <t>Number of sources (M): See <xref target="subsec-4-1-3"></xref></t>
-			<t>Congestion control: Default TCP congestion control <xref target="RFC5681"></xref>
-			   or CBR over UDP. </t>
+			<t>Congestion control: Default TCP congestion control
+			   <xref target="RFC5681"></xref> or constant-bit-rate (CBR)
+			   traffic over UDP. </t>
 			                   
 			<t>Traffic timeline:  See <xref
 			   target="subsec-4-1-3"></xref></t>
@@ -864,11 +878,11 @@
 
                       <t>Number of sources (M): See <xref target="subsec-4-2-3"></xref></t>
                       <t>Traffic direction: See <xref target="subsec-4-2-3"></xref></t>
-                      <t>Congestion control: Default TCP congestion control
-                      [TBD] or CBR over UDP</t>
+		      <t>Congestion control: Default TCP congestion control
+			 <xref target="RFC5681"/> or constant-bit-rate (CBR)
+			 traffic over UDP</t>
 
-			<t>Traffic timeline: See <xref
-			 target="subsec-4-2-3"></xref></t>			
+			<t>Traffic timeline: See <xref target="subsec-4-2-3"></xref></t>			
 
                     </list></t>
                 </list></t>

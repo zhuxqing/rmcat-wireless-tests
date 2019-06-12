@@ -5,12 +5,12 @@
 Network Working Group                                          Z. Sarker
 Internet-Draft                                              I. Johansson
 Intended status: Informational                               Ericsson AB
-Expires: December 1, 2019                                         X. Zhu
+Expires: December 14, 2019                                        X. Zhu
                                                                    J. Fu
                                                                   W. Tan
                                                               M. Ramalho
                                                            Cisco Systems
-                                                            May 30, 2019
+                                                           June 12, 2019
 
 
   Evaluation Test Cases for Interactive Real-Time Media over Wireless
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on December 1, 2019.
+   This Internet-Draft will expire on December 14, 2019.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Sarker, et al.          Expires December 1, 2019                [Page 1]
+Sarker, et al.          Expires December 14, 2019               [Page 1]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Sarker, et al.          Expires December 1, 2019                [Page 2]
+Sarker, et al.          Expires December 14, 2019               [Page 2]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 1.  Introduction
@@ -165,9 +165,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019                [Page 3]
+Sarker, et al.          Expires December 14, 2019               [Page 3]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    deliver the data from the base station to the destination and vice
@@ -221,9 +221,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019                [Page 4]
+Sarker, et al.          Expires December 14, 2019               [Page 4]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    o  Both Quality of Service (QoS) and non-QoS radio bearers can be
@@ -277,9 +277,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019                [Page 5]
+Sarker, et al.          Expires December 14, 2019               [Page 5]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 3.1.  Varying Network Load
@@ -315,14 +315,11 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
    access, an Evolved Packet Core (EPC) and an Internet connection.  The
    mobile user is connected to the EPC using LTE radio access technology
    which is further connected to the Internet.  The fixed user is
-   connected to the Internet via wired connection with no bottleneck
-   (practically infinite bandwidth).  The Internet and wired connection
-   in this setup does not add any network impairments to the test, it
-   only adds 10ms of one-way transport propagation delay.  [TODO:
-   address reviewer's comment on "infinite bandwidth".  Suggestion: The
-   fixed user is connected to the Internet via wired connection with
-   sufficiently high bandwidth, e.g., 10 Gbps, so that the system is
-   resource-limited on the wireless interface. ]
+   connected to the Internet via wired connection with sufficiently high
+   bandwidth, for instance, 10 Gbps, so that the system is resource-
+   limited on the wireless interface.  The Internet and wired connection
+   in this setup does not introduce any network impairments to the test;
+   it only adds 10ms of one-way propagation delay.
 
    The path from the fixed user to mobile user is defines as "Downlink"
    and the path from mobile user to the fixed user is defined as
@@ -333,9 +330,12 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019                [Page 6]
+
+
+
+Sarker, et al.          Expires December 14, 2019               [Page 6]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
                              uplink
@@ -389,9 +389,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019                [Page 7]
+Sarker, et al.          Expires December 14, 2019               [Page 7]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
        *  Uplink user intensity : {0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9,
@@ -431,25 +431,26 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
    8.  Other traffic model:
 
        *  Downlink simulation: Maximum of 4Mbps/cell (web browsing or
-          FTP traffic)
+          FTP traffic following default TCP congestion control
+          [RFC5681])
 
        *  Unlink simulation: Maximum of 2Mbps/cell (web browsing or FTP
-          traffic)
+          traffic following default TCP congestion control [RFC5681])
 
 3.2.  Bad Radio Coverage
 
    The goal of this test is to evaluate the performance of candidate
    congestion control algorithm when users visit part of the network
    with bad radio coverage.  The scenario is created by using larger
-   cell radius than previous test case.  In this test case each of the
 
 
 
-Sarker, et al.          Expires December 1, 2019                [Page 8]
+Sarker, et al.          Expires December 14, 2019               [Page 8]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
+   cell radius than previous test case.  In this test case each of the
    user/UE in the media session is an RMCAT compliant endpoint.  The
    arrival of users follows a Poisson distribution, which is
    proportional to the length of the call, so that the number of users
@@ -476,12 +477,12 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 3.2.2.  Simulation Setup
 
    The desired simulation setup is same as Varying Network Load test
-   case defined in Section 3.1 except following changes-
+   case defined in Section 3.1 except following changes:
 
-   1.  Radio environment : Same as defined in Section 3.1.2 except the
-       following
+   1.  Radio environment: Same as defined in Section 3.1.2 except the
+       following:
 
-       A.  Deployment and propagation model : 3GPP case 3[Deployment]
+       A.  Deployment and propagation model : 3GPP case 3 [Deployment]
 
        B.  Cell radius: 577.3333 Meters
 
@@ -492,19 +493,21 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
    3.  Media traffic model: Same as defined in Section 3.1.2
 
-   4.  Other traffic model: None
+   4.  Other traffic model:
+
+       *  Downlink simulation: Maximum of 4Mbps/cell (web browsing or
+          FTP traffic following default TCP congestion control
+          [RFC5681])
 
 
 
-
-
-
-
-
-Sarker, et al.          Expires December 1, 2019                [Page 9]
+Sarker, et al.          Expires December 14, 2019               [Page 9]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
+
+       *  Unlink simulation: Maximum of 2Mbps/cell (web browsing or FTP
+          traffic following default TCP congestion control [RFC5681])
 
 3.3.  Desired Evaluation Metrics for cellular test cases
 
@@ -551,17 +554,17 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
    o  Packet transmissions over Wi-Fi are susceptible to contentions and
       collisions over the air.  Consequently, traffic load beyond a
       certain utilization level over a Wi-Fi network can introduce
+
+
+
+Sarker, et al.          Expires December 14, 2019              [Page 10]
+
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
+
+
       frequent collisions over the air and significant network overhead,
       as well as packet drops due to buffer overflow at the
       transmitters.  This, in turn, leads to excessive delay,
-
-
-
-Sarker, et al.          Expires December 1, 2019               [Page 10]
-
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
-
-
       retransmissions, packet losses and lower effective bandwidth for
       applications.  Note, however, that the consequent delay and loss
       patterns caused by collisions are qualitatively different from
@@ -608,16 +611,15 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
    as in [I-D.ietf-rmcat-eval-test]) should be collected for each test
    case.
 
+
+
+Sarker, et al.          Expires December 14, 2019              [Page 11]
+
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
+
+
    All test cases described below can be carried out using simulations,
    e.g. based on [ns-2] or [ns-3].  When feasible, it is also encouraged
-
-
-
-Sarker, et al.          Expires December 1, 2019               [Page 11]
-
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
-
-
    to perform testbed-based evaluations using Wi-Fi access points and
    endpoints running up-to-date IEEE 802.11 protocols, such as 802.11ac
    and the emerging Wi-Fi 6, to verify the viability of the candidate
@@ -667,11 +669,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-
-
-Sarker, et al.          Expires December 1, 2019               [Page 12]
+Sarker, et al.          Expires December 14, 2019              [Page 12]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
                                    uplink
@@ -725,9 +725,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019               [Page 13]
+Sarker, et al.          Expires December 14, 2019              [Page 13]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
       *  Bottleneck queue size: 300ms.
@@ -759,7 +759,7 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
          +  Number of sources (M): See Section 4.1.3
 
          +  Congestion control: Default TCP congestion control [RFC5681]
-            or CBR over UDP.
+            or constant-bit-rate (CBR) traffic over UDP.
 
          +  Traffic timeline: See Section 4.1.3
 
@@ -781,9 +781,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019               [Page 14]
+Sarker, et al.          Expires December 14, 2019              [Page 14]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    o  One RMCAT flow competing against one long-live TCP flow over
@@ -837,9 +837,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019               [Page 15]
+Sarker, et al.          Expires December 14, 2019              [Page 15]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    o  Wired path characteristics:
@@ -880,8 +880,8 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
          +  Traffic direction: See Section 4.2.3
 
-         +  Congestion control: Default TCP congestion control [TBD] or
-            CBR over UDP
+         +  Congestion control: Default TCP congestion control [RFC5681]
+            or constant-bit-rate (CBR) traffic over UDP
 
          +  Traffic timeline: See Section 4.2.3
 
@@ -893,9 +893,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019               [Page 16]
+Sarker, et al.          Expires December 14, 2019              [Page 16]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    o  Multiple RMCAT Flows Sharing the Wireless Downlink: N=16 (all
@@ -949,9 +949,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019               [Page 17]
+Sarker, et al.          Expires December 14, 2019              [Page 17]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    o  Varying number of RMCAT flows.  The goal of this test is to
@@ -1005,9 +1005,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019               [Page 18]
+Sarker, et al.          Expires December 14, 2019              [Page 18]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 4.3.2.  Effects of Legacy 802.11b Devices
@@ -1061,9 +1061,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019               [Page 19]
+Sarker, et al.          Expires December 14, 2019              [Page 19]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    [HO-LTE-3GPP]
@@ -1117,9 +1117,9 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019               [Page 20]
+Sarker, et al.          Expires December 14, 2019              [Page 20]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 9.2.  Informative References
@@ -1173,9 +1173,9 @@ Authors' Addresses
 
 
 
-Sarker, et al.          Expires December 1, 2019               [Page 21]
+Sarker, et al.          Expires December 14, 2019              [Page 21]
 
-Internet-Draft          RMCAT Wireless Test Cases               May 2019
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    Ingemar Johansson
@@ -1229,4 +1229,4 @@ Internet-Draft          RMCAT Wireless Test Cases               May 2019
 
 
 
-Sarker, et al.          Expires December 1, 2019               [Page 22]
+Sarker, et al.          Expires December 14, 2019              [Page 22]
