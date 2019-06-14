@@ -785,12 +785,13 @@
 	 
 	<t>One pair of bi-directional RMCAT flows, one on-off CBR over
 	   UDP flow on uplink: N=2 (with one uplink flow and one downlink
-	   flow); M=1 (uplink). CBR flow on time at 0s-60s, off time at
+	   flow); M=1 (uplink). CBR flow ON time at 0s-60s, OFF time at
 	   60s-119s.</t>
    
    	<t>One pair of bi-directional RMCAT flows, one off-on CBR over
 	   UDP flow on uplink: N=2 (with one uplink flow and one downlink
-	   flow); M=1 (uplink). UDP off time: 0s-60s, on time: 60s-119s. </t>
+	   flow); M=1 (uplink). OFF time for UDP flow: 0s-60s;
+	   ON time: 60s-119s. </t>
 
    	<t>One RMCAT flow competing against one long-live TCP flow over
 	   uplink: N=1 (uplink) and M = 1(uplink), TCP start time at 0s
@@ -894,8 +895,9 @@
 
           <t>This section describes a few test scenarios that are deemed as
 	  important for understanding the behavior of a RMCAT candidate
-          solution over a Wi-Fi network. <list style="symbols">
-
+	  solution over a Wi-Fi network. 
+	  
+	  <list style="symbols">
               <t>Multiple RMCAT Flows Sharing the Wireless Downlink: 
 		N=16 (all downlink); M = 0. This test case is for studying
 	        the impact of contention on competing RMCAT flows.
@@ -921,37 +923,41 @@
 		on whether uplink flows can stablize at a fair share
 		of application-layer throughput.</t>
 
-	<t>Multiple Bi-directional RMCAT Flows: N = 16 (8 uplink and 8 downlink); 
-	M = 0.  The goal of this test is to evaluate performance of
-	the candidate solution in terms of bandwidth fairness between
-	uplink and downlink flow.</t>
+		<t>Multiple Bi-directional RMCAT Flows: N = 16 (8 uplink
+		and 8 downlink); M = 0.  The goal of this test is to evaluate
+		performance of the candidate solution in terms of bandwidth
+		fairness between uplink and downlink flows.</t>
 
-	<t>Multiple Bi-directional RMCAT Flows with on-off CBR traffic: 
-	N = 16 (8 uplink and 8 downlink); M = 5(uplink). The goal of
-	this test is to evaluate adaptation behavior of the candidate
-	solution when its available bandwidth changes due to departure
-	of background traffic. The background traffic consists of several
-	(e.g., M=5) CBR flows transported over UDP, which are ON at times t=0-60s
-	and are OFF at times t=61-120s.</t>
+		<t>Multiple Bi-directional RMCAT Flows with on-off CBR
+		traffic: N = 16 (8 uplink and 8 downlink); M = 5(uplink).
+		The goal of this test is to evaluate adaptation behavior
+		of the candidate solution when its available bandwidth
+		changes due to departure of background traffic. The
+		background traffic consists of several (e.g., M=5) CBR
+		flows transported over UDP, which are ON at times t=0-60s
+		and are OFF at times t=61-120s.</t>
 
-	<t>Multiple Bi-directional RMCAT Flows with off-on CBR traffic: 
-	N = 16 (8 uplink and 8 downlink); M = 5(uplink). The goal of
-	this test is to evaluate adaptation behavior of the candidate
-	solution when its available bandwidth changes due to arrival
-	of background traffic. The background traffic consists of several
-	(e.g., M=5) parallel CBR flows transported over UDP, which are 
-	OFF at times t=0-60s and are ON at times t=61-120s. </t>
+		<t>Multiple Bi-directional RMCAT Flows with off-on CBR traffic: 
+		N = 16 (8 uplink and 8 downlink); M = 5(uplink). The goal of
+		this test is to evaluate adaptation behavior of the candidate
+		solution when its available bandwidth changes due to arrival
+		of background traffic. The background traffic consists of
+		several (e.g., M=5) parallel CBR flows transported over UDP,
+		which are OFF at times t=0-60s and are ON at times t=61-120s.
+		</t>
 
-        <t>Multiple RMCAT flows in the presence of background TCP
-        traffic. The goal of this test is to evaluate how RMCAT flows
-        compete against TCP over a congested Wi-Fi network for a given
-	candidate solution.  TCP start time: 0s, end time: 119s. </t>
-<!-- Editor's Note: need to add the number of recommended RMCAT
-	and TCP flows] -->
+		<t>Multiple Bi-directional RMCAT flows in the presence of
+		background TCP traffic: N=16 (8 uplink and 8 downlink);
+		M = 5 (uplink). The goal of this test is to evaluate how
+		RMCAT flows compete against TCP over a congested Wi-Fi
+		network for a given candidate solution.  TCP start time: 40s,
+		end time: 80s. </t>
 
-        <t>Varying number of RMCAT flows. The goal of this test is to
-        evaluate how a candidate RMCAT solution responds to varying
-	traffic load/demand over a congested Wi-Fi network.</t> 
+		<t>Varying number of RMCAT flows. A series of tests can be
+		carried out for the above test cases with different values
+		of N, e.g., N = [4, 8, 12, 16, 20]. The goal of this test is
+		to evaluate how a candidate RMCAT solution responds to varying
+		traffic load/demand over a congested Wi-Fi network. </t> 
 <!--[Editor's Note: need to specify recommended arrival/departure
 	pattern of RMCAT flows] -->
 
@@ -979,16 +985,31 @@
     scenario. </t>
 
     <t>Multiple bi-directional RMCAT flows with dynamic background
-    traffic carry CBR flows over UDP: RMCAT flows should adapt in 
+    traffic carrying CBR flows over UDP: RMCAT flows should adapt in 
     a timely fashion to the resulting changes in available bandwidth. </t>
 		
-    <t>Multiple bi-directional RMCAT flows with TCP traffic: overall
-    bandwidth usage shared by all RMCAT flows should not be significantly
-    lower than those achieved by the same number of bi-directional TCP flows.
-    In other words, the performance of multiple concurrent TCP
-    flows will be used as a performance benchmark for this test
-    scenario. All downlink RMCAT flows are expected to obtain similar
-    bandwidth with respect to each other.</t>
+    <t>Multiple bi-directional RMCAT flows with dynamic background
+    traffic over TCP: during the presence of TCP background flows, 
+    the overall bandwidth usage shared by all RMCAT flows should not
+    be significantly lower than those achieved by the same number of
+    bi-directional TCP flows. In other words, the performance of multiple
+    concurrent TCP flows will be used as a performance benchmark for
+    this test scenario. All downlink RMCAT flows are expected to obtain
+    similar bandwidth with respect to each other. The throughput of
+    RMCAT flows should decrease upon the arrival of TCP background
+    traffic and increase upon their departure, both reactions should
+    occur in a timely fashion (e.g., within 10s of seconds). </t>
+
+    <t>Varying number of RMCAT flows: the test results for varying
+    values of N -- while keeping all other parameters constant --
+    is expected to show steady and stable per-flow throughtput for
+    each value of N. The average throughput of all RMCAT flows is
+    expected to stay constant around the maximum rate when N is small,
+    then gradually decrease with increasing number of RMCAT flows
+    till it reaches the minimum allowed rate, beyond which the offered
+    load to the Wi-Fi network (with a large value of N) is exceeding its
+    capacity. 
+    </t>
 
     </list></t>
     </section>

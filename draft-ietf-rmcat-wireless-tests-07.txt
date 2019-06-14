@@ -91,17 +91,17 @@ Table of Contents
        4.2.2.  Test setup  . . . . . . . . . . . . . . . . . . . . .  15
        4.2.3.  Typical test scenarios  . . . . . . . . . . . . . . .  16
        4.2.4.  Expected behavior . . . . . . . . . . . . . . . . . .  18
-     4.3.  Other Potential Test Cases  . . . . . . . . . . . . . . .  18
-       4.3.1.  EDCA/WMM usage  . . . . . . . . . . . . . . . . . . .  18
+     4.3.  Other Potential Test Cases  . . . . . . . . . . . . . . .  19
+       4.3.1.  EDCA/WMM usage  . . . . . . . . . . . . . . . . . . .  19
        4.3.2.  Effects of Legacy 802.11b Devices . . . . . . . . . .  19
    5.  Conclusion  . . . . . . . . . . . . . . . . . . . . . . . . .  19
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  19
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  19
-   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  19
-   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  19
-     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  19
+   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  20
+   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  20
+     9.1.  Normative References  . . . . . . . . . . . . . . . . . .  20
      9.2.  Informative References  . . . . . . . . . . . . . . . . .  21
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  21
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  22
 
 
 
@@ -772,11 +772,11 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
    o  One pair of bi-directional RMCAT flows, one on-off CBR over UDP
       flow on uplink: N=2 (with one uplink flow and one downlink flow);
-      M=1 (uplink).  CBR flow on time at 0s-60s, off time at 60s-119s.
+      M=1 (uplink).  CBR flow ON time at 0s-60s, OFF time at 60s-119s.
 
    o  One pair of bi-directional RMCAT flows, one off-on CBR over UDP
       flow on uplink: N=2 (with one uplink flow and one downlink flow);
-      M=1 (uplink).  UDP off time: 0s-60s, on time: 60s-119s.
+      M=1 (uplink).  OFF time for UDP flow: 0s-60s; ON time: 60s-119s.
 
 
 
@@ -922,7 +922,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
    o  Multiple Bi-directional RMCAT Flows: N = 16 (8 uplink and 8
       downlink); M = 0.  The goal of this test is to evaluate
       performance of the candidate solution in terms of bandwidth
-      fairness between uplink and downlink flow.
+      fairness between uplink and downlink flows.
 
    o  Multiple Bi-directional RMCAT Flows with on-off CBR traffic: N =
       16 (8 uplink and 8 downlink); M = 5(uplink).  The goal of this
@@ -940,11 +940,11 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
       parallel CBR flows transported over UDP, which are OFF at times
       t=0-60s and are ON at times t=61-120s.
 
-   o  Multiple RMCAT flows in the presence of background TCP traffic.
-      The goal of this test is to evaluate how RMCAT flows compete
-      against TCP over a congested Wi-Fi network for a given candidate
-      solution.  TCP start time: 0s, end time: 119s.
-
+   o  Multiple Bi-directional RMCAT flows in the presence of background
+      TCP traffic: N=16 (8 uplink and 8 downlink); M = 5 (uplink).  The
+      goal of this test is to evaluate how RMCAT flows compete against
+      TCP over a congested Wi-Fi network for a given candidate solution.
+      TCP start time: 40s, end time: 80s.
 
 
 
@@ -954,9 +954,11 @@ Sarker, et al.          Expires December 16, 2019              [Page 17]
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
-   o  Varying number of RMCAT flows.  The goal of this test is to
-      evaluate how a candidate RMCAT solution responds to varying
-      traffic load/demand over a congested Wi-Fi network.
+   o  Varying number of RMCAT flows.  A series of tests can be carried
+      out for the above test cases with different values of N, e.g., N =
+      [4, 8, 12, 16, 20].  The goal of this test is to evaluate how a
+      candidate RMCAT solution responds to varying traffic load/demand
+      over a congested Wi-Fi network.
 
 4.2.4.  Expected behavior
 
@@ -976,16 +978,37 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
       be used as a performance benchmark for this test scenario.
 
    o  Multiple bi-directional RMCAT flows with dynamic background
-      traffic carry CBR flows over UDP: RMCAT flows should adapt in a
+      traffic carrying CBR flows over UDP: RMCAT flows should adapt in a
       timely fashion to the resulting changes in available bandwidth.
 
-   o  Multiple bi-directional RMCAT flows with TCP traffic: overall
-      bandwidth usage shared by all RMCAT flows should not be
+   o  Multiple bi-directional RMCAT flows with dynamic background
+      traffic over TCP: during the presence of TCP background flows, the
+      overall bandwidth usage shared by all RMCAT flows should not be
       significantly lower than those achieved by the same number of bi-
       directional TCP flows.  In other words, the performance of
       multiple concurrent TCP flows will be used as a performance
       benchmark for this test scenario.  All downlink RMCAT flows are
       expected to obtain similar bandwidth with respect to each other.
+      The throughput of RMCAT flows should decrease upon the arrival of
+      TCP background traffic and increase upon their departure, both
+      reactions should occur in a timely fashion (e.g., within 10s of
+      seconds).
+
+   o  Varying number of RMCAT flows: the test results for varying values
+      of N -- while keeping all other parameters constant -- is expected
+      to show steady and stable per-flow throughtput for each value of
+      N.  The average throughput of all RMCAT flows is expected to stay
+      constant around the maximum rate when N is small, then gradually
+      decrease with increasing number of RMCAT flows till it reaches the
+      minimum allowed rate, beyond which the offered load to the Wi-Fi
+      network (with a large value of N) is exceeding its capacity.
+
+
+
+Sarker, et al.          Expires December 16, 2019              [Page 18]
+
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
+
 
 4.3.  Other Potential Test Cases
 
@@ -1001,14 +1024,6 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
    transmission medium more aggressively, thereby causing more frequent
    collisions and collision-induced losses.  This is a topic worthy of
    further investigation.
-
-
-
-
-Sarker, et al.          Expires December 16, 2019              [Page 18]
-
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
-
 
 4.3.2.  Effects of Legacy 802.11b Devices
 
@@ -1043,6 +1058,14 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
    avoid leaking non-responsive traffic from unproven congestion
    avoidance techniques onto the open Internet.
 
+
+
+
+Sarker, et al.          Expires December 16, 2019              [Page 19]
+
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
+
+
 8.  Acknowledgements
 
    We would like to thank Tomas Frankkila, Magnus Westerlund, Kristofer
@@ -1057,14 +1080,6 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
               Universal Terrestrial Radio Access (UTRA)", October 2006,
               <http://www.3gpp.org/ftp/specs/
               archive/25_series/25.814/25814-710.zip>.
-
-
-
-
-Sarker, et al.          Expires December 16, 2019              [Page 19]
-
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
-
 
    [HO-LTE-3GPP]
               TS 36.331, 3GPP., "E-UTRA- Radio Resource Control (RRC);
@@ -1099,6 +1114,14 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
               RFC2119, March 1997,
               <http://www.rfc-editor.org/info/rfc2119>.
 
+
+
+
+Sarker, et al.          Expires December 16, 2019              [Page 20]
+
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
+
+
    [RFC2914]  Floyd, S., "Congestion Control Principles", BCP 41, RFC
               2914, DOI 10.17487/RFC2914, September 2000, <https://www
               .rfc-editor.org/info/rfc2914>.
@@ -1110,17 +1133,6 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
-
-
-
-
-
-
-
-Sarker, et al.          Expires December 16, 2019              [Page 20]
-
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
-
 
 9.2.  Informative References
 
@@ -1157,6 +1169,15 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
    [ns-3]     "The Network Simulator - ns-3", <https://www.nsnam.org/>.
 
+
+
+
+
+Sarker, et al.          Expires December 16, 2019              [Page 21]
+
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
+
+
 Authors' Addresses
 
    Zaheduzzaman Sarker
@@ -1167,15 +1188,6 @@ Authors' Addresses
 
    Phone: +46 107173743
    Email: zaheduzzaman.sarker@ericsson.com
-
-
-
-
-
-
-Sarker, et al.          Expires December 16, 2019              [Page 21]
-
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    Ingemar Johansson
@@ -1215,6 +1227,13 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
    Email: dtan2@cisco.com
 
 
+
+
+Sarker, et al.          Expires December 16, 2019              [Page 22]
+
+Internet-Draft          RMCAT Wireless Test Cases              June 2019
+
+
    Michael A. Ramalho
    Cisco Systems, Inc.
    8000 Hawkins Road
@@ -1229,4 +1248,41 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019              [Page 22]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sarker, et al.          Expires December 16, 2019              [Page 23]
