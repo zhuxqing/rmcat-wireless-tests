@@ -546,11 +546,11 @@
 
 	      <t>Other traffic model: 
 		  <list style="symbols">
-                  <t>Downlink simulation: Maximum of 4Mbps/cell (web browsing
+                  <t>Downlink simulation: Maximum of 2Mbps/cell (web browsing
 	          or FTP traffic following default TCP congestion control
 		  <xref target="RFC5681"/>)</t>
 
-                  <t>Unlink simulation: Maximum of 2Mbps/cell (web browsing or
+                  <t>Unlink simulation: Maximum of 1Mbps/cell (web browsing or
 		  FTP traffic following default TCP congestion control
                   <xref target="RFC5681"/>)</t>
 		  </list></t>

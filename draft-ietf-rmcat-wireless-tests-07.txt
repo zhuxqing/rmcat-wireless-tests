@@ -5,12 +5,12 @@
 Network Working Group                                          Z. Sarker
 Internet-Draft                                              I. Johansson
 Intended status: Informational                               Ericsson AB
-Expires: December 14, 2019                                        X. Zhu
+Expires: December 16, 2019                                        X. Zhu
                                                                    J. Fu
                                                                   W. Tan
                                                               M. Ramalho
                                                            Cisco Systems
-                                                           June 12, 2019
+                                                           June 14, 2019
 
 
   Evaluation Test Cases for Interactive Real-Time Media over Wireless
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on December 14, 2019.
+   This Internet-Draft will expire on December 16, 2019.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Sarker, et al.          Expires December 14, 2019               [Page 1]
+Sarker, et al.          Expires December 16, 2019               [Page 1]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Sarker, et al.          Expires December 14, 2019               [Page 2]
+Sarker, et al.          Expires December 16, 2019               [Page 2]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -165,7 +165,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019               [Page 3]
+Sarker, et al.          Expires December 16, 2019               [Page 3]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -221,7 +221,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019               [Page 4]
+Sarker, et al.          Expires December 16, 2019               [Page 4]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -277,7 +277,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019               [Page 5]
+Sarker, et al.          Expires December 16, 2019               [Page 5]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -333,7 +333,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019               [Page 6]
+Sarker, et al.          Expires December 16, 2019               [Page 6]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -389,7 +389,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019               [Page 7]
+Sarker, et al.          Expires December 16, 2019               [Page 7]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -445,7 +445,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019               [Page 8]
+Sarker, et al.          Expires December 16, 2019               [Page 8]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -495,18 +495,18 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
    4.  Other traffic model:
 
-       *  Downlink simulation: Maximum of 4Mbps/cell (web browsing or
+       *  Downlink simulation: Maximum of 2Mbps/cell (web browsing or
           FTP traffic following default TCP congestion control
           [RFC5681])
 
 
 
-Sarker, et al.          Expires December 14, 2019               [Page 9]
+Sarker, et al.          Expires December 16, 2019               [Page 9]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
-       *  Unlink simulation: Maximum of 2Mbps/cell (web browsing or FTP
+       *  Unlink simulation: Maximum of 1Mbps/cell (web browsing or FTP
           traffic following default TCP congestion control [RFC5681])
 
 3.3.  Desired Evaluation Metrics for cellular test cases
@@ -557,7 +557,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 10]
+Sarker, et al.          Expires December 16, 2019              [Page 10]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -613,7 +613,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 11]
+Sarker, et al.          Expires December 16, 2019              [Page 11]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -669,7 +669,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 12]
+Sarker, et al.          Expires December 16, 2019              [Page 12]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -725,7 +725,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 13]
+Sarker, et al.          Expires December 16, 2019              [Page 13]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -781,7 +781,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 14]
+Sarker, et al.          Expires December 16, 2019              [Page 14]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -837,7 +837,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 15]
+Sarker, et al.          Expires December 16, 2019              [Page 15]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -893,7 +893,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 16]
+Sarker, et al.          Expires December 16, 2019              [Page 16]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -949,7 +949,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 17]
+Sarker, et al.          Expires December 16, 2019              [Page 17]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -1005,7 +1005,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 18]
+Sarker, et al.          Expires December 16, 2019              [Page 18]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -1061,7 +1061,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 19]
+Sarker, et al.          Expires December 16, 2019              [Page 19]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -1117,7 +1117,7 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 20]
+Sarker, et al.          Expires December 16, 2019              [Page 20]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -1173,7 +1173,7 @@ Authors' Addresses
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 21]
+Sarker, et al.          Expires December 16, 2019              [Page 21]
 
 Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
@@ -1229,4 +1229,4 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 14, 2019              [Page 22]
+Sarker, et al.          Expires December 16, 2019              [Page 22]
