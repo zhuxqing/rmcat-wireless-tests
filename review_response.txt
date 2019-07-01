@@ -1,0 +1,150 @@
+-------------------------------------------------
+Review Comments (from Sergio Mena on the mailing list) and Response (tagged [Authors] 
+-------------------------------------------------
+
+>     RMCAT working group,
+>
+>     This is my review of draft-ietf-rmcat-wireless-tests-06. I realize my
+>     review comes a few days after the deadline. Sorry about that. Hopefully
+>     it's not too late.
+>
+>     I have structured my feedback in three parts: minor/editorial comments,
+>     "less minor" comments, and general comments.
+>
+>     * General comments.
+>        - Although I had some (fairly minor) suggestions on the particular
+>     setup of test cases, I understand it is too late for that, as the draft
+>     is quite mature and several teams have already implemented the TCs as
+>     they are described, so this review doesn't attempt to re-discuss the
+>     values/topologies chosen for the test cases.
+>
+>        - Wifi6. The document does not make any reference to Wifi6. I am
+>     aware of the fact the the standard is not yet finalized, but I think the
+>     announced innovations (in particular OFDMA, and the increased scheduling
+>     flexibility it mail entail) would justify at least a general mention. My
+>     suggestion is that page 11 could be a good place to introduce such a
+>     reference. Section 4.3 is another good spot.
+>
+
+ [Authors] Great suggestion.  Sec. 4 is now revised as follows. Note that we've also
+updated the statistics for 11ac and 11n to catch up on their evolution over time.
+
+	Unless otherwise mentioned, test cases in this section are described using the
+	underlying PHY- and MAC-layer parameters based on the IEEE 802.11n Standard.
+	Statistics collected from enterprise Wi-Fi networks show that the two dominant
+	physical modes are 802.11n and 802.11ac, accounting for 41% and 58% of
+	connected devices. As Wi-Fi standards evolve over time, for instance, with the
+	introduction of the emerging Wi-Fi 6 (802.11ax) products, the PHY- and MAC-
+	layer test case specifications need to be updated accordingly to reflect such
+	changes.
+	...
+
+	All test cases described below can be carried out using simulations, e.g. based
+	on [ns-2] or [ns-3]. When feasible, it is also encouraged to perform testbed-
+	based evaluations using Wi-Fi access points and endpoints running up-to-date
+	IEEE 802.11 protocols, such as 802.11ac and the emerging Wi-Fi 6, to verify the
+	viability of the candidate schemes.
+>
+>     * "less minor"
+>        - Page 6. Section 3.1.1. Please do not define the bandwidth as
+>     "infinite". That is problematic in a simulation. Rather, choose a big
+>     enough value (e.g., 10 Gbps) that is big enough so that it will not
+>     produce any congestion.
+>
+
+[Authors]  Thanks for raising this point.  The text in that section is now revised as:
+
+	The fixed user is connected to the Internet via wired connection with sufficiently
+	high bandwidth, for instance, 10 Gbps, so that the system is resource-limited on the
+	wireless interface.
+
+>        - Page 10. Last bullet. I would use the expression "non-congestion
+>     related losses" in this bullet, to be consistent with the cellular section.
+>
+
+[Authors]  We've discussed with the reviewer offline regarding this topic.  To more accurately describe
+the nature of packet losses over Wi-Fi, the wording in the 3rd bullet point of Sec
+4 has been revised to:
+
+	Packet transmissions over Wi-Fi are susceptible to contentions and collisions
+	over the air. Consequently, traffic load beyond a certain utilization level over a
+	Wi-Fi network can introduce frequent collisions over the air and significant
+	network overhead, as well as packet drops due to buffer overflow at the
+	transmitters. This, in turn, leads to excessive delay, retransmissions, packet
+	losses and lower effective bandwidth for applications. Note, however, that the
+	consequent delay and loss patterns caused by collisions are qualitatively
+	different from those induced by congestion over a wired connection.
+
+>        - Page 11. Last paragraph. I wonder why the cellular section
+>     recommends or suggests that the tests should be carried out only in a
+>     simulator, whereas the WiFi section recommends to also run some
+>     "evaluation" in a real testbed.
+>
+
+[Authors] Even though it is possible to carry out tests over LTE (and 5G) networks, and actually
+it is already done so today, these tests cannot in the general case be carried out in a deterministic fashion
+or to ensure repeatability, as these network are in the control of cellular operators and there can various
+amounts of competing traffic in the same cell(s). In practice, it is only in underground mines that one can
+carry out near deterministic testing. Even there, it is not guaranteed either as workers in the mines carry
+with them their IPhones and Androids.  Also, the underground mining setting may not reflect typical
+usage patterns of a urban setting. 
+
+The main reason for the lack of suggestion for testbed-based evaluations for cellular in the draft is out
+of the above concerns of practical feasibility,  whereas Wi-Fi equipment is relatively lower cost to acquire
+and setup.  Based on the reviewer comments, we've revised the discussion in this paragraph (Sec. 4) to
+tune down the level of recommendation for testbed-based Wi-Fi evaluations to "encourage": 
+
+	All test cases described below can be carried out using simulations, e.g. based
+	on [ns-2] or [ns-3]. When feasible, it is also encouraged to perform testbed-
+	based evaluations using Wi-Fi access points and endpoints running up-to-date
+	IEEE 802.11 protocols, such as 802.11ac and the emerging Wi-Fi 6, to verify the
+	viability of the candidate schemes.
+>
+>        - Page 16. "Congestion control" bullet includes the acronym [TBD].
+>     Does it mean "to be decided"? If it does, what is the decision? BTW, why
+>     aren't TCP flows used in the cellular TCs (or did I miss them?)
+>
+
+[Authors] This was indeed a "to-be-decided" reminder to the editors.  We've updated
+the reference for the default congestion control scheme of TCP to [RFC5681] so
+as to align with the eval-test draft (https://tools.ietf.org/html/draft-ietf-rmcat-
+eval-test-10, see Sec. 5.6 and 5.7).  
+
+The draft now specifies background FTP traffic over TCP (using default congestion
+control per RFC5681) in both Sections 3.1 and 3.2 for cellular test cases.  
+
+>
+>     * minor/editorial
+>        - Abstract. "These applications are typically required to implement
+>     congestion control". Grammar is correct, but somewhat ambiguous on what
+>     requires what. Suggestion: "A congestion control algorithm is typically
+>     required by these applications"
+>        - Page 4. 1st paragraph. "Besides, there are certain characteristics
+>     which make the cellular network different and challenging than other
+>     types of access network such as Wi-Fi and wired network”. Please fix
+>     grammar near the word "than".
+>        - Page 5. "The key factors to define test cases for cellular network
+>     are" should read either "for a cellular network", or "for cellular
+>     networks". There are other occurrences of this further down in the text
+>        - Page 6. In my opinion, "there should be enough amount of time"
+>     could be shortened to "there should be enough time"
+>        - Page 8. "intercity" --> "intensity" (?)
+>        - Page 11. First paragraph "singal" --> "signal"
+>        - Page 11. "Throughout this draft". I would rather say "Throughout
+>     the 'WiFi networks' section" or "Throughout this section" something
+>     similar, to avoid confusion with the cellular section
+>        - Page 12. 1st paragraph. "set up" --> "setup"
+>        - All over. Search and replace: "traffics" --> "traffic"
+>        - All over. Search and replace "followings" --> "following"
+>
+
+[Authors]  Thanks for catching all these nits via your "minor/editorial" comments. The
+draft has been updated accordingly.
+
+>
+>     I hope this will help improve the quality of the text.
+>
+>     Sergio
+>
+-------------------------------------------------
+

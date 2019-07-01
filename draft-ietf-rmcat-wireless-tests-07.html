@@ -401,7 +401,7 @@
 <link href="#rfc.section.5" rel="Chapter" title="5 Conclusion"/>
 <link href="#rfc.section.6" rel="Chapter" title="6 IANA Considerations"/>
 <link href="#rfc.section.7" rel="Chapter" title="7 Security Considerations"/>
-<link href="#rfc.section.8" rel="Chapter" title="8 Acknowledgements"/>
+<link href="#rfc.section.8" rel="Chapter" title="8 Acknowledgments"/>
 <link href="#rfc.references" rel="Chapter" title="9 References"/>
 <link href="#rfc.references.1" rel="Chapter" title="9.1 Normative References"/>
 <link href="#rfc.references.2" rel="Chapter" title="9.2 Informative References"/>
@@ -413,7 +413,7 @@
 
   <meta name="dct.creator" content="Sarker, Z., Johansson, I., Zhu, X., Fu, J., Tan, W., and M. Ramalho" />
   <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-rmcat-wireless-tests-07" />
-  <meta name="dct.issued" scheme="ISO8601" content="2019-6-14" />
+  <meta name="dct.issued" scheme="ISO8601" content="2019-7-1" />
   <meta name="dct.abstract" content="The Real-time Transport Protocol (RTP) is used for interactive multimedia communication applications.  A congestion control algorithm is typically required by these applications. To ensure seamless and robust user experience, a well-designed RTP-based congestion control algorithm should work well across all access network types.  This document describes test cases for evaluating performances of such congestion control algorithms over LTE and Wi-Fi networks." />
   <meta name="description" content="The Real-time Transport Protocol (RTP) is used for interactive multimedia communication applications.  A congestion control algorithm is typically required by these applications. To ensure seamless and robust user experience, a well-designed RTP-based congestion control algorithm should work well across all access network types.  This document describes test cases for evaluating performances of such congestion control algorithms over LTE and Wi-Fi networks." />
 
@@ -437,7 +437,7 @@
   <td class="right">Ericsson AB</td>
 </tr>
 <tr>
-  <td class="left">Expires: December 16, 2019</td>
+  <td class="left">Expires: January 2, 2020</td>
   <td class="right">X. Zhu</td>
 </tr>
 <tr>
@@ -458,7 +458,7 @@
 </tr>
 <tr>
   <td class="left"></td>
-  <td class="right">June 14, 2019</td>
+  <td class="right">July 1, 2019</td>
 </tr>
 
     	
@@ -478,7 +478,7 @@
 <p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
 <p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at http://datatracker.ietf.org/drafts/current/.</p>
 <p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
-<p>This Internet-Draft will expire on December 16, 2019.</p>
+<p>This Internet-Draft will expire on January 2, 2020.</p>
 <h1 id="rfc.copyrightnotice">
   <a href="#rfc.copyrightnotice">Copyright Notice</a>
 </h1>
@@ -517,7 +517,7 @@
 <li>5.   <a href="#rfc.section.5">Conclusion</a></li>
 <li>6.   <a href="#rfc.section.6">IANA Considerations</a></li>
 <li>7.   <a href="#rfc.section.7">Security Considerations</a></li>
-<li>8.   <a href="#rfc.section.8">Acknowledgements</a></li>
+<li>8.   <a href="#rfc.section.8">Acknowledgments</a></li>
 <li>9.   <a href="#rfc.references">References</a></li>
 <li>9.1.   <a href="#rfc.references.1">Normative References</a></li>
 <li>9.2.   <a href="#rfc.references.2">Informative References</a></li>
@@ -716,7 +716,7 @@
   <li>Multiple Bi-directional RMCAT Flows with on-off CBR traffic: N = 16 (8 uplink and 8 downlink); M = 5(uplink).  The goal of this test is to evaluate adaptation behavior of the candidate solution when its available bandwidth changes due to departure of background traffic. The background traffic consists of several (e.g., M=5) CBR flows transported over UDP, which are ON at times t=0-60s and are OFF at times t=61-120s.</li>
   <li>Multiple Bi-directional RMCAT Flows with off-on CBR traffic: N = 16 (8 uplink and 8 downlink); M = 5(uplink). The goal of this test is to evaluate adaptation behavior of the candidate solution when its available bandwidth changes due to arrival of background traffic. The background traffic consists of several (e.g., M=5) parallel CBR flows transported over UDP, which are OFF at times t=0-60s and are ON at times t=61-120s.  </li>
   <li>Multiple Bi-directional RMCAT flows in the presence of background TCP traffic: N=16 (8 uplink and 8 downlink); M = 5 (uplink). The goal of this test is to evaluate how RMCAT flows compete against TCP over a congested Wi-Fi network for a given candidate solution.  TCP start time: 40s, end time: 80s. </li>
-  <li>Varying number of RMCAT flows. A series of tests can be carried out for the above test cases with different values of N, e.g., N = [4, 8, 12, 16, 20]. The goal of this test is to evaluate how a candidate RMCAT solution responds to varying traffic load/demand over a congested Wi-Fi network. </li>
+  <li>Varying number of RMCAT flows. A series of tests can be carried out for the above test cases with different values of N, e.g., N = [4, 8, 12, 16, 20]. The goal of this test is to evaluate how a candidate RMCAT solution responds to varying traffic load/demand over a congested Wi-Fi network. The start time of these RMCAT flows is randomly distributed within a window of t=0-10s, whereas their end times are randomly distributed within a window of t=110-120s. </li>
 </ul>
 <h1 id="rfc.section.4.2.4"><a href="#rfc.section.4.2.4">4.2.4.</a> Expected behavior</h1>
 <p/>
@@ -740,8 +740,8 @@
 <h1 id="rfc.section.7"><a href="#rfc.section.7">7.</a> <a href="#Security" id="Security">Security Considerations</a></h1>
 <p id="rfc.section.7.p.1">The security considerations in <a href="#I-D.ietf-rmcat-eval-criteria">[I-D.ietf-rmcat-eval-criteria]</a> and the relevant congestion control algorithms apply.  The principles for congestion control are described in <a href="#RFC2914">[RFC2914]</a>, and in particular any new method MUST implement safeguards to avoid congestion collapse of the Internet.</p>
 <p id="rfc.section.7.p.2">The evaluation of the test cases are intended to be run in a controlled lab environment.  Hence, the applications, simulators and network nodes ought to be well-behaved and should not impact the desired results.  It is important to take appropriate caution to avoid leaking non-responsive traffic from unproven congestion avoidance techniques onto the open Internet.</p>
-<h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#Acknowledgements" id="Acknowledgements">Acknowledgements</a></h1>
-<p id="rfc.section.8.p.1">We would like to thank Tomas Frankkila, Magnus Westerlund, Kristofer Sandlund for their valuable comments while writing this draft.</p>
+<h1 id="rfc.section.8"><a href="#rfc.section.8">8.</a> <a href="#Acknowledgments" id="Acknowledgments">Acknowledgments</a></h1>
+<p id="rfc.section.8.p.1">We would like to thank Tomas Frankkila, Magnus Westerlund, Kristofer Sandlund, and Sergio Mena de la Cruz for their valuable input and review comments regarding this draft.</p>
 <h1 id="rfc.references"><a href="#rfc.references">9.</a> References</h1>
 <h1 id="rfc.references.1"><a href="#rfc.references.1">9.1.</a> Normative References</h1>
 <table>

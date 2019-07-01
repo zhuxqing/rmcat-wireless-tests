@@ -5,12 +5,12 @@
 Network Working Group                                          Z. Sarker
 Internet-Draft                                              I. Johansson
 Intended status: Informational                               Ericsson AB
-Expires: December 16, 2019                                        X. Zhu
+Expires: January 2, 2020                                          X. Zhu
                                                                    J. Fu
                                                                   W. Tan
                                                               M. Ramalho
                                                            Cisco Systems
-                                                           June 14, 2019
+                                                            July 1, 2019
 
 
   Evaluation Test Cases for Interactive Real-Time Media over Wireless
@@ -43,7 +43,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on December 16, 2019.
+   This Internet-Draft will expire on January 2, 2020.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Sarker, et al.          Expires December 16, 2019               [Page 1]
+Sarker, et al.           Expires January 2, 2020                [Page 1]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -97,7 +97,7 @@ Table of Contents
    5.  Conclusion  . . . . . . . . . . . . . . . . . . . . . . . . .  19
    6.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  19
    7.  Security Considerations . . . . . . . . . . . . . . . . . . .  19
-   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  20
+   8.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  20
    9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  20
      9.1.  Normative References  . . . . . . . . . . . . . . . . . .  20
      9.2.  Informative References  . . . . . . . . . . . . . . . . .  21
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Sarker, et al.          Expires December 16, 2019               [Page 2]
+Sarker, et al.           Expires January 2, 2020                [Page 2]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
 1.  Introduction
@@ -165,9 +165,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019               [Page 3]
+Sarker, et al.           Expires January 2, 2020                [Page 3]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
    deliver the data from the base station to the destination and vice
@@ -221,9 +221,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019               [Page 4]
+Sarker, et al.           Expires January 2, 2020                [Page 4]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
    o  Both Quality of Service (QoS) and non-QoS radio bearers can be
@@ -277,9 +277,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019               [Page 5]
+Sarker, et al.           Expires January 2, 2020                [Page 5]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
 3.1.  Varying Network Load
@@ -333,9 +333,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019               [Page 6]
+Sarker, et al.           Expires January 2, 2020                [Page 6]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
                              uplink
@@ -389,9 +389,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019               [Page 7]
+Sarker, et al.           Expires January 2, 2020                [Page 7]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
        *  Uplink user intensity : {0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9,
@@ -445,9 +445,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019               [Page 8]
+Sarker, et al.           Expires January 2, 2020                [Page 8]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
    cell radius than previous test case.  In this test case each of the
@@ -501,9 +501,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019               [Page 9]
+Sarker, et al.           Expires January 2, 2020                [Page 9]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
        *  Unlink simulation: Maximum of 1Mbps/cell (web browsing or FTP
@@ -557,9 +557,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019              [Page 10]
+Sarker, et al.           Expires January 2, 2020               [Page 10]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
       frequent collisions over the air and significant network overhead,
@@ -613,9 +613,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019              [Page 11]
+Sarker, et al.           Expires January 2, 2020               [Page 11]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
    All test cases described below can be carried out using simulations,
@@ -669,9 +669,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019              [Page 12]
+Sarker, et al.           Expires January 2, 2020               [Page 12]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
                                    uplink
@@ -725,9 +725,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019              [Page 13]
+Sarker, et al.           Expires January 2, 2020               [Page 13]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
       *  Bottleneck queue size: 300ms.
@@ -781,9 +781,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019              [Page 14]
+Sarker, et al.           Expires January 2, 2020               [Page 14]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
    o  One RMCAT flow competing against one long-live TCP flow over
@@ -837,9 +837,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019              [Page 15]
+Sarker, et al.           Expires January 2, 2020               [Page 15]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
    o  Wired path characteristics:
@@ -893,9 +893,9 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019              [Page 16]
+Sarker, et al.           Expires January 2, 2020               [Page 16]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
    o  Multiple RMCAT Flows Sharing the Wireless Downlink: N=16 (all
@@ -949,16 +949,19 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-Sarker, et al.          Expires December 16, 2019              [Page 17]
+Sarker, et al.           Expires January 2, 2020               [Page 17]
 
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
 
 
    o  Varying number of RMCAT flows.  A series of tests can be carried
       out for the above test cases with different values of N, e.g., N =
       [4, 8, 12, 16, 20].  The goal of this test is to evaluate how a
       candidate RMCAT solution responds to varying traffic load/demand
-      over a congested Wi-Fi network.
+      over a congested Wi-Fi network.  The start time of these RMCAT
+      flows is randomly distributed within a window of t=0-10s, whereas
+      their end times are randomly distributed within a window of
+      t=110-120s.
 
 4.2.4.  Expected behavior
 
@@ -999,16 +1002,17 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
       to show steady and stable per-flow throughtput for each value of
       N.  The average throughput of all RMCAT flows is expected to stay
       constant around the maximum rate when N is small, then gradually
+
+
+
+Sarker, et al.           Expires January 2, 2020               [Page 18]
+
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
+
+
       decrease with increasing number of RMCAT flows till it reaches the
       minimum allowed rate, beyond which the offered load to the Wi-Fi
       network (with a large value of N) is exceeding its capacity.
-
-
-
-Sarker, et al.          Expires December 16, 2019              [Page 18]
-
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
-
 
 4.3.  Other Potential Test Cases
 
@@ -1054,22 +1058,23 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
    The evaluation of the test cases are intended to be run in a
    controlled lab environment.  Hence, the applications, simulators and
    network nodes ought to be well-behaved and should not impact the
+
+
+
+Sarker, et al.           Expires January 2, 2020               [Page 19]
+
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
+
+
    desired results.  It is important to take appropriate caution to
    avoid leaking non-responsive traffic from unproven congestion
    avoidance techniques onto the open Internet.
 
-
-
-
-Sarker, et al.          Expires December 16, 2019              [Page 19]
-
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
-
-
-8.  Acknowledgements
+8.  Acknowledgments
 
    We would like to thank Tomas Frankkila, Magnus Westerlund, Kristofer
-   Sandlund for their valuable comments while writing this draft.
+   Sandlund, and Sergio Mena de la Cruz for their valuable input and
+   review comments regarding this draft.
 
 9.  References
 
@@ -1109,18 +1114,18 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
               architecture", June 2011, <http://www.3gpp.org/ftp/specs/
               archive/23_series/23.203/23203-990.zip>.
 
+
+
+
+Sarker, et al.           Expires January 2, 2020               [Page 20]
+
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
+
+
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119, DOI 10.17487/
               RFC2119, March 1997,
               <http://www.rfc-editor.org/info/rfc2119>.
-
-
-
-
-Sarker, et al.          Expires December 16, 2019              [Page 20]
-
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
-
 
    [RFC2914]  Floyd, S., "Congestion Control Principles", BCP 41, RFC
               2914, DOI 10.17487/RFC2914, September 2000, <https://www
@@ -1164,19 +1169,19 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
               <https://www.nsnam.org/docs/release/3.23/manual/html/
               index.html>.
 
+
+
+
+
+Sarker, et al.           Expires January 2, 2020               [Page 21]
+
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
+
+
    [ns-2]     "The Network Simulator - ns-2",
               <http://www.isi.edu/nsnam/ns/>.
 
    [ns-3]     "The Network Simulator - ns-3", <https://www.nsnam.org/>.
-
-
-
-
-
-Sarker, et al.          Expires December 16, 2019              [Page 21]
-
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
-
 
 Authors' Addresses
 
@@ -1218,6 +1223,17 @@ Authors' Addresses
    Email: jianfu@cisco.com
 
 
+
+
+
+
+
+
+Sarker, et al.           Expires January 2, 2020               [Page 22]
+
+Internet-Draft          RMCAT Wireless Test Cases              July 2019
+
+
    Wei-Tian Tan
    Cisco Systems
    725 Alder Drive
@@ -1225,13 +1241,6 @@ Authors' Addresses
    USA
 
    Email: dtan2@cisco.com
-
-
-
-
-Sarker, et al.          Expires December 16, 2019              [Page 22]
-
-Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
    Michael A. Ramalho
@@ -1276,13 +1285,4 @@ Internet-Draft          RMCAT Wireless Test Cases              June 2019
 
 
 
-
-
-
-
-
-
-
-
-
-Sarker, et al.          Expires December 16, 2019              [Page 23]
+Sarker, et al.           Expires January 2, 2020               [Page 23]
