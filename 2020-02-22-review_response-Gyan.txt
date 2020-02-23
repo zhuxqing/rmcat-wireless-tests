@@ -1,0 +1,86 @@
+Document: draft-ietf-rmcat-wireless-tests-08
+Reviewer: Gyan Mishra
+Review Date: 2020-01-17
+IETF LC End Date: 2020-01-21
+IESG Telechat date: Not scheduled for a telechat
+
+Summary: Ready, but with nits and minor issues that should be addressed.
+
+Major issues: None
+
+Minor issues:  This document describes test cases for evaluating performance of RTP congestion control algorithms over LTE & WIFI networks.  
+
+Section 1 It is mentioned a number of instance where “wired” is mentioned where I believe “wireless” or “WIFI” is what is meant to be stated.  Please check.
+
+[authors] Thanks for raising this concern. We’ve doubled checked on the usage of “wired” in all three instances in the introduction section, and believe it is intended as such.  Our intention was to contrast the characteristics of wireless networks from that of wired networks, therefore motivate the need for this draft.   We have, however, taken the opportunity to revise those sentences to make them less wordy. 
+ 
+I would recommend  to use WIFI to refer to local LAN WIFI and use cellular to refer to a mobile handset, and not use the term “wireless” as that could be confusing.  
+
+[authors] We agree with the general suggestion that it is preferable to refer specifically to WiFi or cellular whenever possible and have mostly edited out the word “wireless”. In a few places, however, it is rather cumbersome to always say “cellular and WiFi networks” when our intention is to simply contrast the difference between wireless and wired communication. We have therefore stuck with the term “wireless” in these cases. 
+
+I would recommend not using LTE to refer to Cellular from a general mobile handset point of view, since LTE refers to 4G and Cellular could be any - 2G,3G,4G,5G etc 
+
+[authors]  We agree with this proposed change. The text has been updated accordingly with a few exceptions: a) mentioning LTE/5G as an example of operational cellular network; b) pointing to the LTE simulator in NS-3; and c) referencing the corresponding 3GPP standard documents. 
+
+Section 3 This section also mentioned “wired” where I think the goal of the document is test cases of WIFI & Cellular and adding in wired does confuse the reader as we are talking about quality degradation issues with wireless technologies - WIFI & Cellular.  Please check the verbiage.
+
+[authors] Thanks for pointing this out. We have checked all three previous usage of the word in this section and have eliminated the mention of it in the introductory discussions. The remaining two uses, however, are needed for describing the proposed test case topology so we left them as is. 
+
+
+Section 3 In this sentence you mention 3G support of high bandwidth.  My experience with 3G has not been very slow page loading and that multimedia would suffer.
+
+[authors] This is a fair complaint. To avoid controversy, we have revised the sentence to state: “… it is evident that only the more recent radio technologies can support the high bandwidth requirements  …”
+
+Section 3 Bottom of page 5 it is mentioned that the combination of multiple access technologies such as one user has LTE connection and another has  Wi-Fi connection is kept out of the scope of this document.  Please explain why as the reader would believe it would be in scope as that is the main topic.
+
+[authors]  When some of the users are on LTE and some of the users are on Wi-Fi, it is only interesting, from a testing point of view, to investigate that case when the bottleneck of the system is on the wired hop.  Whereas the main focus of this draft is to evaluate how congestion control schemes interactive over the wireless interface. We have added the following statement in the draft to explain why it is out of scope: 
+
+“It should be noted that the goal of the following test cases is to evaluate the performance
+of candidate algorithms over the radio interface of the cellular network. Hence it is assumed
+that the radio interface is the bottleneck link between the communicating peers and that the core
+network does not introduce any extra congestion along the path. Consequently, this draft has kept
+as out of scope the combination of multiple access technologies involving both cellular and Wi-Fi users.
+”
+
+Section 3 Top of page 6 - I am wondering if there is a better explanation of why you need a test simulator due to unpredictable nature or cellular other than underground mines.  
+
+[authors]  The unpredictable nature of the cellular networks makes test results unrepeatable. Therefore our recommendation of carrying out tests using simulators.  
+
+Section 3.1.1 Here the fixed user is on a wired LAN connected to mobile user.  You mention wireless interface which makes me wonder is the fixed user actually a  WIFI user connected to broadband WIFI router wired to the internet. See in quotes which makes me wonder 
+
+"The fixed user is connected to the Internet via wired connection with sufficiently high bandwidth, for instance, 
+10 Gbps, so that the system is resource limited on the {wireless?} interface"  
+
+[authors]  Thanks for raising this point of confusion. The proposed test case comprise of both cellular users and fixed users. They share the wired backhaul link with sufficiently high bandwidth.  As such, the bottleneck of the system is over the cellular radio access link.  We have revised the sentence as below to avoid further confusion: 
+
+“… so that the system bottleneck is on the cellular radio access interface … “
+
+
+Section 4.1 Please explain in why the home access link represents a bottleneck due to its bandwidth.  
+It is not obvious as these days Gigabit and above broadband speeds are available at home.
+
+[authors] We agree that the scenario where the wired hop remains the bottleneck is becoming less common. This subsection describes test cases to reflect DSL-like home Internet access.   Overtime, we can perhaps get rid of this section completely. 
+
+Nits/editorial comments:
+
+Draft Date should to be updated.
+
+[authors] Done
+
+Section 3.1.2  1-B Antenna- [2D, 3D] should be defined ==> Zahed/Ingmer, can you help with this one? 
+
+Section 3.1.2 RTT [40, 150] , should define a unit millisecond
+
+[authors] Done. 
+
+Section 3.1.2 4. User Intensity, should define what the values in brackets mean and unit of measure. ==> Zahed/Ingmer, can you help with this?
+
+Section 3.1.2 7.2.a Media direction: Uplink and Downlink,  should define what is meant by Uplink and Downlink
+
+[authors] Please see definition in the second paragraph of Section 3.1.1 and the illustration in Fig. 1. 
+
+Section 4..2.3 g N= [4, 8, 12, 16, 20], should define what N is and any unit of measure
+
+[authors] The variables N and M indicate the number of real-time media flows and competing TCP streams, respectively, as illustrated in Fig. 2. We added a sentence in Sec. 4.1.1 to explicitly explain this
+
+ 

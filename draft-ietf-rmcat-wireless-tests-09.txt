@@ -5,13 +5,13 @@
 Network Working Group                                          Z. Sarker
 Internet-Draft                                              I. Johansson
 Intended status: Informational                               Ericsson AB
-Expires: August 24, 2020                                          X. Zhu
+Expires: August 25, 2020                                          X. Zhu
                                                                    J. Fu
                                                                   W. Tan
                                                            Cisco Systems
                                                               M. Ramalho
                                                            AcousticComms
-                                                       February 21, 2020
+                                                       February 22, 2020
 
 
   Evaluation Test Cases for Interactive Real-Time Media over Wireless
@@ -23,7 +23,7 @@ Abstract
    The Real-time Transport Protocol (RTP) is a common transport choice
    for interactive multimedia communication applications.  The
    performance of these applications typically depends on a well-
-   functioning congestion control algorithm.  To ensure seamless and
+   functioning congestion control algorithm.  To ensure a seamless and
    robust user experience, a well-designed RTP-based congestion control
    algorithm should work well across all access network types.  This
    document describes test cases for evaluating performances of
@@ -45,7 +45,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on August 24, 2020.
+   This Internet-Draft will expire on August 25, 2020.
 
 
 
@@ -53,7 +53,7 @@ Status of This Memo
 
 
 
-Sarker, et al.           Expires August 24, 2020                [Page 1]
+Sarker, et al.           Expires August 25, 2020                [Page 1]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
@@ -98,8 +98,8 @@ Table of Contents
        4.2.4.  Expected behavior . . . . . . . . . . . . . . . . . .  18
      4.3.  Other Potential Test Cases  . . . . . . . . . . . . . . .  19
        4.3.1.  EDCA/WMM usage  . . . . . . . . . . . . . . . . . . .  19
-       4.3.2.  Effect of devices with heterogeneous link rates . . .  19
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  19
+       4.3.2.  Effect of heterogeneous link rates  . . . . . . . . .  19
+   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .  20
    6.  Security Considerations . . . . . . . . . . . . . . . . . . .  20
    7.  Acknowledgments . . . . . . . . . . . . . . . . . . . . . . .  20
    8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  20
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Sarker, et al.           Expires August 24, 2020                [Page 2]
+Sarker, et al.           Expires August 25, 2020                [Page 2]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
@@ -119,14 +119,14 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
    Wireless networks (both cellular and Wi-Fi [IEEE802.11]) are an
    integral and increasingly more significant part of the Internet.
    Typical application scenarios for interactive multimedia
-   communication over wireless range from video conferencing calls in a
-   bus or train to live media streaming at home.  It is well known that
-   the characteristics and technical challenges for supporting
-   multimedia services over wireless are very different from those of
-   providing the same service over a wired network.  Although the basic
-   test cases as defined in [I-D.ietf-rmcat-eval-test] have covered many
-   common effects of network impairments for evaluating RTP-based
-   congestion control schemes, they remain to be tested over
+   communication over wireless include from video conferencing calls in
+   a bus or train as well as live media streaming at home.  It is well
+   known that the characteristics and technical challenges for
+   supporting multimedia services over wireless are very different from
+   those of providing the same service over a wired network.  Although
+   the basic test cases as defined in [I-D.ietf-rmcat-eval-test] have
+   covered many common effects of network impairments for evaluating
+   RTP-based congestion control schemes, they remain to be tested over
    characteristics and dynamics unique to a given wireless environment.
    For example, in cellular networks, the base station maintains
    individual queues per radio bearer per user hence it leads to a
@@ -165,7 +165,7 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
 
 
-Sarker, et al.           Expires August 24, 2020                [Page 3]
+Sarker, et al.           Expires August 25, 2020                [Page 3]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
@@ -176,7 +176,7 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
    there will remain some packet losses and delay variations.  Moreover,
    with increased cell load or handover to a congested cell, congestion
    in the transport network will become even worse.  Besides, there
-   exist certain characteristics which distinguish the cellular network
+   exist certain characteristics that distinguish the cellular network
    from other wireless access networks such as Wi-Fi.  In a cellular
    network --
 
@@ -185,7 +185,8 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
       *  The cost per bit over the shared link varies over time and is
          different for different users.
 
-      *  Leftover/unused resource can be consumed by other greedy users.
+      *  Leftover/unused resources can be consumed by other greedy
+         users.
 
    o  Queues are always per radio bearer hence each user can have many
       such queues.
@@ -204,38 +205,40 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
    o  The network part decides how much the user can transmit.
 
-   o  The cellular network has variable link capacity per user
+   o  The cellular network has variable link capacity per user.
 
-      *  Can vary as fast as a period of milliseconds.
+      *  It can vary as fast as a period of milliseconds.
 
-      *  Depends on many factors (such as distance, speed, interference,
-         different flows).
+      *  It depends on many factors (such as distance, speed,
+         interference, different flows).
 
-      *  Uses complex and smart link adaptation which makes the link
+      *  It uses complex and smart link adaptation which makes the link
          behavior ever more dynamic.
 
       *  The scheduling priority depends on the estimated throughput.
 
-   o  Both Quality of Service (QoS) and non-QoS radio bearers can be
-      used.
 
 
 
-Sarker, et al.           Expires August 24, 2020                [Page 4]
+
+Sarker, et al.           Expires August 25, 2020                [Page 4]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
+
+   o  Both Quality of Service (QoS) and non-QoS radio bearers can be
+      used.
 
    Hence, a real-time communication application operating over a
    cellular network needs to cope with a shared bottleneck link and
    variable link capacity, events like handover, non-congestion related
    loss, abrupt changes in bandwidth (both short term and long term) due
    to handover, network load and bad radio coverage.  Even though 3GPP
-   define QoS bearers [QoS-3GPP] to ensure high-quality user experience,
-   it is still preferable for real-time applications to behave in an
-   adaptive manner.
+   has defined QoS bearers [QoS-3GPP] to ensure high-quality user
+   experience, it is still preferable for real-time applications to
+   behave in an adaptive manner.
 
-   Different mobile operators deploy their own cellular network with
+   Different mobile operators deploy their own cellular networks with
    their own set of network functionalities and policies.  Usually, a
    mobile operator network includes 2G, EDGE, 3G and 4G radio access
    technologies.  Looking at the specifications of such radio
@@ -271,17 +274,17 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
    Even though it is possible to carry out tests over operational
    cellular networks (e.g., LTE/5G), and actually such tests are already
-   available today, these tests cannot in general be carried out in a
-   deterministic fashion to ensure repeatability.  The main reason is
-   that these networks are controlled by cellular operators and there
 
 
 
-Sarker, et al.           Expires August 24, 2020                [Page 5]
+Sarker, et al.           Expires August 25, 2020                [Page 5]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
 
+   available today, these tests cannot in general be carried out in a
+   deterministic fashion to ensure repeatability.  The main reason is
+   that these networks are controlled by cellular operators and there
    exist various amounts of competing traffic in the same cell(s).  In
    practice, it is only in underground mines that one can carry out near
    deterministic testing.  Even there, it is not guaranteed either as
@@ -297,19 +300,19 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
    congestion control algorithm under varying network load.  The network
    load variation is created by adding and removing network users a.k.a.
    User Equipments (UEs) during the simulation.  In this test case, each
-   user/UE in the media session is an RMCAT-compliant endpoint.  User
-   arrivals follow a Poisson distribution proportional to the length of
-   the call so as to keep the number of users per cell fairly constant
-   during the evaluation period.  At the beginning of the simulation,
-   there should be enough time to warm-up the network.  This is to avoid
-   running the evaluation in an empty network where network nodes are
-   having empty buffers, low interference at the beginning of the
-   simulation.  This network initialization period should be excluded
-   from the evaluation period.
+   user/UE in the media session is an endpoint following RTP-based
+   congestion control.  User arrivals follow a Poisson distribution
+   proportional to the length of the call, to keep the number of users
+   per cell fairly constant during the evaluation period.  At the
+   beginning of the simulation, there should be enough time to warm-up
+   the network.  This is to avoid running the evaluation in an empty
+   network where network nodes are having empty buffers, low
+   interference at the beginning of the simulation.  This network
+   initialization period should be excluded from the evaluation period.
 
    This test case also includes user mobility and some competing
-   traffic.  The latter includes both same kind of flows (with same
-   adaptation algorithms) and different kind of flows (with different
+   traffic.  The latter includes both the same types of flows (with same
+   adaptation algorithms) and different types of flows (with different
    services and congestion control schemes).  The investigated
    congestion control algorithms should show maximum possible network
    utilization and stability in terms of rate variations, lowest
@@ -327,16 +330,16 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
    with sufficiently high bandwidth, for instance, 10 Gbps, so that the
    system bottleneck is on the cellular radio access interface.  The
    wired connection to in this setup does not introduce any network
-   impairments to the test; it only adds 10 ms of one-way propagation
-   delay.
 
 
 
-
-Sarker, et al.           Expires August 24, 2020                [Page 6]
+Sarker, et al.           Expires August 25, 2020                [Page 6]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
+
+   impairments to the test; it only adds 10 ms of one-way propagation
+   delay.
 
    The path from the fixed user to the mobile users is defined as
    "Downlink" and the path from the mobile users to the fixed user is
@@ -383,16 +386,17 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
        H.  Bearer: Default bearer for all traffic.
 
-       I.  Active Queue Management (AQM) settings: AQM [on,off]
-
-   2.  End-to-end Round Trip Time (RTT): [40ms, 150ms]
 
 
 
-Sarker, et al.           Expires August 24, 2020                [Page 7]
+Sarker, et al.           Expires August 25, 2020                [Page 7]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
+
+       I.  Active Queue Management (AQM) settings: AQM [on,off]
+
+   2.  End-to-end Round Trip Time (RTT): [40ms, 150ms]
 
    3.  User arrival model: Poisson arrival model
 
@@ -437,18 +441,18 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
    8.  Other traffic models:
 
-       *  Downlink simulation: Maximum of 4Mbps/cell (web browsing or
-          FTP traffic following default TCP congestion control
-          [RFC5681])
 
 
 
 
-
-Sarker, et al.           Expires August 24, 2020                [Page 8]
+Sarker, et al.           Expires August 25, 2020                [Page 8]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
+
+       *  Downlink simulation: Maximum of 4Mbps/cell (web browsing or
+          FTP traffic following default TCP congestion control
+          [RFC5681])
 
        *  Unlink simulation: Maximum of 2Mbps/cell (web browsing or FTP
           traffic following default TCP congestion control [RFC5681])
@@ -461,7 +465,7 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
    cell radius than that in the previous test case.  In this test case,
    each user/UE in the media session is an RMCAT compliant endpoint.
    User arrivals follow a Poisson distribution proportional to the
-   length of the call, so as to keep the number of users per cell fairly
+   length of the call, to keep the number of users per cell fairly
    constant during the evaluation period.  At the beginning of the
    simulation, there should be enough amount of time to warm-up the
    network.  This is to avoid running the evaluation in an empty network
@@ -494,17 +498,18 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
        B.  Cell radius: 577.3333 Meters
 
+
+
+
+Sarker, et al.           Expires August 25, 2020                [Page 9]
+
+Internet-Draft          RMCAT Wireless Test Cases          February 2020
+
+
        C.  Mobility: 3km/h
 
    2.  User intensity = {0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9, 5.6, 6.3,
        7.0}
-
-
-
-Sarker, et al.           Expires August 24, 2020                [Page 9]
-
-Internet-Draft          RMCAT Wireless Test Cases          February 2020
-
 
    3.  Media traffic model: Same as defined in Section 3.1.2
 
@@ -541,27 +546,27 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 4.  Wi-Fi Networks Specific Test Cases
 
    Given the prevalence of Internet access links over Wi-Fi, it is
-   important to evaluate candidate RMCAT congestion control solutions
-   over test cases that include Wi-Fi access links.  Such evaluations
-   should highlight the inherently different characteristics of Wi-Fi
-   networks in contrast to wired networks:
+   important to evaluate candidate RTP-based congestion control
+   solutions over test cases that include Wi-Fi access links.  Such
+   evaluations should highlight the inherently different characteristics
+   of Wi-Fi networks in contrast to their wired counterparts:
 
    o  The wireless radio channel is subject to interference from nearby
-      transmitters, multipath fading and shadowing.  These effect lead
+      transmitters, multipath fading, and shadowing.  These effects lead
+
+
+
+
+Sarker, et al.           Expires August 25, 2020               [Page 10]
+
+Internet-Draft          RMCAT Wireless Test Cases          February 2020
+
+
       to fluctuations in the link throughput and sometimes an error-
       prone communication environment.
 
    o  Available network bandwidth is not only shared over the air
       between concurrent users but also between uplink and downlink
-
-
-
-
-Sarker, et al.           Expires August 24, 2020               [Page 10]
-
-Internet-Draft          RMCAT Wireless Test Cases          February 2020
-
-
       traffic due to the half-duplex nature of the wireless transmission
       medium.
 
@@ -572,62 +577,63 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
       as well as packet drops due to buffer overflow at the
       transmitters.  This, in turn, leads to excessive delay,
       retransmissions, packet losses and lower effective bandwidth for
-      applications.  Note further that the consequent delay and loss
-      patterns caused by collisions are qualitatively different from
-      those induced by congestion over a wired connection.
+      applications.  Note further that the collision-induced delay and
+      loss patterns are qualitatively different from those caused by
+      congestion over a wired connection.
 
    o  The IEEE 802.11 standard (i.e., Wi-Fi) supports multi-rate
       transmission capabilities by dynamically choosing the most
       appropriate modulation and coding scheme (MCS) for the given
       received signal strength.  A different choice in the MCS Index
-      lead to different physical-layer (PHY-layer) link rates and
+      leads to different physical-layer (PHY-layer) link rates and
       consequently different application-layer throughput.
 
-   o  Presence of legacy devices (e.g., ones operating only in IEEE
-      802.11b at a much lower PHY-layer link rate) can significantly
+   o  The presence of legacy devices (e.g., ones operating only in IEEE
+      802.11b) at a much lower PHY-layer link rate can significantly
       slow down the rest of a modern Wi-Fi network.  As discussed in
-      [Heusse2003], the main reason for such anomaly is that legacy
-      devices take much longer to transmit the same packet over a slower
-      link than over a faster link, thereby consuming substantial
-      portion of the transmission opportunities over the air.
+      [Heusse2003], the main reason for such anomaly is that it takes
+      much longer to transmit the same packet over a slower link than
+      over a faster link, thereby consuming a substantial portion of air
+      time.
 
    o  Handover from one Wi-Fi Access Point (AP) to another may lead to
-      packet delay and losses during the process.
+      excessive packet delays and losses during the process.
 
-   o  IEEE 802.11e have introduced the Enhanced Distributed Channel
+   o  IEEE 802.11e has introduced the Enhanced Distributed Channel
       Access (EDCA) mechanism to allow different traffic categories to
       contend for channel access using different random back-off
       parameters.  This mechanism is a mandatory requirement for the Wi-
       Fi Multimedia (WMM) certification in Wi-Fi Alliance.  It allows
-      one to prioritize real-time application traffic such as voice and
-      video over non-urgent data transmissions (e.g., file transfer).
+      for prioritization of real-time application traffic such as voice
+      and video over non-urgent data transmissions (e.g., file
+      transfer).
 
    In summary, the presence of Wi-Fi access links in different network
    topologies can exert different impact on the network performance in
-   terms of application-layer effective throughput, packet loss rate,
-   and packet delivery delay.  These, in turn, will influence the
-   behavior of end-to-end real-time multimedia congestion control.
-
-   Unless otherwise mentioned, test cases in this section are described
-   using the underlying PHY- and MAC-layer parameters based on the IEEE
 
 
 
-Sarker, et al.           Expires August 24, 2020               [Page 11]
+Sarker, et al.           Expires August 25, 2020               [Page 11]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
 
-   802.11n Standard.  Statistics collected from enterprise Wi-Fi
-   networks show that the two dominant physical modes are 802.11n and
-   802.11ac, accounting for 41% and 58% of connected devices.  As Wi-Fi
-   standards evolve over time -- for instance, with the introduction of
-   the emerging Wi-Fi 6 (802.11ax) products -- the PHY- and MAC-layer
-   test case specifications need to be updated accordingly to reflect
-   such changes.
+   terms of application-layer effective throughput, packet loss rate,
+   and packet delivery delay.  These, in turn, will influence the
+   behavior of end-to-end real-time multimedia congestion control.
+
+   Unless otherwise mentioned, the test cases in this section choose the
+   PHY- and MAC-layer parameters based on the IEEE 802.11n Standard.
+   Statistics collected from enterprise Wi-Fi networks show that the two
+   dominant physical modes are 802.11n and 802.11ac, accounting for 41%
+   and 58% of connected devices.  As Wi-Fi standards evolve over time --
+   for instance, with the introduction of the emerging Wi-Fi 6 (based on
+   IEEE 802.11ax) products -- the PHY- and MAC-layer test case
+   specifications need to be updated accordingly to reflect such
+   changes.
 
    Typically, a Wi-Fi access network connects to a wired infrastructure.
-   Either the wired or the Wi-Fi segment of the network could be the
+   Either the wired or the Wi-Fi segment of the network can be the
    bottleneck.  The following sections describe basic test cases for
    both scenarios separately.  The same set of performance metrics as in
    [I-D.ietf-rmcat-eval-test]) should be collected for each test case.
@@ -645,31 +651,25 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
    conferencing over Wi-Fi connections from the home.  Typically, the
    Wi-Fi home network is not congested and the bottleneck is present
    over the wired home access link.  Although it is expected that test
-   evaluation results from this section are similar to those from test
-   cases defined for wired networks (see [I-D.ietf-rmcat-eval-test]), it
-   is still worthwhile to run through these tests as sanity checks.
+   evaluation results from this section are similar to those as in
+   [I-D.ietf-rmcat-eval-test], it is still worthwhile to run through
+   these tests as sanity checks.
 
 4.1.1.  Network topology
 
    Figure 2 shows the network topology of Wi-Fi test cases.  The test
    contains multiple mobile nodes (MNs) connected to a common Wi-Fi
    access point (AP) and their corresponding wired clients on fixed
-   nodes (FNs).  Each connection carries either a RMCAT or a TCP traffic
-   flow.  Directions of the flows can be uplink, downlink, or bi-
-   directional.  The total number of uplink/downlink/bi-directional
-   flows for RMCAT traffic is denoted as N; the total number of
-   uplink/downlink/bi-directional background TCP traffic flows is
-   denoted as M.
+   nodes (FNs).  Each connection carries either a RTP-based media flow
+   or a TCP traffic flow.  Directions of the flows can be uplink (i.e.,
+   from mobile nodes to fixed nodes), downlink (i.e., from fixed nodes
+   to mobile nodes), or bi-directional.  The total number of
+   uplink/downlink/bi-directional flows for RTP-based media traffic and
+   TCP traffic are denoted as N and M, respectively.
 
 
 
-
-
-
-
-
-
-Sarker, et al.           Expires August 24, 2020               [Page 12]
+Sarker, et al.           Expires August 25, 2020               [Page 12]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
@@ -687,13 +687,13 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
             +------+         |    |         |     |        +------+
                              | AP |=========| FN0 |
            +----------+      |    |         |     |      +----------+
-           | MN_tcp_1 | )))) |    |         |     |======| MN_tcp_1 |
+           | MN_tcp_1 | )))) |    |         |     |======| FN_tcp_1 |
            +----------+      +----+         +-----+      +----------+
                  .          ))                 \\             .
                  .         ))                   \\            .
                  .        ))                     \\           .
            +----------+  ))                       \\     +----------+
-           | MN_tcp_M |)))                         \=====| MN_tcp_M |
+           | MN_tcp_M |)))                         \=====| FN_tcp_M |
            +----------+                                  +----------+
                             +<-----------------+
                                     Downlink
@@ -707,11 +707,11 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
    o  Wi-Fi network characteristics:
 
       *  Radio propagation model: Log-distance path loss propagation
-         model [NS3WiFi]
+         model (see [NS3WiFi])
 
       *  PHY- and MAC-layer configuration: IEEE 802.11n
 
-      *  MCS Index at 11: 16-QAM 1/2, Raw Data Rate@52Mbps
+      *  MCS Index at 11: 16-QAM 1/2, Raw Data Rate at 52Mbps
 
    o  Wired path characteristics:
 
@@ -725,7 +725,7 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
 
 
-Sarker, et al.           Expires August 24, 2020               [Page 13]
+Sarker, et al.           Expires August 25, 2020               [Page 13]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
@@ -765,59 +765,59 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
 4.1.3.  Typical test scenarios
 
-   o  Single uplink RMCAT flow: N=1 with uplink direction and M=0.
+   o  Single uplink RTP-based media flow: N=1 with uplink direction and
+      M=0.
 
-   o  One pair of bi-directional RMCAT flows: N=2 (with one uplink flow
-      and one downlink flow); M=0.
+   o  One pair of bi-directional RTP-based media flows: N=2 (i.e., one
+      uplink flow and one downlink flow); M=0.
 
-   o  One pair of bi-directional RMCAT flows, one on-off CBR over UDP
-      flow on uplink: N=2 (with one uplink flow and one downlink flow);
-      M=1 (uplink).  CBR flow ON time at 0s-60s, OFF time at 60s-119s.
+   o  One pair of bi-directional RTP-based media flows: N=2; one uplink
+      on-off CBR flow over UDP: M=1 (uplink).  The CBR flow has ON time
+      at t=0s-60s and OFF time at t=60s-119s.
 
-   o  One pair of bi-directional RMCAT flows, one off-on CBR over UDP
-      flow on uplink: N=2 (with one uplink flow and one downlink flow);
-      M=1 (uplink).  OFF time for UDP flow: 0s-60s; ON time: 60s-119s.
-
-
+   o  One pair of bi-directional RTP-based media flows: N=2; one uplink
+      off-on CBR flow over UDP: M=1 (uplink).  The CBR flow has OFF time
+      at t=0s-60s and ON time at t=60s-119s.
 
 
-Sarker, et al.           Expires August 24, 2020               [Page 14]
+
+Sarker, et al.           Expires August 25, 2020               [Page 14]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
 
-   o  One RMCAT flow competing against one long-live TCP flow over
-      uplink: N=1 (uplink) and M = 1(uplink), TCP start time at 0s and
-      end time at 119s.
+   o  One RTP-based media flow competing against one long-live TCP flow
+      in the uplink direction: N=1 (uplink) and M = 1(uplink).  The TCP
+      flow has start time at t=0s and end time at t=119s.
 
 4.1.4.  Expected behavior
 
-   o  Single uplink RMCAT flow: the candidate algorithm is expected to
-      detect the path capacity constraint, to converge to bottleneck
-      link capacity and to adapt the flow to avoid unwanted oscillation
-      when the sending bit rate is approaching the bottleneck link
-      capacity.  No excessive oscillations in the media rate should be
-      present.
+   o  Single uplink RTP-based media flow: the candidate algorithm is
+      expected to detect the path capacity constraint, to converge to
+      the bottleneck link capacity, and to adapt the flow to avoid
+      unwanted oscillations when the sending bit rate is approaching the
+      bottleneck link capacity.  No excessive oscillations in the media
+      rate should be present.
 
-   o  Bi-directional RMCAT flows: It is expected that the candidate
-      algorithm is able to converge to the bottleneck capacity of the
-      wired path on both directions despite the presence of measurement
-      noise over the Wi-Fi connection.  In the presence of background
-      TCP or CBR over UDP traffic, the rate of RMCAT flows should adapt
-      in a timely manner to changes in the available bottleneck
-      bandwidth.
+   o  Bi-directional RTP-based media flows: the candidate algorithm is
+      expected to converge to the bottleneck capacity of the wired path
+      in both directions despite the presence of measurement noise over
+      the Wi-Fi connection.  In the presence of background TCP or CBR
+      over UDP traffic, the rate of RTP-based media flows should adapt
+      promptly to the arrival and departure of background traffic flows.
 
-   o  One RMCAT flow competing with long-live TCP flow over uplink: the
-      candidate algorithm should be able to avoid congestion collapse,
-      and to stabilize at a fair share of the bottleneck link capacity.
+   o  One RTP-based media flow competing with long-live TCP flow in the
+      uplink direction: the candidate algorithm is expected to avoid
+      congestion collapse and to stabilize at a fair share of the
+      bottleneck link capacity.
 
 4.2.  Bottleneck in Wi-Fi Network
 
-   These test cases assume that the wired portion along the media path
-   is well-provisioned whereas the bottleneck exists over the Wi-Fi
-   access network.  This is to mimic the application scenarios typically
-   encountered by users in an enterprise environment or at a coffee
-   house.
+   The test cases in this section assume that the wired segment along
+   the media path is well-provisioned whereas the bottleneck exists over
+   the Wi-Fi access network.  This is to mimic the application scenarios
+   typically encountered by users in an enterprise environment or at a
+   coffee house.
 
 4.2.1.  Network topology
 
@@ -830,14 +830,14 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
    o  Wi-Fi network characteristics:
 
       *  Radio propagation model: Log-distance path loss propagation
-         model [NS3WiFi]
+         model (see [NS3WiFi])
 
       *  PHY- and MAC-layer configuration: IEEE 802.11n
 
 
 
 
-Sarker, et al.           Expires August 24, 2020               [Page 15]
+Sarker, et al.           Expires August 25, 2020               [Page 15]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
@@ -893,7 +893,7 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
 
 
-Sarker, et al.           Expires August 24, 2020               [Page 16]
+Sarker, et al.           Expires August 25, 2020               [Page 16]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
@@ -901,170 +901,174 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 4.2.3.  Typical test scenarios
 
    This section describes a few test scenarios that are deemed as
-   important for understanding the behavior of a candidate RMCAT
-   solution over a Wi-Fi network.
+   important for understanding the behavior of a candidate RTP-based
+   congestion control scheme over a Wi-Fi network.
 
-   a.  Multiple RMCAT Flows Sharing the Wireless Downlink: N=16 (all
-       downlink); M = 0.  This test case is for studying the impact of
-       contention on the multiple concurrent RMCAT flows.  For an
-       802.11n network, given the MCS Index of 11 and the corresponding
-       raw data rate of 52Mbps, the total application-layer throughput
-       (assuming reasonable distance, low interference and infrequent
-       contentions caused by competing streams) is around 20Mbps.
-       Consequently, a total of N=16 RMCAT flows are needed to saturate
-       the wireless interface in this experiment.  Evaluation of a given
-       candidate solution should focus on whether downlink RMCAT flows
-       can stabilize at a fair share of total application-layer
+   a.  Multiple RTP-based media flows sharing the wireless downlink:
+       N=16 (all downlink); M = 0.  This test case is for studying the
+       impact of contention on the multiple concurrent media flows.  For
+       an 802.11n network, given the MCS Index of 11 and the
+       corresponding link rate of 52Mbps, the total application-layer
+       throughput (assuming reasonable distance, low interference and
+       infrequent contentions caused by competing streams) is around
+       20Mbps.  A total of N=16 RTP-based media flows (with a maximum
+       rate of 1.5Mbps each) are expected to saturate the wireless
+       interface in this experiment.  Evaluation of a given candidate
+       scheme should focus on whether the downlink media flows can
+       stabilize at a fair share of the total application-layer
        throughput.
 
-   b.  Multiple RMCAT Flows Sharing the Wireless Uplink: N = 16 (all
-       downlink); M = 0.  When multiple clients attempt to transmit
-       video packets uplink over the wireless interface, they introduce
-       more frequent contentions and potential collisions.  Per-flow
+   b.  Multiple RTP-based media flows sharing the wireless uplink:N = 16
+       (all downlink); M = 0.  When multiple clients attempt to transmit
+       media packets uplink over the Wi-Fi network, they introduce more
+       frequent contentions and potential collisions.  Per-flow
        throughput is expected to be lower than that in the previous
-       downlink-only scenario.  Evaluation of a given candidate solution
-       should focus on whether uplink flows can stabilize at a fair
-       share of application-layer throughput.
+       downlink-only scenario.  Evaluation of a given candidate scheme
+       should focus on whether the uplink flows can stabilize at a fair
+       share of the total application-layer throughput.
 
-   c.  Multiple Bi-directional RMCAT Flows: N = 16 (8 uplink and 8
-       downlink); M = 0.  The goal of this test is to evaluate the
-       performance of the candidate solution in terms of bandwidth
+   c.  Multiple bi-directional RTP-based media flows: N = 16 (8 uplink
+       and 8 downlink); M = 0.  The goal of this test is to evaluate the
+       performance of the candidate scheme in terms of bandwidth
        fairness between uplink and downlink flows.
 
-   d.  Multiple Bi-directional RMCAT Flows with on-off CBR traffic: N =
-       16 (8 uplink and 8 downlink); M = 5(uplink).  The goal of this
-       test is to evaluate the adaptation behavior of the candidate
-       solution when its available bandwidth changes due to the
-       departure of background traffic.  The background traffic consists
-       of several (e.g., M=5) CBR flows transported over UDP.  These
-       background flows are ON at times t=0-60s and are OFF at times
-       t=61-120s.
+   d.  Multiple bi-directional RTP-based media flows with on-off CBR
+       traffic over UDP: N = 16 (8 uplink and 8 downlink); M = 5
+       (uplink).  The goal of this test is to evaluate the adaptation
+       behavior of the candidate scheme when its available bandwidth
+       changes due to the departure of background traffic.  The
+       background traffic consists of several (e.g., M=5) CBR flows
+       transported over UDP.  These background flows are ON at time
+       t=0-60s and OFF at time t=61-120s.
 
-   e.  Multiple Bi-directional RMCAT Flows with off-on CBR traffic: N =
-       16 (8 uplink and 8 downlink); M = 5(uplink).  The goal of this
-       test is to evaluate the adaptation behavior of the candidate
-       solution when its available bandwidth changes due to the arrival
-       of background traffic.  The background traffic consists of
-       several (e.g., M=5) parallel CBR flows transported over UDP.
-
+   e.  Multiple bi-directional RTP-based media flows with off-on CBR
+       traffic over UDP: N = 16 (8 uplink and 8 downlink); M = 5
+       (uplink).  The goal of this test is to evaluate the adaptation
+       behavior of the candidate scheme when its available bandwidth
+       changes due to the arrival of background traffic.  The background
 
 
-Sarker, et al.           Expires August 24, 2020               [Page 17]
+
+Sarker, et al.           Expires August 25, 2020               [Page 17]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
 
-       These background flows are OFF at times t=0-60s and are ON at
-       times t=61-120s.
+       traffic consists of several (e.g., M=5) parallel CBR flows
+       transported over UDP.  These background flows are OFF at time
+       t=0-60s and ON at times t=61-120s.
 
-   f.  Multiple Bi-directional RMCAT flows in the presence of background
-       TCP traffic: N=16 (8 uplink and 8 downlink); M = 5 (uplink).  The
-       goal of this test is to evaluate how RMCAT flows compete against
-       TCP over a congested Wi-Fi network for a given candidate
-       solution.  TCP start time: 40s, end time: 80s.
+   f.  Multiple bi-directional RTP-based media flows in the presence of
+       background TCP traffic: N=16 (8 uplink and 8 downlink); M = 5
+       (uplink).  The goal of this test is to evaluate how RTP-based
+       media flows compete against TCP over a congested Wi-Fi network
+       for a given candidate scheme.  TCP flows have start time at t=40s
+       and end time at t=80s.
 
-   g.  Varying number of RMCAT flows: A series of tests can be carried
-       out for the above test cases with different values of N, e.g., N
-       = [4, 8, 12, 16, 20].  The goal of this test is to evaluate how a
-       candidate RMCAT solution responds to varying traffic load/demand
-       over a congested Wi-Fi network.  The start time of these RMCAT
-       flows is randomly distributed within a window of t=0-10s, whereas
+   g.  Varying number of RTP-based media flows: A series of tests can be
+       carried out for the above test cases with different values of N,
+       e.g., N = [4, 8, 12, 16, 20].  The goal of this test is to
+       evaluate how a candidate scheme responds to varying traffic load/
+       demand over a congested Wi-Fi network.  The start times of the
+       media flows are randomly distributes within a window of t=0-10s;
        their end times are randomly distributed within a window of
        t=110-120s.
 
 4.2.4.  Expected behavior
 
-   o  Multiple downlink RMCAT flows: each RMCAT flow should get its fair
-      share of the total bottleneck link bandwidth.  Overall bandwidth
-      usage should not be significantly lower than that experienced by
-      the same number of concurrent downlink TCP flows.  In other words,
-      the performance of multiple concurrent TCP flows will be used as a
-      performance benchmark for this test scenario.  The end-to-end
-      delay and packet loss ratio experienced by each flow should be
-      within an acceptable range for real-time multimedia applications.
+   o  Multiple downlink RTP-based media flows: each media flow is
+      expected to get its fair share of the total bottleneck link
+      bandwidth.  Overall bandwidth usage should not be significantly
+      lower than that experienced by the same number of concurrent
+      downlink TCP flows.  In other words, the behavior of multiple
+      concurrent TCP flows will be used as a performance benchmark for
+      this test scenario.  The end-to-end delay and packet loss ratio
+      experienced by each flow should be within an acceptable range for
+      real-time multimedia applications.
 
-   o  Multiple uplink RMCAT flows: overall bandwidth usage shared by all
-      RMCAT flows should not be significantly lower than that
+   o  Multiple uplink RTP-based media flows: overall bandwidth usage by
+      all media flows should not be significantly lower than that
       experienced by the same number of concurrent uplink TCP flows.  In
-      other words, the performance of multiple concurrent TCP flows will
-      be used as a performance benchmark for this test scenario.
+      other words, the behavior of multiple concurrent TCP flows will be
+      used as a performance benchmark for this test scenario.
 
-   o  Multiple bi-directional RMCAT flows with dynamic background
-      traffic carrying CBR flows over UDP: RMCAT flows should adapt in a
-      timely fashion to the resulting changes in available bandwidth.
+   o  Multiple bi-directional RTP-based media flows with dynamic
+      background traffic carrying CBR flows over UDP: the media flows
+      are expected to adapt in a timely fashion to the changes in
+      available bandwidth introduced by the arrival/departure of
+      background traffic.
 
-   o  Multiple bi-directional RMCAT flows with dynamic background
-      traffic over TCP: during the presence of TCP background flows, the
-      overall bandwidth usage shared by all RMCAT flows should not be
-      significantly lower than those achieved by the same number of bi-
-      directional TCP flows.  In other words, the performance of
-      multiple concurrent TCP flows will be used as a performance
-      benchmark for this test scenario.  All downlink RMCAT flows are
-      expected to obtain similar bandwidth with respect to each other.
-      The throughput of RMCAT flows should decrease upon the arrival of
+   o  Multiple bi-directional RTP-based media flows with dynamic
+      background traffic over TCP: during the presence of TCP background
+      flows, the overall bandwidth usage by all media flows should not
+      be significantly lower than those achieved by the same number of
 
 
 
-Sarker, et al.           Expires August 24, 2020               [Page 18]
+Sarker, et al.           Expires August 25, 2020               [Page 18]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
 
-      TCP background traffic and increase upon their departure, both
-      reactions should occur in a timely fashion (e.g., within 10s of
-      seconds).
+      bi-directional TCP flows.  In other words, the behavior of
+      multiple concurrent TCP flows will be used as a performance
+      benchmark for this test scenario.  All downlink media flows are
+      expected to obtain similar bandwidth as each other.  The
+      throughput of each media flow is expected to decrease upon the
+      arrival of TCP background traffic and, conversely, increase upon
+      their departure.  Both reactions should occur in a timely fashion,
+      for example, within 10s of seconds.
 
-   o  Varying number of bi-directional RMCAT flows: the test results for
-      varying values of N -- while keeping all other parameters constant
-      -- is expected to show steady and stable per-flow throughput for
-      each value of N.  The average throughput of all RMCAT flows is
-      expected to stay constant around the maximum rate when N is small,
-      then gradually decrease with increasing number of RMCAT flows till
-      it reaches the minimum allowed rate, beyond which the offered load
-      to the Wi-Fi network (with a large value of N) is exceeding its
-      capacity.
+   o  Varying number of bi-directional RTP-based media flows: the test
+      results for varying values of N -- while keeping all other
+      parameters constant -- is expected to show steady and stable per-
+      flow throughput for each value of N.  The average throughput of
+      all media flows is expected to stay constant around the maximum
+      rate when N is small, then gradually decrease with increasing
+      value of N till it reaches the minimum allowed rate, beyond which
+      the offered load to the Wi-Fi network exceeds its capacity (i.e.,
+      with a very large value of N).
 
 4.3.  Other Potential Test Cases
 
 4.3.1.  EDCA/WMM usage
 
-   EDCA/WMM is prioritized QoS with four traffic classes (or Access
-   Categories) with differing priorities.  RMCAT flows should achieve
-   better performance (i.e., lower delay, fewer packet losses) with
-   EDCA/WMM enabled when competing against non-interactive background
-   traffic (e.g., file transfers).  When most of the traffic over Wi-Fi
-   is dominated by media, however, turning on WMM may actually degrade
-   performance since all media flows now attempt to access the wireless
-   transmission medium more aggressively, thereby causing more frequent
-   collisions and collision-induced losses.  This is a topic worthy of
-   further investigation.
+   The EDCA/WMM mechanism defines prioritized QoS for four traffic
+   classes (or Access Categories).  RTP-based real-time media flows
+   should achieve better performance in terms of lower delay and fewer
+   packet losses with EDCA/WMM enabled when competing against non-
+   interactive background traffic such as file transfers.  When most of
+   the traffic over Wi-Fi is dominated by media, however, turning on WMM
+   may degrade performance since all media flows now attempt to access
+   the wireless transmission medium more aggressively, thereby causing
+   more frequent collisions and collision-induced losses.  This is a
+   topic worthy of further investigation.
 
-4.3.2.  Effect of devices with heterogeneous link rates
+4.3.2.  Effect of heterogeneous link rates
 
    As discussed in [Heusse2003], the presence of clients operating over
-   slow PHY-layer link rates (e.g., a legacy 802.11b device operating
-   connected to a modern network) may adversely impact the overall
-   performance of the network.  Additional test cases can be devised to
-   evaluate the effect of clients with heterogeneous link rates on the
-   performance of the candidate congestion control algorithm.  Such test
-   cases, for instance, can specify that the PHY-layer link rates for
-   all clients span over a wide range (e.g., 2Mbps to 54Mbps) for
-   observing the effect on the congestion control behavior of the real-
-   time interactive applications.  a
+   slow PHY-layer link rates (e.g., a legacy 802.11b device) connected
+   to a modern network may adversely impact the overall performance of
+   the network.  Additional test cases can be devised to evaluate the
+   effect of clients with heterogeneous link rates on the performance of
+   the candidate congestion control algorithm.  Such test cases, for
+   instance, can specify that the PHY-layer link rates for all clients
+   span over a wide range (e.g., 2Mbps to 54Mbps) for investigating its
+   effect on the congestion control behavior of the real-time
+   interactive applications.
+
+
+
+
+
+Sarker, et al.           Expires August 25, 2020               [Page 19]
+
+Internet-Draft          RMCAT Wireless Test Cases          February 2020
+
 
 5.  IANA Considerations
 
    This memo includes no request to IANA.
-
-
-
-
-
-
-Sarker, et al.           Expires August 24, 2020               [Page 19]
-
-Internet-Draft          RMCAT Wireless Test Cases          February 2020
-
 
 6.  Security Considerations
 
@@ -1078,8 +1082,8 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
    controlled lab environment.  Hence, the applications, simulators and
    network nodes ought to be well-behaved and should not impact the
    desired results.  It is important to take appropriate caution to
-   avoid leaking non-responsive traffic from unproven congestion
-   avoidance techniques onto the open Internet.
+   avoid leaking non-responsive traffic with unproven congestion
+   avoidance behaviro onto the open Internet.
 
 7.  Acknowledgments
 
@@ -1107,20 +1111,23 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
               Cases for Evaluating RMCAT Proposals", draft-ietf-rmcat-
               eval-test-10 (work in progress), May 2019.
 
+
+
+
+
+
+
+Sarker, et al.           Expires August 25, 2020               [Page 20]
+
+Internet-Draft          RMCAT Wireless Test Cases          February 2020
+
+
    [IEEE802.11]
               IEEE, "Standard for Information technology--
               Telecommunications and information exchange between
               systems Local and metropolitan area networks--Specific
               requirements Part 11: Wireless LAN Medium Access Control
               (MAC) and Physical Layer (PHY) Specifications", 2012.
-
-
-
-
-Sarker, et al.           Expires August 24, 2020               [Page 20]
-
-Internet-Draft          RMCAT Wireless Test Cases          February 2020
-
 
    [NS3WiFi]  "Wi-Fi Channel Model in ns-3 Simulator",
               <https://www.nsnam.org/doxygen/
@@ -1164,19 +1171,17 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
               <http://www.3gpp.org/ftp/specs/
               archive/25_series/25.331/25331-990.zip>.
 
+
+
+Sarker, et al.           Expires August 25, 2020               [Page 21]
+
+Internet-Draft          RMCAT Wireless Test Cases          February 2020
+
+
    [I-D.ietf-rmcat-cc-requirements]
               Jesup, R. and Z. Sarker, "Congestion Control Requirements
               for Interactive Real-Time Media", draft-ietf-rmcat-cc-
               requirements-09 (work in progress), December 2014.
-
-
-
-
-
-Sarker, et al.           Expires August 24, 2020               [Page 21]
-
-Internet-Draft          RMCAT Wireless Test Cases          February 2020
-
 
    [NS-2]     "ns-2", December 2014,
               <http://nsnam.sourceforge.net/wiki/index.php/Main_Page>.
@@ -1224,12 +1229,7 @@ Authors' Addresses
 
 
 
-
-
-
-
-
-Sarker, et al.           Expires August 24, 2020               [Page 22]
+Sarker, et al.           Expires August 25, 2020               [Page 22]
 
 Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
@@ -1285,4 +1285,4 @@ Internet-Draft          RMCAT Wireless Test Cases          February 2020
 
 
 
-Sarker, et al.           Expires August 24, 2020               [Page 23]
+Sarker, et al.           Expires August 25, 2020               [Page 23]

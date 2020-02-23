@@ -1,0 +1,47 @@
+Hi authors,
+
+As you can see below I just requested IETF last call for draft-ietf-rmcat-wireless-tests. In my AD review I didn’t find anything important that needs to be addressed before IETF last call, so I didn’t send a separate AD review mail this time, however, I have a couple of small comments about reference that should be addressed before IESG evaluation:
+
+- It seems like [I-D.ietf-rmcat-eval-test] should be a normative reference the way it is cited in section 3.2.1.
+
+[authors] Good point. This reference is now moved to the normative section. 
+ 
+- Then, the notation "3GPP case 1 [Deployment]” in section 3.1.2 as well as similarity used in section 3.2.2 is quite confusing as squared brackets are also used for options. I recommend to rename the referent to e.g HO-deploy-3GPP and maybe even write then "3GPP case 1 (see [HO-deploy-3GPP])”.
+
+[authors]  Agree.  Revised accordingly. 
+
+- However, the other 3GPP reference probably don’t need to be normative as they only provide further information about mechanism that impact cellular network but don’t need to be known in detail to perform these tests, while the reference to IEEE802.11 maybe should be normative…?
+
+[authors] Agree. I’ve moved the other 3GPP references to the informative section and moved the IEEE802.11 one to the normative. 
+
+- There are two different references to ns-3. Please only use one!
+
+[authors]. Thanks for catching this — an artifact from co-authors working on different parts of this draft. I’ve consolidated to one. Have also updated information of both references of NS-2 and NS-3 to be consistent with those in the recently published RFC 8698.    
+
+- I don’t think the reference to RFC2914 necessarily needs to be normative.
+
+[authors] Agree. Moved to informative instead. 
+
+Also as usually when reviewing a document I of course have some more comments, however, they are mostly editorial:
+
+- Some of the Wi-Fi acronym are not spelled out or explained, e.g. MCS and EDCA/WMM. Maybe a few more sentences can be added to intro part in section 4.
+
+[authors] Thanks for pointing this out.  I’ve revised the sentence in the intro part of Sec. 4 to fully spell out EDCA (Enhanced Distributed Channel Access) and WMM (Wi-Fi Multi-Media) separately. The draft now introduced the full term before adding the acronym in the bracket. I’ve also added some explanation for MCS (Modulation and Coding Scheme) in the sub-paragraph starting with “The IEEE 802.11 standard (i.e., Wi-Fi) supports multi-rate transmission capabilities  …”.    
+
+- The conclusion section is actually not needed/not a common thing, so I recommend just removing it.
+
+[author] Done. 
+
+- also in sec 4:
+"All test cases described below can be carried out using simulations, e.g. based on [ns-2] or [ns-3].”
+This should probably say some like “are recommended to be carried out using simulations” (similar as phrased at the end of the intro text in sec 3).
+
+[authors] Good suggestion. The sentence is revised accordingly, as “We recommend to carry out the test cases as defined in this document using a simulator, such as [NS-2] or [NS-3]. ”
+
+- In section 3:
+"Even though 3GPP define QoS bearers [QoS-3GPP] to ensure high-quality user experience,
+   adaptive real-time applications are desired.”
+Is desired the right word here? What do you mean?
+
+[authors]  I’ve revised the text to “Even though 3GPP define QoS bearers [QoS-3GPP] to ensure high-quality user experience, it is still preferrable to real-time applications to behave in an adaptive manner.”
+
