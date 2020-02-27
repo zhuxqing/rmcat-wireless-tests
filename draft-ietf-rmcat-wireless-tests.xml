@@ -990,7 +990,7 @@
     environment.  Hence, the applications, simulators and network nodes ought to be
     well-behaved and should not impact the desired results.  It is important to take
     appropriate caution to avoid leaking non-responsive traffic with unproven congestion
-    avoidance behaviro onto the open Internet.</t>
+    avoidance behavior onto the open Internet.</t>
 
 </section>
     
