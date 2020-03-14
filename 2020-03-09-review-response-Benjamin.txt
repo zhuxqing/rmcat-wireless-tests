@@ -1,0 +1,54 @@
+Benjamin Kaduk has entered the following ballot position for
+draft-ietf-rmcat-wireless-tests-09: No Objection
+
+When responding, please keep the subject line intact and reply to all
+email addresses included in the To and CC lines. (Feel free to cut this
+introductory paragraph, however.)
+
+
+Please refer to https://www.ietf.org/iesg/statement/discuss-criteria.html
+for more information about IESG DISCUSS and COMMENT positions.
+
+
+The document, along with other ballot positions, can be found here:
+https://datatracker.ietf.org/doc/draft-ietf-rmcat-wireless-tests/
+
+
+
+----------------------------------------------------------------------
+COMMENT:
+----------------------------------------------------------------------
+
+Thanks to Adam for noting the author-count already.
+
+Section 3
+
+   Different mobile operators deploy their own cellular networks with
+   their own set of network functionalities and policies.  Usually, a
+   mobile operator network includes 2G, EDGE, 3G and 4G radio access
+
+Is 2G still "typical"?  I was given to understand it was getting phased
+out.
+
+[authors]  Agree that 2G is now outdated. We've revised the sentence to:
+
+"Usually, a mobile operator network includes a range of radio access technologies such as 3G and 4G/LTE." 
+
+Section 3.1, 3.2
+
+How do I tell how much time is "enough time to warm-up the network"?
+
+[authors] Thanks for noting this. We've added a sentence to clarify that the evaluation
+period should start 30 seconds after initialization. 
+
+Section 4.2.3
+
+   b.  Multiple RTP-based media flows sharing the wireless uplink:N = 16
+       (all downlink); M = 0.  When multiple clients attempt to transmit
+
+I'm not sure how to interpret the parenthetical; is it a copy/paste
+issue from (a) that should read "all uplink"?
+
+[authors] Thanks for catching this typo. It's meant to be "all uplink". Fixed now. 
+
+

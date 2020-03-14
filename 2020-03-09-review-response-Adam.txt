@@ -1,0 +1,37 @@
+Adam Roach has entered the following ballot position for
+draft-ietf-rmcat-wireless-tests-09: No Objection
+
+When responding, please keep the subject line intact and reply to all
+email addresses included in the To and CC lines. (Feel free to cut this
+introductory paragraph, however.)
+
+
+Please refer to https://www.ietf.org/iesg/statement/discuss-criteria.html
+for more information about IESG DISCUSS and COMMENT positions.
+
+
+The document, along with other ballot positions, can be found here:
+https://datatracker.ietf.org/doc/draft-ietf-rmcat-wireless-tests/
+
+
+
+----------------------------------------------------------------------
+COMMENT:
+----------------------------------------------------------------------
+
+Thanks for the work that went into creating this document.
+
+ID Nits correctly reports:
+
+  == Unused Reference: 'I-D.ietf-rmcat-cc-requirements' is defined on line
+     998, but no explicit reference was found in the text
+
+[authors] Thanks for the catch. This extraneous reference is now removed. 
+
+As a note for the AD: I can’t find a justification in the ballot or shepherd’s
+writeup for why this document has six authors instead of a smaller number of
+editors and a list of contributors. It would be nice to capture the exception
+rationale in one of those two places for posterity.
+
+[authors] Thanks for noting this. We've updated the author list and have stated
+contributions of previous co-authors in a new Contributor section. 

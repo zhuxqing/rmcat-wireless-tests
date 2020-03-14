@@ -1,0 +1,28 @@
+Alvaro Retana has entered the following ballot position for
+draft-ietf-rmcat-wireless-tests-09: No Objection
+
+When responding, please keep the subject line intact and reply to all
+email addresses included in the To and CC lines. (Feel free to cut this
+introductory paragraph, however.)
+
+
+Please refer to https://www.ietf.org/iesg/statement/discuss-criteria.html
+for more information about IESG DISCUSS and COMMENT positions.
+
+
+The document, along with other ballot positions, can be found here:
+https://datatracker.ietf.org/doc/draft-ietf-rmcat-wireless-tests/
+
+
+
+----------------------------------------------------------------------
+COMMENT:
+----------------------------------------------------------------------
+
+If my reading of the mailing list is correct, it looks like this document was
+the result of merging draft-sarker-rmcat-cellular-eval-test-cases and
+draft-fu-rmcat-wifi-test-case.  It would be nice if this document was tagged as
+replacing them.
+
+
+[authors] fixed by Mirja

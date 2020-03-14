@@ -1,0 +1,60 @@
+Éric Vyncke has entered the following ballot position for
+draft-ietf-rmcat-wireless-tests-09: No Objection
+
+When responding, please keep the subject line intact and reply to all
+email addresses included in the To and CC lines. (Feel free to cut this
+introductory paragraph, however.)
+
+
+Please refer to https://www.ietf.org/iesg/statement/discuss-criteria.html
+for more information about IESG DISCUSS and COMMENT positions.
+
+
+The document, along with other ballot positions, can be found here:
+https://datatracker.ietf.org/doc/draft-ietf-rmcat-wireless-tests/
+
+
+
+----------------------------------------------------------------------
+COMMENT:
+----------------------------------------------------------------------
+
+Thank you for the work put into this document. It is really easy to read.
+
+Please find below some non-blocking COMMENTs and NITs. An answer will be
+appreciated.
+
+I hope that this helps to improve the document,
+
+Regards,
+
+-éric
+
+== COMMENTS ==
+
+-- Section 1 --
+Does the following assertion always stand ? "This contrasts with the wired
+network setting where traffic flows from all users share the same queue."
+
+[authors] Not always but it's a typical setting for wired networks. We revised the
+sentence accordingly: 
+
+"This contrasts with a typical wired network setting ... at the bottleneck."
+
+-- Section 3.1.2 --
+As a frequent high speed train passenger, I would have appreciated a simulation
+with mobility of 300 km/h ;-)
+
+[authors] Thanks for your interest in testing out a high-speed mobility case :)
+For now, the current recommended parameters are limited to simulations that we
+have already evaluated. We are open to adding new test parameters in future drafts
+_after_ someone has test driven that case in simulations. 
+
+== NITS ==
+
+-- Section 3.1.2 --
+s/10Mhz/10MHz/ ?
+
+
+[authors] Fixed. Thanks. 
+

@@ -1,0 +1,117 @@
+Roman Danyliw has entered the following ballot position for
+draft-ietf-rmcat-wireless-tests-09: Discuss
+
+When responding, please keep the subject line intact and reply to all
+email addresses included in the To and CC lines. (Feel free to cut this
+introductory paragraph, however.)
+
+
+Please refer to https://www.ietf.org/iesg/statement/discuss-criteria.html
+for more information about IESG DISCUSS and COMMENT positions.
+
+
+The document, along with other ballot positions, can be found here:
+https://datatracker.ietf.org/doc/draft-ietf-rmcat-wireless-tests/
+
+
+
+----------------------------------------------------------------------
+DISCUSS:
+----------------------------------------------------------------------
+
+Please let me know if I've misunderstood the test execution protocol
+incorrectly:
+
+Section 6.  Per the paragraph “The evaluation of the test cases are intended to
+carry out in a controlled lab environment … It is important to take appropriate
+caution to avoid leaking non-responsive traffic from unproven congestion
+avoidance techniques onto the open Internet”, this is good guidance in general
+case.  However, in the case of this document how applicable is it?  Didn’t
+Section 3 (“We, therefore, recommend that a cellular network simulator is used
+for the test cases defined in this document …” and practically establish it
+can’t be done without simulation with the scenario of the underground mine) and
+Section 4 (“We recommend to carry out the test cases as defined in this
+document using a simulator, such as [NS-2] or [NS-3]).   If all the testing is
+supposed to be in a simulator how is it leaking out onto the internet?  As far
+as I can tell, this helpful text is common in RMCAT document, but in this case
+could it please be tailored for the proposed testing regime.
+
+Perhaps something on the order adding text on the order of “Given the
+difficulty of deterministic wireless testing, it is RECOMMENDED and expected
+that the tests described in this document would be done via simulation.
+However, <in the case of not doing it that way> <leave the existing language>”
+
+
+[authors]  Revised the wording in that section to begin with: 
+
+"
+Given the difficulty of deterministic wireless testing, it is recommended and expected that the tests described in this document would be done via simulations. However, in the case where these test cases are carried out in a testbed setting, the evaluation should take place in a controlled lab environment. 
+"
+
+----------------------------------------------------------------------
+COMMENT:
+----------------------------------------------------------------------
+
+** Section 3.1.  Per “In this test case, each of the user/UE in the media
+session is an RMCAT compliant endpoint”, what is a “RMCAT compliant endpoint”?
+Could this be cited please.
+
+[authors] Revised to (now Sec. 2.1 and 2.2): 
+
+"In this test case, each user/UE in the media session is an endpoint following RTP-based congestion control"
+
+** Section 3.1.  Per “At the beginning of the simulation, there should be
+enough time to warm-up the network”, intuitively the notion of “warm[ing]-up
+the network” makes sense.  However, is more precision required to side-by-side
+analysis of test runs of when the network is “warm enough”?
+
+[authors] Good point. In the test case, the evaluation time is specified to be 30 seconds
+after the start of the simulation. We've added the following as clarifications to the beginning
+of both Sections 2.1 and 2.2 (previously 3.1 and 3.2): 
+
+"Typically, the evaluation period starts 30 seconds after test initialization."
+
+
+** Section 4.  Per “Statistics collected from enterprise Wi-Fi networks show
+that the two dominant physical modes are 802.11n and 802.11ac, accounting for
+41% and 58% of connected devices”, it is would be valuable to cite this value
+and provide a timestamp.  This distribution will certainly change as this
+document ages.
+
+[authors] These statistics are collected from our internal analytics dashboard
+based from enterprise customer deployment. Unfortunately we cannot proivde a
+public reference link to that data source. We have searched for alternative
+sources of similar information (such as a white paper) but haven't yet found a
+good substitute. Any pointers are welcome.  
+ 
+
+** Section 4.  Per “Unless otherwise mentioned, test cases in this section are
+described using the underlying PHY- and MAC-layer parameters based on the IEEE
+802.11n Standard.”, this focus on only 802.11n is surprising, since the next
+sentence establishes that 802.11.n is already less than half (41%) of the Wi-Fi
+traffic (and likely will continue to shrink).  Why not ac?
+
+[authors] This draft was initially developed in 2015, where 11n was still the
+dominant technology for endpoints. We later updated the statistics on respective
+portions of 11n vs. 11ac clients but since we haven't yet got the time to update
+all our ns3-based test case implementations to be based on 11ac, our test case
+specifications are stuck with 11n.  Instead, we've added some text elsewhere in this draft
+to encourage practitioners to evaluate using up-to-date versions of WiFi.  
+
+** There appear to be some differences between the description of the Cellular
+(Section 3) and Wifi (Section 4) test. -- Section 4.1.2 and 4.2.2 are called
+“Test setup”, but Section 3.1.2 and 3.2.2. are called “Simulation setup”.  Was
+this intentional?
+
+[authors] This is an artificat due to the merge of two separate drafts. Since
+our validation efforts for cellular is in simulation only whereas for WiFi we've
+implemented both simulation-based and testbed-based tests, we prefer to leave
+them as is. 
+
+-- Section 4.*.4 discusses the expected test behavior, but Section 3.* does
+not?  Was that explicit?
+
+[authors] Again, this inconsistency emerged out of the merging of two separate
+drafts.   
+
+

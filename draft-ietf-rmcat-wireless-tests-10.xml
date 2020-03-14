@@ -27,7 +27,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="info" docName="draft-ietf-rmcat-wireless-tests-11"
+<rfc category="info" docName="draft-ietf-rmcat-wireless-tests-10"
      ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -107,7 +107,6 @@
       </address>
     </author>
 
-<!--
     <author fullname="Wei-Tian Tan" initials="W.-T." surname="Tan">
       <organization>Cisco Systems</organization>
       <address>
@@ -138,7 +137,6 @@
         <email>mar42@cornell.edu</email>
       </address>
     </author>
-  -->
 
     <date year="2020" />
 
@@ -192,6 +190,18 @@
   evaluation of candidate algorithms. This document describes test cases specifically
   targeting cellular and Wi-Fi networks.</t>
   </section>
+
+<!--
+  <section title="Terminologies">
+
+  <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+    "OPTIONAL" in this document are to be interpreted as described in
+    BCP 14 <xref target="RFC2119"></xref> <xref target="RFC8174"></xref>
+    when, and only when, they appear in all capitals, as shown here.</t>
+
+  </section>
+-->
 
   <section title="Cellular Network Specific Test Cases">
 
@@ -311,18 +321,16 @@
     evaluation period. At the beginning of the simulation, there should be enough time to
     warm-up the network. This is to avoid running the evaluation in an empty network where
     network nodes are having empty buffers, low interference at the beginning of the simulation.
-    This network initialization period should be excluded from the evaluation period. Typically, the evaluation period starts 30 seconds after test initialization. </t>
+    This network initialization period should be excluded from the evaluation period. Typically, the evaluation period starts 30 seconds after test initialization. 
+  </t>
 
 	<t>This test case also includes user mobility and some competing traffic. The latter
     includes both the same types of flows (with same adaptation algorithms) and different
-    types of flows (with different services and congestion control schemes). </t>
-
-    <!-- 
-    The investigated
+    types of flows (with different services and congestion control schemes). The investigated
     congestion control algorithms should show maximum possible network utilization and
     stability in terms of rate variations, lowest possible end to end frame latency,
-    network latency and Packet Loss Rate (PLR) at different cell load level.</t>
-  -->
+    network latency and Packet Loss Rate (PLR) at different cell load level.
+  </t>
 
 	<section anchor="NC-VNL" title="Network Connection">
 
@@ -447,15 +455,6 @@
 	</list></t>
 
   </section>
-
-    <section title="Expected behavior">
-<t>
-    The investigated congestion control algorithms should result in maximum
-    possible network utilization and stability in terms of rate variations,
-    lowest possible end to end frame latency, network latency and Packet Loss
-    Rate (PLR) at different cell load levels.</t>
-</section>
-
 </section>
 
 <section title="Bad Radio Coverage">
@@ -475,14 +474,11 @@
     period. Typically, the evaluation period starts 30 seconds after test initialization. </t>
 
   <t>This test case also includes user mobility and some competing traffic.
-    The latter includes the same kind of flows (with same adaptation algorithms).</t>
-
-    <!--
+    The latter includes the same kind of flows (with same adaptation algorithms).
     The investigated congestion control algorithms should result in maximum
     possible network utilization and stability in terms of rate variations,
     lowest possible end to end frame latency, network latency and Packet Loss
     Rate (PLR) at different cell load levels.</t>
-  -->
 
   <section title="Network connection">
           
@@ -523,16 +519,7 @@
         </list></t>
       </list></t>
 
-	</section>   
-
-    <section title="Expected behavior">
-      
-<t>The investigated congestion control algorithms should result in maximum
-    possible network utilization and stability in terms of rate variations,
-    lowest possible end to end frame latency, network latency and Packet Loss
-    Rate (PLR) at different cell load levels.</t>
-      </section>
-
+	</section>    
 </section>
 
 <section title="Desired Evaluation Metrics for cellular test cases">
@@ -691,7 +678,7 @@
     </section>
 
 
-  <section title="Test/simulation setup">
+  <section title="Test setup">
 	    
   <t><list style="symbols">
       <t>Test duration: 120s</t>
@@ -804,7 +791,7 @@
 
     </section>
 
-    <section title="Test/simulation setup">
+    <section title="Test setup">
 
     <t><list style="symbols">
       <t>Test duration: 120s</t>
@@ -1014,35 +1001,16 @@
     the open Internet.</t>
 
 </section>
-
-<section title="Contributors">
-
-  <t>The following individuals contributed to the design, implementation, and verification
-    of the proposed test cases during earlier stages of this work. They have helped to
-    validate and substantially improve this specification. </t>
-
-    <t>Ingemar Johansson, &lt;ingemar.s.johansson@ericsson.com&gt;
-    of Ericsson AB contributing to the description and validation of cellular test cases
-    during the earlier stage of this draft.</t>
-
-    <t>Wei-Tian Tan, &lt;dtan2@cisco.com&gt;, of Cisco Systems designed and set up
-      a Wi-Fi testbed for evaluating parallel video conferencing streams, based
-      upon which proposed Wi-Fi test cases are described. He also recommended additional
-      test cases to consider, such as the impact of EDCA/WMM usage. </t>
-
-    <t>Michael A. Ramalho, &lt;mar42@cornell.edu&gt; of AcousticComms Consulting
-      (previously at Cisco Systems) applied learnings from Cisco's internal experimentation
-      to the early versions of the draft. He also worked on validating the proposed
-      test cases in a VM-based lab setting.</t>
-
-</section>
     
 <section anchor="Acknowledgments" title="Acknowledgments">
- 
+
+  <t>The authors would like to thank Ingemar Johansson for contributing to the cellular
+     test cases during the earlier stage of this draft. </t>   
 
   <t>The authors would like to thank Tomas Frankkila, Magnus Westerlund,
     Kristofer Sandlund, Sergio Mena de la Cruz, and Mirja Kuehlewind for their
     valuable inputs and review comments regarding this draft.</t>
+
 
 </section>
   

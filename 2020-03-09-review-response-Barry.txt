@@ -1,0 +1,30 @@
+Barry Leiba has entered the following ballot position for
+draft-ietf-rmcat-wireless-tests-09: No Objection
+
+When responding, please keep the subject line intact and reply to all
+email addresses included in the To and CC lines. (Feel free to cut this
+introductory paragraph, however.)
+
+
+Please refer to https://www.ietf.org/iesg/statement/discuss-criteria.html
+for more information about IESG DISCUSS and COMMENT positions.
+
+
+The document, along with other ballot positions, can be found here:
+https://datatracker.ietf.org/doc/draft-ietf-rmcat-wireless-tests/
+
+
+
+----------------------------------------------------------------------
+COMMENT:
+----------------------------------------------------------------------
+
+You include the BCP 14 boilerplate and references, but the only BCP 14 key word
+in the document is a MUST in Section 6 that seems like it doesnt need to be BCP
+14 in this document (it seems to refer to a tenet, not a requirement specified
+in this document).  I suggest removing the boilerplate and the references and
+making the “must” lower case.
+
+
+[authors] Thanks for noting this. The boilerplate is removed and all mentions
+of must/should/may/... are now in lower case. 

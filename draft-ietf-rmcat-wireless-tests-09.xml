@@ -27,7 +27,7 @@
 <?rfc subcompact="no" ?>
 <!-- keep one blank line between list items -->
 <!-- end of list of popular I-D processing instructions -->
-<rfc category="info" docName="draft-ietf-rmcat-wireless-tests-11"
+<rfc category="info" docName="draft-ietf-rmcat-wireless-tests-09"
      ipr="trust200902">
   <!-- category values: std, bcp, info, exp, and historic
      ipr values: full3667, noModification3667, noDerivatives3667
@@ -59,7 +59,6 @@
       </address>
     </author>
 
-<!--
     <author fullname="Ingemar Johansson" initials="I." surname="Johansson">
       <organization>Ericsson AB</organization>
       <address>
@@ -75,7 +74,6 @@
         <email>ingemar.s.johansson@ericsson.com</email>
       </address>
     </author>
-  -->
 
     <author fullname="Xiaoqing Zhu" initials="X" surname="Zhu">
       <organization>Cisco Systems</organization>
@@ -107,7 +105,6 @@
       </address>
     </author>
 
-<!--
     <author fullname="Wei-Tian Tan" initials="W.-T." surname="Tan">
       <organization>Cisco Systems</organization>
       <address>
@@ -138,7 +135,6 @@
         <email>mar42@cornell.edu</email>
       </address>
     </author>
-  -->
 
     <date year="2020" />
 
@@ -179,18 +175,27 @@
   to be tested over characteristics and dynamics unique to a given wireless environment. 
   For example, in cellular networks, the base station maintains individual queues per
   radio bearer per user hence it leads to a different nature of interactions between
-  traffic flows of different users. This contrasts with a typical wired network setting
-  where traffic flows from all users share the same queue at the bottleneck. Furthermore,
-  user mobility patterns in a cellular network differ from those in a Wi-Fi network.
-  Therefore, it is important to evaluate the performance of proposed candidate RTP-based
-  congestion control solutions over cellular mobile networks and over Wi-Fi networks
-  respectively.</t>
+  traffic flows of different users. This contrasts with the wired network setting where
+  traffic flows from all users share the same queue. Furthermore, user mobility patterns
+  in a cellular network differ from those in a Wi-Fi network. Therefore, it is important
+  to evaluate the performance of proposed candidate RTP-based congestion control solutions
+  over cellular mobile networks and over Wi-Fi networks respectively.</t>
 
   <t>The draft <xref target="I-D.ietf-rmcat-eval-criteria"></xref> provides the guideline
   for evaluating candidate algorithms and recognizes the importance of testing over wireless
   access networks. However, it does not describe any specific test cases for performance
   evaluation of candidate algorithms. This document describes test cases specifically
   targeting cellular and Wi-Fi networks.</t>
+  </section>
+
+  <section title="Terminologies">
+
+  <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
+    "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and
+    "OPTIONAL" in this document are to be interpreted as described in
+    BCP 14 <xref target="RFC2119"></xref> <xref target="RFC8174"></xref>
+    when, and only when, they appear in all capitals, as shown here.</t>
+
   </section>
 
   <section title="Cellular Network Specific Test Cases">
@@ -257,13 +262,13 @@
 	</t>
 
   <t>Different mobile operators deploy their own cellular networks with their own set of
-    network functionalities and policies. Usually, a mobile operator network includes a
-    range of radio access technologies such as 3G and 4G/LTE. Looking at the specifications
-    of such radio technologies it is evident that only the more recent radio technologies
-    can support the high bandwidth requirements from real-time interactive video applications.
-    The future real-time interactive application will impose even greater demand on cellular
-    network performance which makes 4G (and beyond) radio technologies more suitable for
-    such genre of application.
+    network functionalities and policies. Usually, a mobile operator network includes 2G,
+    EDGE, 3G and 4G radio access technologies. Looking at the specifications of such radio
+    technologies it is evident that only the more recent radio technologies can support the
+    high bandwidth requirements from real-time interactive video applications. The future
+    real-time interactive application will impose even greater demand on cellular network
+    performance which makes 4G (and beyond) radio technologies more suitable for such genre
+    of application.
   </t>
 
   <t>The key factors in defining test cases for cellular networks are: </t>
@@ -311,18 +316,16 @@
     evaluation period. At the beginning of the simulation, there should be enough time to
     warm-up the network. This is to avoid running the evaluation in an empty network where
     network nodes are having empty buffers, low interference at the beginning of the simulation.
-    This network initialization period should be excluded from the evaluation period. Typically, the evaluation period starts 30 seconds after test initialization. </t>
+    This network initialization period should be excluded from the evaluation period.
+  </t>
 
 	<t>This test case also includes user mobility and some competing traffic. The latter
     includes both the same types of flows (with same adaptation algorithms) and different
-    types of flows (with different services and congestion control schemes). </t>
-
-    <!-- 
-    The investigated
+    types of flows (with different services and congestion control schemes). The investigated
     congestion control algorithms should show maximum possible network utilization and
     stability in terms of rate variations, lowest possible end to end frame latency,
-    network latency and Packet Loss Rate (PLR) at different cell load level.</t>
-  -->
+    network latency and Packet Loss Rate (PLR) at different cell load level.
+  </t>
 
 	<section anchor="NC-VNL" title="Network Connection">
 
@@ -373,11 +376,12 @@
     <t>Deployment and propagation model: 3GPP case 1 
       (see <xref target="HO-deploy-3GPP"></xref>)</t>
     
-    <t>Antenna: Multiple-Input and Multiple-Output (MIMO), 2D or 3D antenna pattern.</t>
+    <!-- [TODO] please define/explain what [2D, 3D] refer to -->
+    <t>Antenna: Multiple-Input and Multiple-Output (MIMO), [2D, 3D]</t>
     
     <t>Mobility: [3km/h, 30km/h]</t>
     
-    <t>Transmission bandwidth: 10MHz</t>
+    <t>Transmission bandwidth: 10Mhz</t>
     
     <t>Number of cells: multi-cell deployment 
       (3 Cells per Base Station (BS) * 7 BS) = 21 cells</t>
@@ -447,15 +451,6 @@
 	</list></t>
 
   </section>
-
-    <section title="Expected behavior">
-<t>
-    The investigated congestion control algorithms should result in maximum
-    possible network utilization and stability in terms of rate variations,
-    lowest possible end to end frame latency, network latency and Packet Loss
-    Rate (PLR) at different cell load levels.</t>
-</section>
-
 </section>
 
 <section title="Bad Radio Coverage">
@@ -464,25 +459,21 @@
     congestion control algorithm when users visit part of the network with
     bad radio coverage. The scenario is created by using a larger cell
     radius than that in the previous test case. In this test case, each
-    user/UE in the media session is an endpoint following RTP-based
-    congestion control. User arrivals follow a Poisson distribution proportional
-    to the length of the call, to keep the number of users per cell fairly
-    constant during the evaluation period. At the beginning of the simulation,
-    there should be enough amount of time to warm-up the network. This is to
-    avoid running the evaluation in an empty network where network nodes are
-    having empty buffers, low interference at the beginning of the simulation.
-    This network initialization period should be excluded from the evaluation
-    period. Typically, the evaluation period starts 30 seconds after test initialization. </t>
+    user/UE in the media session is an RMCAT compliant endpoint. User arrivals
+    follow a Poisson distribution proportional to the length of the call,
+    to keep the number of users per cell fairly constant during the
+    evaluation period. At the beginning of the simulation, there should be
+    enough amount of time to warm-up the network. This is to avoid running
+    the evaluation in an empty network where network nodes are having empty
+    buffers, low interference at the beginning of the simulation. This network
+    initialization period should be excluded from the evaluation period.</t>
 
   <t>This test case also includes user mobility and some competing traffic.
-    The latter includes the same kind of flows (with same adaptation algorithms).</t>
-
-    <!--
+    The latter includes the same kind of flows (with same adaptation algorithms).
     The investigated congestion control algorithms should result in maximum
     possible network utilization and stability in terms of rate variations,
     lowest possible end to end frame latency, network latency and Packet Loss
     Rate (PLR) at different cell load levels.</t>
-  -->
 
   <section title="Network connection">
           
@@ -523,16 +514,7 @@
         </list></t>
       </list></t>
 
-	</section>   
-
-    <section title="Expected behavior">
-      
-<t>The investigated congestion control algorithms should result in maximum
-    possible network utilization and stability in terms of rate variations,
-    lowest possible end to end frame latency, network latency and Packet Loss
-    Rate (PLR) at different cell load levels.</t>
-      </section>
-
+	</section>    
 </section>
 
 <section title="Desired Evaluation Metrics for cellular test cases">
@@ -691,7 +673,7 @@
     </section>
 
 
-  <section title="Test/simulation setup">
+  <section title="Test setup">
 	    
   <t><list style="symbols">
       <t>Test duration: 120s</t>
@@ -804,7 +786,7 @@
 
     </section>
 
-    <section title="Test/simulation setup">
+    <section title="Test setup">
 
     <t><list style="symbols">
       <t>Test duration: 120s</t>
@@ -874,7 +856,7 @@
       Evaluation of a given candidate scheme should focus on whether the downlink media
       flows can stabilize at a fair share of the total application-layer throughput.</t>
 
-    <t>Multiple RTP-based media flows sharing the wireless uplink: N = 16 (all uplink);
+    <t>Multiple RTP-based media flows sharing the wireless uplink:N = 16 (all downlink);
       M = 0. When multiple clients attempt to transmit media packets uplink over the
       Wi-Fi network, they introduce more frequent contentions and potential collisions.
       Per-flow throughput is expected to be lower than that in the previous downlink-only
@@ -1002,44 +984,18 @@
   <t>The security considerations in <xref target="I-D.ietf-rmcat-eval-criteria"></xref>
     and the relevant congestion control algorithms apply.  The principles for congestion
     control are described in <xref target="RFC2914"></xref>, and in particular, any new
-    method must implement safeguards to avoid congestion collapse of the Internet.</t>
+    method MUST implement safeguards to avoid congestion collapse of the Internet.</t>
 
-  <t>Given the difficulty of deterministic wireless testing, it is recommended and
-    expected that the tests described in this document would be done via simulations.
-    However, in the case where these test cases are carried out in a testbed setting,
-    the evaluation should take place in a controlled lab environment. In the testbed,
-    the applications, simulators and network nodes ought to be well-behaved and should
-    not impact the desired results.  It is important to take appropriate caution to
-    avoid leaking non-responsive traffic with unproven congestion avoidance behavior onto
-    the open Internet.</t>
-
-</section>
-
-<section title="Contributors">
-
-  <t>The following individuals contributed to the design, implementation, and verification
-    of the proposed test cases during earlier stages of this work. They have helped to
-    validate and substantially improve this specification. </t>
-
-    <t>Ingemar Johansson, &lt;ingemar.s.johansson@ericsson.com&gt;
-    of Ericsson AB contributing to the description and validation of cellular test cases
-    during the earlier stage of this draft.</t>
-
-    <t>Wei-Tian Tan, &lt;dtan2@cisco.com&gt;, of Cisco Systems designed and set up
-      a Wi-Fi testbed for evaluating parallel video conferencing streams, based
-      upon which proposed Wi-Fi test cases are described. He also recommended additional
-      test cases to consider, such as the impact of EDCA/WMM usage. </t>
-
-    <t>Michael A. Ramalho, &lt;mar42@cornell.edu&gt; of AcousticComms Consulting
-      (previously at Cisco Systems) applied learnings from Cisco's internal experimentation
-      to the early versions of the draft. He also worked on validating the proposed
-      test cases in a VM-based lab setting.</t>
+  <t>The evaluations of the test cases are intended to carry out in a controlled lab
+    environment.  Hence, the applications, simulators and network nodes ought to be
+    well-behaved and should not impact the desired results.  It is important to take
+    appropriate caution to avoid leaking non-responsive traffic with unproven congestion
+    avoidance behavior onto the open Internet.</t>
 
 </section>
     
 <section anchor="Acknowledgments" title="Acknowledgments">
- 
-
+	    
   <t>The authors would like to thank Tomas Frankkila, Magnus Westerlund,
     Kristofer Sandlund, Sergio Mena de la Cruz, and Mirja Kuehlewind for their
     valuable inputs and review comments regarding this draft.</t>
@@ -1066,6 +1022,8 @@
     <references title="Normative References">
 
       <!--?rfc include="http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml"?-->
+
+      <?rfc include='reference.RFC.2119.xml'?>
       <?rfc include='reference.RFC.5681.xml'?>
       <?rfc include='reference.RFC.8174.xml'?>
     
@@ -1120,6 +1078,7 @@
       <!-- A reference written by by an organization not a person. -->
 
       <?rfc include='reference.RFC.2914.xml'?>
+      <?rfc include='reference.I-D.ietf-rmcat-cc-requirements.xml'?>
 
       <reference anchor="HO-def-3GPP"
                  target="http://www.3gpp.org/ftp/specs/archive/21_series/21.905/21905-940.zip">

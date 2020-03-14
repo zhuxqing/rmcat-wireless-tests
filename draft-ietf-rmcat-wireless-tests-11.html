@@ -1,0 +1,1103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head profile="http://www.w3.org/2006/03/hcard http://dublincore.org/documents/2008/08/04/dc-html/">
+  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+
+  <title>Evaluation Test Cases for Interactive Real-Time Media over Wireless Networks</title>
+
+  <style type="text/css" title="Xml2Rfc (sans serif)">
+  /*<![CDATA[*/
+	  a {
+	  text-decoration: none;
+	  }
+      /* info code from SantaKlauss at http://www.madaboutstyle.com/tooltip2.html */
+      a.info {
+          /* This is the key. */
+          position: relative;
+          z-index: 24;
+          text-decoration: none;
+      }
+      a.info:hover {
+          z-index: 25;
+          color: #FFF; background-color: #900;
+      }
+      a.info span { display: none; }
+      a.info:hover span.info {
+          /* The span will display just on :hover state. */
+          display: block;
+          position: absolute;
+          font-size: smaller;
+          top: 2em; left: -5em; width: 15em;
+          padding: 2px; border: 1px solid #333;
+          color: #900; background-color: #EEE;
+          text-align: left;
+      }
+	  a.smpl {
+	  color: black;
+	  }
+	  a:hover {
+	  text-decoration: underline;
+	  }
+	  a:active {
+	  text-decoration: underline;
+	  }
+	  address {
+	  margin-top: 1em;
+	  margin-left: 2em;
+	  font-style: normal;
+	  }
+	  body {
+	  color: black;
+	  font-family: verdana, helvetica, arial, sans-serif;
+	  font-size: 10pt;
+	  max-width: 55em;
+	  
+	  }
+	  cite {
+	  font-style: normal;
+	  }
+	  dd {
+	  margin-right: 2em;
+	  }
+	  dl {
+	  margin-left: 2em;
+	  }
+	
+	  ul.empty {
+	  list-style-type: none;
+	  }
+	  ul.empty li {
+	  margin-top: .5em;
+	  }
+	  dl p {
+	  margin-left: 0em;
+	  }
+	  dt {
+	  margin-top: .5em;
+	  }
+	  h1 {
+	  font-size: 14pt;
+	  line-height: 21pt;
+	  page-break-after: avoid;
+	  }
+	  h1.np {
+	  page-break-before: always;
+	  }
+	  h1 a {
+	  color: #333333;
+	  }
+	  h2 {
+	  font-size: 12pt;
+	  line-height: 15pt;
+	  page-break-after: avoid;
+	  }
+	  h3, h4, h5, h6 {
+	  font-size: 10pt;
+	  page-break-after: avoid;
+	  }
+	  h2 a, h3 a, h4 a, h5 a, h6 a {
+	  color: black;
+	  }
+	  img {
+	  margin-left: 3em;
+	  }
+	  li {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  ol p {
+	  margin-left: 0em;
+	  }
+	  p {
+	  margin-left: 2em;
+	  margin-right: 2em;
+	  }
+	  pre {
+	  margin-left: 3em;
+	  background-color: lightyellow;
+	  padding: .25em;
+	  }
+	  pre.text2 {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f0f0f0;
+	  width: 69em;
+	  }
+	  pre.inline {
+	  background-color: white;
+	  padding: 0em;
+	  }
+	  pre.text {
+	  border-style: dotted;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  width: 69em;
+	  }
+	  pre.drawing {
+	  border-style: solid;
+	  border-width: 1px;
+	  background-color: #f8f8f8;
+	  padding: 2em;
+	  }
+	  table {
+	  margin-left: 2em;
+	  }
+	  table.tt {
+	  vertical-align: top;
+	  }
+	  table.full {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.headers {
+	  border-style: outset;
+	  border-width: 1px;
+	  }
+	  table.tt td {
+	  vertical-align: top;
+	  }
+	  table.full td {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.tt th {
+	  vertical-align: top;
+	  }
+	  table.full th {
+	  border-style: inset;
+	  border-width: 1px;
+	  }
+	  table.headers th {
+	  border-style: none none inset none;
+	  border-width: 1px;
+	  }
+	  table.left {
+	  margin-right: auto;
+	  }
+	  table.right {
+	  margin-left: auto;
+	  }
+	  table.center {
+	  margin-left: auto;
+	  margin-right: auto;
+	  }
+	  caption {
+	  caption-side: bottom;
+	  font-weight: bold;
+	  font-size: 9pt;
+	  margin-top: .5em;
+	  }
+	
+	  table.header {
+	  border-spacing: 1px;
+	  width: 95%;
+	  font-size: 10pt;
+	  color: white;
+	  }
+	  td.top {
+	  vertical-align: top;
+	  }
+	  td.topnowrap {
+	  vertical-align: top;
+	  white-space: nowrap; 
+	  }
+	  table.header td {
+	  background-color: gray;
+	  width: 50%;
+	  }
+	  table.header a {
+	  color: white;
+	  }
+	  td.reference {
+	  vertical-align: top;
+	  white-space: nowrap;
+	  padding-right: 1em;
+	  }
+	  thead {
+	  display:table-header-group;
+	  }
+	  ul.toc, ul.toc ul {
+	  list-style: none;
+	  margin-left: 1.5em;
+	  margin-right: 0em;
+	  padding-left: 0em;
+	  }
+	  ul.toc li {
+	  line-height: 150%;
+	  font-weight: bold;
+	  font-size: 10pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  ul.toc li li {
+	  line-height: normal;
+	  font-weight: normal;
+	  font-size: 9pt;
+	  margin-left: 0em;
+	  margin-right: 0em;
+	  }
+	  li.excluded {
+	  font-size: 0pt;
+	  }
+	  ul p {
+	  margin-left: 0em;
+	  }
+	
+	  .comment {
+	  background-color: yellow;
+	  }
+	  .center {
+	  text-align: center;
+	  }
+	  .error {
+	  color: red;
+	  font-style: italic;
+	  font-weight: bold;
+	  }
+	  .figure {
+	  font-weight: bold;
+	  text-align: center;
+	  font-size: 9pt;
+	  }
+	  .filename {
+	  color: #333333;
+	  font-weight: bold;
+	  font-size: 12pt;
+	  line-height: 21pt;
+	  text-align: center;
+	  }
+	  .fn {
+	  font-weight: bold;
+	  }
+	  .hidden {
+	  display: none;
+	  }
+	  .left {
+	  text-align: left;
+	  }
+	  .right {
+	  text-align: right;
+	  }
+	  .title {
+	  color: #990000;
+	  font-size: 18pt;
+	  line-height: 18pt;
+	  font-weight: bold;
+	  text-align: center;
+	  margin-top: 36pt;
+	  }
+	  .vcardline {
+	  display: block;
+	  }
+	  .warning {
+	  font-size: 14pt;
+	  background-color: yellow;
+	  }
+	
+	
+	  @media print {
+	  .noprint {
+		display: none;
+	  }
+	
+	  a {
+		color: black;
+		text-decoration: none;
+	  }
+	
+	  table.header {
+		width: 90%;
+	  }
+	
+	  td.header {
+		width: 50%;
+		color: black;
+		background-color: white;
+		vertical-align: top;
+		font-size: 12pt;
+	  }
+	
+	  ul.toc a::after {
+		content: leader('.') target-counter(attr(href), page);
+	  }
+	
+	  ul.ind li li a {
+		content: target-counter(attr(href), page);
+	  }
+	
+	  .print2col {
+		column-count: 2;
+		-moz-column-count: 2;
+		column-fill: auto;
+	  }
+	  }
+	
+	  @page {
+	  @top-left {
+		   content: "Internet-Draft"; 
+	  } 
+	  @top-right {
+		   content: "December 2010"; 
+	  } 
+	  @top-center {
+		   content: "Abbreviated Title";
+	  } 
+	  @bottom-left {
+		   content: "Doe"; 
+	  } 
+	  @bottom-center {
+		   content: "Expires June 2011"; 
+	  } 
+	  @bottom-right {
+		   content: "[Page " counter(page) "]"; 
+	  } 
+	  }
+	
+	  @page:first { 
+		@top-left {
+		  content: normal;
+		}
+		@top-right {
+		  content: normal;
+		}
+		@top-center {
+		  content: normal;
+		}
+	  }
+  /*]]>*/
+  </style>
+
+  <link href="#rfc.toc" rel="Contents">
+<link href="#rfc.section.1" rel="Chapter" title="1 Introduction">
+<link href="#rfc.section.2" rel="Chapter" title="2 Cellular Network Specific Test Cases">
+<link href="#rfc.section.2.1" rel="Chapter" title="2.1 Varying Network Load">
+<link href="#rfc.section.2.1.1" rel="Chapter" title="2.1.1 Network Connection">
+<link href="#rfc.section.2.1.2" rel="Chapter" title="2.1.2 Simulation Setup">
+<link href="#rfc.section.2.1.3" rel="Chapter" title="2.1.3 Expected behavior">
+<link href="#rfc.section.2.2" rel="Chapter" title="2.2 Bad Radio Coverage">
+<link href="#rfc.section.2.2.1" rel="Chapter" title="2.2.1 Network connection">
+<link href="#rfc.section.2.2.2" rel="Chapter" title="2.2.2 Simulation Setup">
+<link href="#rfc.section.2.2.3" rel="Chapter" title="2.2.3 Expected behavior">
+<link href="#rfc.section.2.3" rel="Chapter" title="2.3 Desired Evaluation Metrics for cellular test cases">
+<link href="#rfc.section.3" rel="Chapter" title="3 Wi-Fi Networks Specific Test Cases">
+<link href="#rfc.section.3.1" rel="Chapter" title="3.1 Bottleneck in Wired Network">
+<link href="#rfc.section.3.1.1" rel="Chapter" title="3.1.1 Network topology">
+<link href="#rfc.section.3.1.2" rel="Chapter" title="3.1.2 Test/simulation setup">
+<link href="#rfc.section.3.1.3" rel="Chapter" title="3.1.3 Typical test scenarios">
+<link href="#rfc.section.3.1.4" rel="Chapter" title="3.1.4 Expected behavior">
+<link href="#rfc.section.3.2" rel="Chapter" title="3.2 Bottleneck in Wi-Fi Network">
+<link href="#rfc.section.3.2.1" rel="Chapter" title="3.2.1 Network topology">
+<link href="#rfc.section.3.2.2" rel="Chapter" title="3.2.2 Test/simulation setup">
+<link href="#rfc.section.3.2.3" rel="Chapter" title="3.2.3 Typical test scenarios">
+<link href="#rfc.section.3.2.4" rel="Chapter" title="3.2.4 Expected behavior">
+<link href="#rfc.section.3.3" rel="Chapter" title="3.3 Other Potential Test Cases">
+<link href="#rfc.section.3.3.1" rel="Chapter" title="3.3.1 EDCA/WMM usage">
+<link href="#rfc.section.3.3.2" rel="Chapter" title="3.3.2 Effect of heterogeneous link rates">
+<link href="#rfc.section.4" rel="Chapter" title="4 IANA Considerations">
+<link href="#rfc.section.5" rel="Chapter" title="5 Security Considerations">
+<link href="#rfc.section.6" rel="Chapter" title="6 Contributors">
+<link href="#rfc.section.7" rel="Chapter" title="7 Acknowledgments">
+<link href="#rfc.references" rel="Chapter" title="8 References">
+<link href="#rfc.references.1" rel="Chapter" title="8.1 Normative References">
+<link href="#rfc.references.2" rel="Chapter" title="8.2 Informative References">
+<link href="#rfc.authors" rel="Chapter">
+
+
+  <meta name="generator" content="xml2rfc version 2.38.1 - https://tools.ietf.org/tools/xml2rfc" />
+  <link rel="schema.dct" href="http://purl.org/dc/terms/" />
+
+  <meta name="dct.creator" content="Sarker, Z., Zhu, X., and J. Fu" />
+  <meta name="dct.identifier" content="urn:ietf:id:draft-ietf-rmcat-wireless-tests-11" />
+  <meta name="dct.issued" scheme="ISO8601" content="2020-13" />
+  <meta name="dct.abstract" content="The Real-time Transport Protocol (RTP) is a common transport choice for interactive multimedia communication applications. The performance of these applications typically depends on a well-functioning congestion control algorithm.  To ensure a seamless and robust user experience, a well-designed RTP-based congestion control algorithm should work well across all access network types.  This document describes test cases for evaluating performances of candidate congestion control algorithms over cellular and Wi-Fi networks. " />
+  <meta name="description" content="The Real-time Transport Protocol (RTP) is a common transport choice for interactive multimedia communication applications. The performance of these applications typically depends on a well-functioning congestion control algorithm.  To ensure a seamless and robust user experience, a well-designed RTP-based congestion control algorithm should work well across all access network types.  This document describes test cases for evaluating performances of candidate congestion control algorithms over cellular and Wi-Fi networks. " />
+
+</head>
+
+<body>
+
+  <table class="header">
+    <tbody>
+    
+    	<tr>
+<td class="left">Network Working Group</td>
+<td class="right">Z. Sarker</td>
+</tr>
+<tr>
+<td class="left">Internet-Draft</td>
+<td class="right">Ericsson AB</td>
+</tr>
+<tr>
+<td class="left">Intended status: Informational</td>
+<td class="right">X. Zhu</td>
+</tr>
+<tr>
+<td class="left">Expires: September 14, 2020</td>
+<td class="right">J. Fu</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">Cisco Systems</td>
+</tr>
+<tr>
+<td class="left"></td>
+<td class="right">March 13, 2020</td>
+</tr>
+
+    	
+    </tbody>
+  </table>
+
+  <p class="title">Evaluation Test Cases for Interactive Real-Time Media over Wireless Networks<br />
+  <span class="filename">draft-ietf-rmcat-wireless-tests-11</span></p>
+  
+  <h1 id="rfc.abstract"><a href="#rfc.abstract">Abstract</a></h1>
+<p>The Real-time Transport Protocol (RTP) is a common transport choice for interactive multimedia communication applications. The performance of these applications typically depends on a well-functioning congestion control algorithm.  To ensure a seamless and robust user experience, a well-designed RTP-based congestion control algorithm should work well across all access network types.  This document describes test cases for evaluating performances of candidate congestion control algorithms over cellular and Wi-Fi networks.</p>
+<h1 id="rfc.status"><a href="#rfc.status">Status of This Memo</a></h1>
+<p>This Internet-Draft is submitted in full conformance with the provisions of BCP 78 and BCP 79.</p>
+<p>Internet-Drafts are working documents of the Internet Engineering Task Force (IETF).  Note that other groups may also distribute working documents as Internet-Drafts.  The list of current Internet-Drafts is at https://datatracker.ietf.org/drafts/current/.</p>
+<p>Internet-Drafts are draft documents valid for a maximum of six months and may be updated, replaced, or obsoleted by other documents at any time.  It is inappropriate to use Internet-Drafts as reference material or to cite them other than as "work in progress."</p>
+<p>This Internet-Draft will expire on September 14, 2020.</p>
+<h1 id="rfc.copyrightnotice"><a href="#rfc.copyrightnotice">Copyright Notice</a></h1>
+<p>Copyright (c) 2020 IETF Trust and the persons identified as the document authors.  All rights reserved.</p>
+<p>This document is subject to BCP 78 and the IETF Trust's Legal Provisions Relating to IETF Documents (https://trustee.ietf.org/license-info) in effect on the date of publication of this document.  Please review these documents carefully, as they describe your rights and restrictions with respect to this document.  Code Components extracted from this document must include Simplified BSD License text as described in Section 4.e of the Trust Legal Provisions and are provided without warranty as described in the Simplified BSD License.</p>
+
+  
+  <hr class="noprint" />
+  <h1 class="np" id="rfc.toc"><a href="#rfc.toc">Table of Contents</a></h1>
+  <ul class="toc">
+
+  	<li>1.   <a href="#rfc.section.1">Introduction</a>
+</li>
+<li>2.   <a href="#rfc.section.2">Cellular Network Specific Test Cases</a>
+</li>
+<ul><li>2.1.   <a href="#rfc.section.2.1">Varying Network Load</a>
+</li>
+<ul><li>2.1.1.   <a href="#rfc.section.2.1.1">Network Connection</a>
+</li>
+<li>2.1.2.   <a href="#rfc.section.2.1.2">Simulation Setup</a>
+</li>
+<li>2.1.3.   <a href="#rfc.section.2.1.3">Expected behavior</a>
+</li>
+</ul><li>2.2.   <a href="#rfc.section.2.2">Bad Radio Coverage</a>
+</li>
+<ul><li>2.2.1.   <a href="#rfc.section.2.2.1">Network connection</a>
+</li>
+<li>2.2.2.   <a href="#rfc.section.2.2.2">Simulation Setup</a>
+</li>
+<li>2.2.3.   <a href="#rfc.section.2.2.3">Expected behavior</a>
+</li>
+</ul><li>2.3.   <a href="#rfc.section.2.3">Desired Evaluation Metrics for cellular test cases</a>
+</li>
+</ul><li>3.   <a href="#rfc.section.3">Wi-Fi Networks Specific Test Cases</a>
+</li>
+<ul><li>3.1.   <a href="#rfc.section.3.1">Bottleneck in Wired Network</a>
+</li>
+<ul><li>3.1.1.   <a href="#rfc.section.3.1.1">Network topology</a>
+</li>
+<li>3.1.2.   <a href="#rfc.section.3.1.2">Test/simulation setup</a>
+</li>
+<li>3.1.3.   <a href="#rfc.section.3.1.3">Typical test scenarios</a>
+</li>
+<li>3.1.4.   <a href="#rfc.section.3.1.4">Expected behavior</a>
+</li>
+</ul><li>3.2.   <a href="#rfc.section.3.2">Bottleneck in Wi-Fi Network</a>
+</li>
+<ul><li>3.2.1.   <a href="#rfc.section.3.2.1">Network topology</a>
+</li>
+<li>3.2.2.   <a href="#rfc.section.3.2.2">Test/simulation setup</a>
+</li>
+<li>3.2.3.   <a href="#rfc.section.3.2.3">Typical test scenarios</a>
+</li>
+<li>3.2.4.   <a href="#rfc.section.3.2.4">Expected behavior</a>
+</li>
+</ul><li>3.3.   <a href="#rfc.section.3.3">Other Potential Test Cases</a>
+</li>
+<ul><li>3.3.1.   <a href="#rfc.section.3.3.1">EDCA/WMM usage</a>
+</li>
+<li>3.3.2.   <a href="#rfc.section.3.3.2">Effect of heterogeneous link rates</a>
+</li>
+</ul></ul><li>4.   <a href="#rfc.section.4">IANA Considerations</a>
+</li>
+<li>5.   <a href="#rfc.section.5">Security Considerations</a>
+</li>
+<li>6.   <a href="#rfc.section.6">Contributors</a>
+</li>
+<li>7.   <a href="#rfc.section.7">Acknowledgments</a>
+</li>
+<li>8.   <a href="#rfc.references">References</a>
+</li>
+<ul><li>8.1.   <a href="#rfc.references.1">Normative References</a>
+</li>
+<li>8.2.   <a href="#rfc.references.2">Informative References</a>
+</li>
+</ul><li><a href="#rfc.authors">Authors' Addresses</a>
+</li>
+
+
+  </ul>
+
+  <h1 id="rfc.section.1">
+<a href="#rfc.section.1">1.</a> Introduction</h1>
+<p id="rfc.section.1.p.1">Wireless networks (both cellular and Wi-Fi <a href="#IEEE802.11" class="xref">[IEEE802.11]</a>) are an integral and increasingly more significant part of the Internet. Typical application scenarios for interactive multimedia communication over wireless include from video conferencing calls in a bus or train as well as live media streaming at home.  It is well known that the characteristics and technical challenges for supporting multimedia services over wireless are very different from those of providing the same service over a wired network. Although the basic test cases as defined in <a href="#I-D.ietf-rmcat-eval-test" class="xref">[I-D.ietf-rmcat-eval-test]</a> have covered many common effects of network impairments for evaluating RTP-based congestion control schemes, they remain to be tested over characteristics and dynamics unique to a given wireless environment.  For example, in cellular networks, the base station maintains individual queues per radio bearer per user hence it leads to a different nature of interactions between traffic flows of different users. This contrasts with a typical wired network setting where traffic flows from all users share the same queue at the bottleneck. Furthermore, user mobility patterns in a cellular network differ from those in a Wi-Fi network.  Therefore, it is important to evaluate the performance of proposed candidate RTP-based congestion control solutions over cellular mobile networks and over Wi-Fi networks respectively.</p>
+<p id="rfc.section.1.p.2">The draft <a href="#I-D.ietf-rmcat-eval-criteria" class="xref">[I-D.ietf-rmcat-eval-criteria]</a> provides the guideline for evaluating candidate algorithms and recognizes the importance of testing over wireless access networks. However, it does not describe any specific test cases for performance evaluation of candidate algorithms. This document describes test cases specifically targeting cellular and Wi-Fi networks.</p>
+<h1 id="rfc.section.2">
+<a href="#rfc.section.2">2.</a> Cellular Network Specific Test Cases</h1>
+<p id="rfc.section.2.p.1">A cellular environment is more complicated than its wireline counterpart since it seeks to provide services in the context of variable available bandwidth, location dependencies and user mobilities at different speeds.  In a cellular network, the user may reach the cell edge which may lead to a significant amount of retransmissions to deliver the data from the base station to the destination and vice versa. These radio links will often act as a bottleneck for the rest of the network and will eventually lead to excessive delays or packet drops. An efficient retransmission or link adaptation mechanism can reduce the packet loss probability but there will remain some packet losses and delay variations. Moreover, with increased cell load or handover to a congested cell, congestion in the transport network will become even worse. Besides, there exist certain characteristics that distinguish the cellular network from other wireless access networks such as Wi-Fi. In a cellular network -- </p>
+<p></p>
+
+<ul>
+<li>The bottleneck is often a shared link with relatively few users.  <ul>
+<li>The cost per bit over the shared link varies over time and is different for different users.</li>
+<li>Leftover/unused resources can be consumed by other greedy users.</li>
+</ul>
+<p> </p>
+</li>
+<li>Queues are always per radio bearer hence each user can have many such queues.</li>
+<li>Users can experience both Inter and Intra Radio Access Technology (RAT) handovers (see <a href="#HO-def-3GPP" class="xref">[HO-def-3GPP]</a> for the definition of "handover").</li>
+<li>Handover between cells or change of serving cells (as described in <a href="#HO-LTE-3GPP" class="xref">[HO-LTE-3GPP]</a> and <a href="#HO-UMTS-3GPP" class="xref">[HO-UMTS-3GPP]</a>) might cause user plane interruptions which can lead to bursts of packet losses, delay and/or jitter. The exact behavior depends on the type of radio bearer.  Typically, the default best-effort bearers do not generate packet loss, instead, packets are queued up and transmitted once the handover is completed.</li>
+<li>The network part decides how much the user can transmit.</li>
+<li>The cellular network has variable link capacity per user.  <ul>
+<li>It can vary as fast as a period of milliseconds.</li>
+<li>It depends on many factors (such as distance, speed, interference, different flows).</li>
+<li>It uses complex and smart link adaptation which makes the link behavior ever more dynamic.</li>
+<li>The scheduling priority depends on the estimated throughput.</li>
+</ul>
+<p> </p>
+</li>
+<li>Both Quality of Service (QoS) and non-QoS radio bearers can be used.</li>
+</ul>
+<p id="rfc.section.2.p.3">Hence, a real-time communication application operating over a cellular network needs to cope with a shared bottleneck link and variable link capacity, events like handover, non-congestion related loss, abrupt changes in bandwidth (both short term and long term) due to handover, network load and bad radio coverage. Even though 3GPP has defined QoS bearers <a href="#QoS-3GPP" class="xref">[QoS-3GPP]</a> to ensure high-quality user experience, it is still preferable for real-time applications to behave in an adaptive manner.  </p>
+<p id="rfc.section.2.p.4">Different mobile operators deploy their own cellular networks with their own set of network functionalities and policies. Usually, a mobile operator network includes a range of radio access technologies such as 3G and 4G/LTE. Looking at the specifications of such radio technologies it is evident that only the more recent radio technologies can support the high bandwidth requirements from real-time interactive video applications.  The future real-time interactive application will impose even greater demand on cellular network performance which makes 4G (and beyond) radio technologies more suitable for such genre of application.  </p>
+<p id="rfc.section.2.p.5">The key factors in defining test cases for cellular networks are: </p>
+<p></p>
+
+<ul>
+<li>Shared and varying link capacity</li>
+<li>Mobility</li>
+<li>Handover</li>
+</ul>
+<p id="rfc.section.2.p.7">However, these factors are typically highly correlated in a cellular network.  Therefore, instead of devising separate test cases for individual important events, we have divided the test case into two categories. It should be noted that the goal of the following test cases is to evaluate the performance of candidate algorithms over the radio interface of the cellular network. Hence it is assumed that the radio interface is the bottleneck link between the communicating peers and that the core network does not introduce any extra congestion along the path. Consequently, this draft has kept as out of scope the combination of multiple access technologies involving both cellular and Wi-Fi users. In this latter case the shared bottleneck is likely at the wired backhaul link. These test cases further assume a typical real-time telephony scenario where one real-time session consists of one voice stream and one video stream. </p>
+<p id="rfc.section.2.p.8">Even though it is possible to carry out tests over operational cellular networks (e.g., LTE/5G), and actually such tests are already available today, these tests cannot in general be carried out in a deterministic fashion to ensure repeatability. The main reason is that these networks are controlled by cellular operators and there exist various amounts of competing traffic in the same cell(s). In practice, it is only in underground mines that one can carry out near deterministic testing. Even there, it is not guaranteed either as workers in the mines may carry with them their personal mobile phones. Furthermore, the underground mining setting may not reflect typical usage patterns in an urban setting. We, therefore, recommend that a cellular network simulator is used for the test cases defined in this document, for example -- the LTE simulator in <a href="#NS-3" class="xref">[NS-3]</a>. </p>
+<h1 id="rfc.section.2.1">
+<a href="#rfc.section.2.1">2.1.</a> <a href="#VNL" id="VNL">Varying Network Load</a>
+</h1>
+<p id="rfc.section.2.1.p.1">The goal of this test is to evaluate the performance of the candidate congestion control algorithm under varying network load. The network load variation is created by adding and removing network users a.k.a. User Equipments (UEs) during the simulation.  In this test case, each user/UE in the media session is an endpoint following RTP-based congestion control. User arrivals follow a Poisson distribution proportional to the length of the call, to keep the number of users per cell fairly constant during the evaluation period. At the beginning of the simulation, there should be enough time to warm-up the network. This is to avoid running the evaluation in an empty network where network nodes are having empty buffers, low interference at the beginning of the simulation.  This network initialization period should be excluded from the evaluation period. Typically, the evaluation period starts 30 seconds after test initialization. </p>
+<p id="rfc.section.2.1.p.2">This test case also includes user mobility and some competing traffic. The latter includes both the same types of flows (with same adaptation algorithms) and different types of flows (with different services and congestion control schemes). </p>
+<h1 id="rfc.section.2.1.1">
+<a href="#rfc.section.2.1.1">2.1.1.</a> <a href="#NC-VNL" id="NC-VNL">Network Connection</a>
+</h1>
+<p id="rfc.section.2.1.1.p.1">Each mobile user is connected to a fixed user. The connection between the mobile user and fixed user consists of a cellular radio access, an Evolved Packet Core (EPC) and an Internet connection. The mobile user is connected to the EPC using cellular radio access technology which is further connected to the Internet. At the other end, the fixed user is connected to the Internet via wired connection with sufficiently high bandwidth, for instance, 10 Gbps, so that the system bottleneck is on the cellular radio access interface. The wired connection to in this setup does not introduce any network impairments to the test; it only adds 10 ms of one-way propagation delay.  </p>
+<p id="rfc.section.2.1.1.p.2">The path from the fixed user to the mobile users is defined as "Downlink" and the path from the mobile users to the fixed user is defined as "Uplink". We assume that only uplink or downlink is congested for mobile users. Hence, we recommend that the uplink and downlink simulations are run separately.  </p>
+<div id="rfc.figure.1"></div>
+<div id="fig-siml-topology"></div>
+<pre>
+                       
+                 uplink                     
+++)))        +--------------------------&gt;         
+++-+      ((o))                                   
+|  |       / \     +-------+     +------+    +---+
++--+      /   \----+       +-----+      +----+   |
+         /     \   +-------+     +------+    +---+
+ UE         BS        EPC        Internet    fixed
+             &lt;--------------------------+          
+                      downlink                    
+</pre>
+<p class="figure">Figure 1: Simulation Topology</p>
+<p></p>
+<h1 id="rfc.section.2.1.2">
+<a href="#rfc.section.2.1.2">2.1.2.</a> <a href="#SS-VNL" id="SS-VNL">Simulation Setup</a>
+</h1>
+<p id="rfc.section.2.1.2.p.1">The values enclosed within "[ ]" for the following simulation attributes follow the same notion as in <a href="#I-D.ietf-rmcat-eval-test" class="xref">[I-D.ietf-rmcat-eval-test]</a>.  The desired simulation setup is as follows -- </p>
+<p></p>
+
+<ol>
+<li>Radio environment: <ol style="list-style-type: upper-alpha">
+<li>Deployment and propagation model: 3GPP case 1 (see <a href="#HO-deploy-3GPP" class="xref">[HO-deploy-3GPP]</a>)</li>
+<li>Antenna: Multiple-Input and Multiple-Output (MIMO), 2D or 3D antenna pattern.</li>
+<li>Mobility: [3km/h, 30km/h]</li>
+<li>Transmission bandwidth: 10MHz</li>
+<li>Number of cells: multi-cell deployment (3 Cells per Base Station (BS) * 7 BS) = 21 cells</li>
+<li>Cell radius: 166.666 Meters</li>
+<li>Scheduler: Proportional fair with no priority</li>
+<li>Bearer: Default bearer for all traffic.</li>
+<li>Active Queue Management (AQM) settings: AQM [on,off]</li>
+</ol>
+</li>
+<li>End-to-end Round Trip Time (RTT): [40ms, 150ms]</li>
+<li>User arrival model: Poisson arrival model</li>
+<li>User intensity: <ul>
+<li>Downlink user intensity: {0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9, 5.6, 6.3, 7.0, 7.7, 8.4, 9,1, 9.8, 10.5}</li>
+<li>Uplink user intensity : {0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9, 5.6, 6.3, 7.0}</li>
+</ul>
+<p> </p>
+</li>
+<li>Simulation duration: 91s</li>
+<li>Evaluation period: 30s-60s</li>
+<li>Media traffic: <ol>
+<li>Media type: Video<ol style="list-style-type: lower-alpha">
+<li>Media direction: [Uplink, Downlink]</li>
+<li>Number of Media source per user: One (1)</li>
+<li>Media duration per user: 30s</li>
+<li>Media source: same as defined in Section 4.3 of <a href="#I-D.ietf-rmcat-eval-test" class="xref">[I-D.ietf-rmcat-eval-test]</a>
+</li>
+</ol>
+<p> </p>
+</li>
+<li>Media Type: Audio <ol style="list-style-type: lower-alpha">
+<li>Media direction: Uplink and Downlink</li>
+<li>Number of Media source per user: One (1)</li>
+<li>Media duration per user: 30s</li>
+<li>Media codec: Constant Bit Rate (CBR)</li>
+<li>Media bitrate: 20 Kbps</li>
+<li>Adaptation: off</li>
+</ol>
+<p> </p>
+</li>
+</ol>
+</li>
+<li>Other traffic models: <ul>
+<li>Downlink simulation: Maximum of 4Mbps/cell (web browsing or FTP traffic following default TCP congestion control <a href="#RFC5681" class="xref">[RFC5681]</a>)</li>
+<li>Unlink simulation: Maximum of 2Mbps/cell (web browsing or FTP traffic following default TCP congestion control <a href="#RFC5681" class="xref">[RFC5681]</a>)</li>
+</ul>
+<p> </p>
+</li>
+</ol>
+<h1 id="rfc.section.2.1.3">
+<a href="#rfc.section.2.1.3">2.1.3.</a> Expected behavior</h1>
+<p id="rfc.section.2.1.3.p.1">The investigated congestion control algorithms should result in maximum possible network utilization and stability in terms of rate variations, lowest possible end to end frame latency, network latency and Packet Loss Rate (PLR) at different cell load levels.</p>
+<h1 id="rfc.section.2.2">
+<a href="#rfc.section.2.2">2.2.</a> Bad Radio Coverage</h1>
+<p id="rfc.section.2.2.p.1">The goal of this test is to evaluate the performance of candidate congestion control algorithm when users visit part of the network with bad radio coverage. The scenario is created by using a larger cell radius than that in the previous test case. In this test case, each user/UE in the media session is an endpoint following RTP-based congestion control. User arrivals follow a Poisson distribution proportional to the length of the call, to keep the number of users per cell fairly constant during the evaluation period. At the beginning of the simulation, there should be enough amount of time to warm-up the network. This is to avoid running the evaluation in an empty network where network nodes are having empty buffers, low interference at the beginning of the simulation.  This network initialization period should be excluded from the evaluation period. Typically, the evaluation period starts 30 seconds after test initialization. </p>
+<p id="rfc.section.2.2.p.2">This test case also includes user mobility and some competing traffic.  The latter includes the same kind of flows (with same adaptation algorithms).</p>
+<h1 id="rfc.section.2.2.1">
+<a href="#rfc.section.2.2.1">2.2.1.</a> Network connection</h1>
+<p id="rfc.section.2.2.1.p.1">Same as defined in <a href="#NC-VNL" class="xref">Section 2.1.1</a></p>
+<h1 id="rfc.section.2.2.2">
+<a href="#rfc.section.2.2.2">2.2.2.</a> Simulation Setup</h1>
+<p id="rfc.section.2.2.2.p.1">The desired simulation setup is the same as the Varying Network Load test case defined in <a href="#VNL" class="xref">Section 2.1</a> except the following changes: </p>
+
+<ol>
+<li>Radio environment: Same as defined in <a href="#SS-VNL" class="xref">Section 2.1.2</a> except the following: <ol style="list-style-type: upper-alpha">
+<li>Deployment and propagation model: 3GPP case 3 (see <a href="#HO-deploy-3GPP" class="xref">[HO-deploy-3GPP]</a>)</li>
+<li>Cell radius: 577.3333 Meters</li>
+<li>Mobility: 3km/h</li>
+</ol>
+</li>
+<li>User intensity = {0.7, 1.4, 2.1, 2.8, 3.5, 4.2, 4.9, 5.6, 6.3, 7.0}</li>
+<li>Media traffic model: Same as defined in <a href="#SS-VNL" class="xref">Section 2.1.2</a>
+</li>
+<li>Other traffic models: <ul>
+<li>Downlink simulation: Maximum of 2Mbps/cell (web browsing or FTP traffic following default TCP congestion control <a href="#RFC5681" class="xref">[RFC5681]</a>)</li>
+<li>Unlink simulation: Maximum of 1Mbps/cell (web browsing or FTP traffic following default TCP congestion control <a href="#RFC5681" class="xref">[RFC5681]</a>)</li>
+</ul>
+</li>
+</ol>
+<h1 id="rfc.section.2.2.3">
+<a href="#rfc.section.2.2.3">2.2.3.</a> Expected behavior</h1>
+<p id="rfc.section.2.2.3.p.1">The investigated congestion control algorithms should result in maximum possible network utilization and stability in terms of rate variations, lowest possible end to end frame latency, network latency and Packet Loss Rate (PLR) at different cell load levels.</p>
+<h1 id="rfc.section.2.3">
+<a href="#rfc.section.2.3">2.3.</a> Desired Evaluation Metrics for cellular test cases</h1>
+<p id="rfc.section.2.3.p.1">The evaluation criteria document <a href="#I-D.ietf-rmcat-eval-criteria" class="xref">[I-D.ietf-rmcat-eval-criteria]</a> defines the metrics to be used to evaluate candidate algorithms. Considering the nature and distinction of cellular networks we recommend that at least the following metrics be used to evaluate the performance of the candidate algorithms: </p>
+<p></p>
+
+<ul>
+<li>Average cell throughput (for all cells), shows cell utilizations.</li>
+<li>Application sending and receiving bitrate, goodput.</li>
+<li>Packet Loss Rate (PLR).</li>
+<li>End-to-end Media frame delay. For video, this means the delay from capture to display.</li>
+<li>Transport delay.</li>
+<li>Algorithm stability in terms of rate variation.</li>
+</ul>
+<h1 id="rfc.section.3">
+<a href="#rfc.section.3">3.</a> Wi-Fi Networks Specific Test Cases</h1>
+<p id="rfc.section.3.p.1">Given the prevalence of Internet access links over Wi-Fi, it is important to evaluate candidate RTP-based congestion control solutions over test cases that include Wi-Fi access links. Such evaluations should highlight the inherently different characteristics of Wi-Fi networks in contrast to their wired counterparts:</p>
+<p></p>
+
+<ul>
+<li>The wireless radio channel is subject to interference from nearby transmitters, multipath fading, and shadowing. These effects lead to fluctuations in the link throughput and sometimes an error-prone communication environment.</li>
+<li>Available network bandwidth is not only shared over the air between concurrent users but also between uplink and downlink traffic due to the half-duplex nature of the wireless transmission medium.</li>
+<li>Packet transmissions over Wi-Fi are susceptible to contentions and collisions over the air. Consequently, traffic load beyond a certain utilization level over a Wi-Fi network can introduce frequent collisions over the air and significant network overhead, as well as packet drops due to buffer overflow at the transmitters.  This, in turn, leads to excessive delay, retransmissions, packet losses and lower effective bandwidth for applications. Note further that the collision-induced delay and loss patterns are qualitatively different from those caused by congestion over a wired connection. </li>
+<li>The IEEE 802.11 standard (i.e., Wi-Fi) supports multi-rate transmission capabilities by dynamically choosing the most appropriate modulation and coding scheme (MCS) for the given received signal strength. A different choice in the MCS Index leads to different physical-layer (PHY-layer) link rates and consequently different application-layer throughput.</li>
+<li>The presence of legacy devices (e.g., ones operating only in IEEE 802.11b) at a much lower PHY-layer link rate can significantly slow down the rest of a modern Wi-Fi network. As discussed in <a href="#Heusse2003" class="xref">[Heusse2003]</a>, the main reason for such anomaly is that it takes much longer to transmit the same packet over a slower link than over a faster link, thereby consuming a substantial portion of air time.</li>
+<li>Handover from one Wi-Fi Access Point (AP) to another may lead to excessive packet delays and losses during the process.</li>
+<li>IEEE 802.11e has introduced the Enhanced Distributed Channel Access (EDCA) mechanism to allow different traffic categories to contend for channel access using different random back-off parameters. This mechanism is a mandatory requirement for the Wi-Fi Multimedia (WMM) certification in Wi-Fi Alliance. It allows for prioritization of real-time application traffic such as voice and video over non-urgent data transmissions (e.g., file transfer).</li>
+</ul>
+<p id="rfc.section.3.p.3">In summary, the presence of Wi-Fi access links in different network topologies can exert different impact on the network performance in terms of application-layer effective throughput, packet loss rate, and packet delivery delay. These, in turn, will influence the behavior of end-to-end real-time multimedia congestion control.</p>
+<p id="rfc.section.3.p.4">Unless otherwise mentioned, the test cases in this section choose the PHY- and MAC-layer parameters based on the IEEE 802.11n Standard. Statistics collected from enterprise Wi-Fi networks show that the two dominant physical modes are 802.11n and 802.11ac, accounting for 41% and 58% of connected devices. As Wi-Fi standards evolve over time -- for instance, with the introduction of the emerging Wi-Fi 6 (based on IEEE 802.11ax) products -- the PHY- and MAC-layer test case specifications need to be updated accordingly to reflect such changes.</p>
+<p id="rfc.section.3.p.5">Typically, a Wi-Fi access network connects to a wired infrastructure. Either the wired or the Wi-Fi segment of the network can be the bottleneck. The following sections describe basic test cases for both scenarios separately. The same set of performance metrics as in <a href="#I-D.ietf-rmcat-eval-test" class="xref">[I-D.ietf-rmcat-eval-test]</a>) should be collected for each test case. </p>
+<p id="rfc.section.3.p.6">We recommend to carry out the test cases as defined in this document using a simulator, such as <a href="#NS-2" class="xref">[NS-2]</a> or <a href="#NS-3" class="xref">[NS-3]</a>. When feasible, it is encouraged to perform testbed-based evaluations using Wi-Fi access points and endpoints running up-to-date IEEE 802.11 protocols, such as 802.11ac and the emerging Wi-Fi 6, so as to verify the viability of the candidate schemes.</p>
+<h1 id="rfc.section.3.1">
+<a href="#rfc.section.3.1">3.1.</a> <a href="#sec-wired-bottleneck" id="sec-wired-bottleneck">Bottleneck in Wired Network</a>
+</h1>
+<p id="rfc.section.3.1.p.1">The test scenarios below are intended to mimic the setup of video conferencing over Wi-Fi connections from the home. Typically, the Wi-Fi home network is not congested and the bottleneck is present over the wired home access link. Although it is expected that test evaluation results from this section are similar to those as in <a href="#I-D.ietf-rmcat-eval-test" class="xref">[I-D.ietf-rmcat-eval-test]</a>, it is still worthwhile to run through these tests as sanity checks.</p>
+<h1 id="rfc.section.3.1.1">
+<a href="#rfc.section.3.1.1">3.1.1.</a> <a href="#sec-wifi-wired-bottleneck-topo" id="sec-wifi-wired-bottleneck-topo">Network topology</a>
+</h1>
+<p><a href="#fig-wifi-test-topology" class="xref">Figure 2</a> shows the network topology of Wi-Fi test cases. The test contains multiple mobile nodes (MNs) connected to a common Wi-Fi access point (AP) and their corresponding wired clients on fixed nodes (FNs). Each connection carries either a RTP-based media flow or a TCP traffic flow. Directions of the flows can be uplink (i.e., from mobile nodes to fixed nodes), downlink (i.e., from fixed nodes to mobile nodes), or bi-directional. The total number of uplink/downlink/bi-directional flows for RTP-based media traffic and TCP traffic are denoted as N and M, respectively.</p>
+<div id="rfc.figure.2"></div>
+<div id="fig-wifi-test-topology"></div>
+<pre>
+
+                             Uplink
+                       +-----------------&gt;+
+      +------+                                       +------+
+      | MN_1 |))))                             /=====| FN_1 |
+      +------+    ))                          //     +------+
+          .        ))                        //         .    
+          .         ))                      //          .    
+          .          ))                    //           .    
+      +------+         +----+         +-----+        +------+
+      | MN_N | ))))))) |    |         |     |========| FN_N |
+      +------+         |    |         |     |        +------+
+                       | AP |=========| FN0 |
+     +----------+      |    |         |     |      +----------+
+     | MN_tcp_1 | )))) |    |         |     |======| FN_tcp_1 |
+     +----------+      +----+         +-----+      +----------+
+           .          ))                 \\             .    
+           .         ))                   \\            .    
+           .        ))                     \\           .    
+     +----------+  ))                       \\     +----------+
+     | MN_tcp_M |)))                         \=====| FN_tcp_M |
+     +----------+                                  +----------+
+                      +&lt;-----------------+
+                              Downlink
+	</pre>
+<p class="figure">Figure 2: Network topology for Wi-Fi test cases</p>
+<p></p>
+<h1 id="rfc.section.3.1.2">
+<a href="#rfc.section.3.1.2">3.1.2.</a> Test/simulation setup</h1>
+<p></p>
+
+<ul>
+<li>Test duration: 120s</li>
+<li>Wi-Fi network characteristics: <ul>
+<li>Radio propagation model: Log-distance path loss propagation model (see <a href="#NS3WiFi" class="xref">[NS3WiFi]</a>)</li>
+<li>PHY- and MAC-layer configuration: IEEE 802.11n</li>
+<li>MCS Index at 11:  16-QAM 1/2, Raw Data Rate at 52Mbps</li>
+</ul>
+</li>
+<li>Wired path characteristics: <ul>
+<li>Path capacity: 1Mbps</li>
+<li>One-Way propagation delay: 50ms.</li>
+<li>Maximum end-to-end jitter: 30ms</li>
+<li>Bottleneck queue type: Drop tail.</li>
+<li>Bottleneck queue size: 300ms.</li>
+<li>Path loss ratio: 0%.</li>
+</ul>
+</li>
+<li>Application characteristics: <ul>
+<li>Media Traffic: <ul>
+<li>Media type: Video</li>
+<li>Media direction: See <a href="#subsec-4-1-3" class="xref">Section 3.1.3</a>
+</li>
+<li>Number of media sources (N): See <a href="#subsec-4-1-3" class="xref">Section 3.1.3</a>
+</li>
+<li>Media timeline: <ul>
+<li>Start time: 0s.</li>
+<li>End time: 119s.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Competing traffic: <ul>
+<li>Type of sources: long-lived TCP or CBR over UDP</li>
+<li>Traffic direction: See <a href="#subsec-4-1-3" class="xref">Section 3.1.3</a>
+</li>
+<li>Number of sources (M): See <a href="#subsec-4-1-3" class="xref">Section 3.1.3</a>
+</li>
+<li>Congestion control: Default TCP congestion control <a href="#RFC5681" class="xref">[RFC5681]</a> or constant-bit-rate (CBR) traffic over UDP.</li>
+<li>Traffic timeline:  See <a href="#subsec-4-1-3" class="xref">Section 3.1.3</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="rfc.section.3.1.3">
+<a href="#rfc.section.3.1.3">3.1.3.</a> <a href="#subsec-4-1-3" id="subsec-4-1-3">Typical test scenarios</a>
+</h1>
+<p></p>
+
+<ul>
+<li>Single uplink RTP-based media flow: N=1 with uplink direction and M=0.</li>
+<li>One pair of bi-directional RTP-based media flows: N=2 (i.e., one uplink flow and one downlink flow); M=0.</li>
+<li>One pair of bi-directional RTP-based media flows: N=2; one uplink on-off CBR flow over UDP: M=1 (uplink). The CBR flow has ON time at t=0s-60s and OFF time at t=60s-119s.</li>
+<li>One pair of bi-directional RTP-based media flows: N=2; one uplink off-on CBR flow over UDP: M=1 (uplink). The CBR flow has OFF time at t=0s-60s and ON time at t=60s-119s.</li>
+<li>One RTP-based media flow competing against one long-live TCP flow in the uplink direction: N=1 (uplink) and M = 1(uplink). The TCP flow has start time at t=0s and end time at t=119s.</li>
+</ul>
+<h1 id="rfc.section.3.1.4">
+<a href="#rfc.section.3.1.4">3.1.4.</a> Expected behavior</h1>
+<p></p>
+
+<ul>
+<li>Single uplink RTP-based media flow: the candidate algorithm is expected to detect the path capacity constraint, to converge to the bottleneck link capacity, and to adapt the flow to avoid unwanted oscillations when the sending bit rate is approaching the bottleneck link capacity. No excessive oscillations in the media rate should be present.</li>
+<li>Bi-directional RTP-based media flows: the candidate algorithm is expected to converge to the bottleneck capacity of the wired path in both directions despite the presence of measurement noise over the Wi-Fi connection. In the presence of background TCP or CBR over UDP traffic, the rate of RTP-based media flows should adapt promptly to the arrival and departure of background traffic flows.</li>
+<li>One RTP-based media flow competing with long-live TCP flow in the uplink direction: the candidate algorithm is expected to avoid congestion collapse and to stabilize at a fair share of the bottleneck link capacity.</li>
+</ul>
+<h1 id="rfc.section.3.2">
+<a href="#rfc.section.3.2">3.2.</a> Bottleneck in Wi-Fi Network</h1>
+<p id="rfc.section.3.2.p.1">The test cases in this section assume that the wired segment along the media path is well-provisioned whereas the bottleneck exists over the Wi-Fi access network. This is to mimic the application scenarios typically encountered by users in an enterprise environment or at a coffee house.</p>
+<h1 id="rfc.section.3.2.1">
+<a href="#rfc.section.3.2.1">3.2.1.</a> Network topology</h1>
+<p id="rfc.section.3.2.1.p.1">Same as defined in <a href="#sec-wifi-wired-bottleneck-topo" class="xref">Section 3.1.1</a></p>
+<h1 id="rfc.section.3.2.2">
+<a href="#rfc.section.3.2.2">3.2.2.</a> Test/simulation setup</h1>
+<p></p>
+
+<ul>
+<li>Test duration: 120s</li>
+<li>Wi-Fi network characteristics: <ul>
+<li>Radio propagation model: Log-distance path loss propagation model (see <a href="#NS3WiFi" class="xref">[NS3WiFi]</a>)</li>
+<li>PHY- and MAC-layer configuration: IEEE 802.11n</li>
+<li>MCS Index at 11:  16-QAM 1/2, Raw Data Rate at 52Mbps</li>
+</ul>
+</li>
+<li>Wired path characteristics: <ul>
+<li>Path capacity: 100Mbps.</li>
+<li>One-Way propagation delay: 50ms.</li>
+<li>Maximum end-to-end jitter: 30ms.</li>
+<li>Bottleneck queue type: Drop tail.</li>
+<li>Bottleneck queue size: 300ms.</li>
+<li>Path loss ratio: 0%.</li>
+</ul>
+</li>
+<li>Application characteristics: <ul>
+<li>Media Traffic: <ul>
+<li>Media type: Video</li>
+<li>Media direction: See <a href="#subsec-4-2-3" class="xref">Section 3.2.3</a>.</li>
+<li>Number of media sources (N): See <a href="#subsec-4-2-3" class="xref">Section 3.2.3</a>.</li>
+<li>Media timeline: <ul>
+<li>Start time: 0s.</li>
+<li>End time: 119s.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Competing traffic: <ul>
+<li>Type of sources: long-lived TCP or CBR over UDP.</li>
+<li>Number of sources (M): See <a href="#subsec-4-2-3" class="xref">Section 3.2.3</a>.</li>
+<li>Traffic direction: See <a href="#subsec-4-2-3" class="xref">Section 3.2.3</a>.</li>
+<li>Congestion control: Default TCP congestion control <a href="#RFC5681" class="xref">[RFC5681]</a> or constant-bit-rate (CBR) traffic over UDP.</li>
+<li>Traffic timeline: See <a href="#subsec-4-2-3" class="xref">Section 3.2.3</a>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="rfc.section.3.2.3">
+<a href="#rfc.section.3.2.3">3.2.3.</a> <a href="#subsec-4-2-3" id="subsec-4-2-3">Typical test scenarios</a>
+</h1>
+<p id="rfc.section.3.2.3.p.1">This section describes a few test scenarios that are deemed as important for understanding the behavior of a candidate RTP-based congestion control scheme over a Wi-Fi network. </p>
+<p></p>
+
+<ol style="list-style-type: lower-alpha">
+<li>Multiple RTP-based media flows sharing the wireless downlink: N=16 (all downlink); M = 0. This test case is for studying the impact of contention on the multiple concurrent media flows. For an 802.11n network, given the MCS Index of 11 and the corresponding link rate of 52Mbps, the total application-layer throughput (assuming reasonable distance, low interference and infrequent contentions caused by competing streams) is around 20Mbps. A total of N=16 RTP-based media flows (with a maximum rate of 1.5Mbps each) are expected to saturate the wireless interface in this experiment.  Evaluation of a given candidate scheme should focus on whether the downlink media flows can stabilize at a fair share of the total application-layer throughput.</li>
+<li>Multiple RTP-based media flows sharing the wireless uplink: N = 16 (all uplink); M = 0. When multiple clients attempt to transmit media packets uplink over the Wi-Fi network, they introduce more frequent contentions and potential collisions.  Per-flow throughput is expected to be lower than that in the previous downlink-only scenario. Evaluation of a given candidate scheme should focus on whether the uplink flows can stabilize at a fair share of the total application-layer throughput.</li>
+<li>Multiple bi-directional RTP-based media flows: N = 16 (8 uplink and 8 downlink); M = 0.  The goal of this test is to evaluate the performance of the candidate scheme in terms of bandwidth fairness between uplink and downlink flows.</li>
+<li>Multiple bi-directional RTP-based media flows with on-off CBR traffic over UDP: N = 16 (8 uplink and 8 downlink); M = 5 (uplink). The goal of this test is to evaluate the adaptation behavior of the candidate scheme when its available bandwidth changes due to the departure of background traffic. The background traffic consists of several (e.g., M=5) CBR flows transported over UDP. These background flows are ON at time t=0-60s and OFF at time t=61-120s.</li>
+<li>Multiple bi-directional RTP-based media flows with off-on CBR traffic over UDP: N = 16 (8 uplink and 8 downlink); M = 5 (uplink). The goal of this test is to evaluate the adaptation behavior of the candidate scheme when its available bandwidth changes due to the arrival of background traffic. The background traffic consists of several (e.g., M=5) parallel CBR flows transported over UDP. These background flows are OFF at time t=0-60s and ON at times t=61-120s.</li>
+<li>Multiple bi-directional RTP-based media flows in the presence of background TCP traffic: N=16 (8 uplink and 8 downlink); M = 5 (uplink). The goal of this test is to evaluate how RTP-based media flows compete against TCP over a congested Wi-Fi network for a given candidate scheme.  TCP flows have start time at t=40s and end time at t=80s. </li>
+<li>Varying number of RTP-based media flows: A series of tests can be carried out for the above test cases with different values of N, e.g., N = [4, 8, 12, 16, 20]. The goal of this test is to evaluate how a candidate scheme responds to varying traffic load/demand over a congested Wi-Fi network. The start times of the media flows are randomly distributes within a window of t=0-10s; their end times are randomly distributed within a window of t=110-120s. </li>
+</ol>
+<h1 id="rfc.section.3.2.4">
+<a href="#rfc.section.3.2.4">3.2.4.</a> Expected behavior</h1>
+<p></p>
+
+<ul>
+<li>Multiple downlink RTP-based media flows: each media flow is expected to get its fair share of the total bottleneck link bandwidth. Overall bandwidth usage should not be significantly lower than that experienced by the same number of concurrent downlink TCP flows. In other words, the behavior of multiple concurrent TCP flows will be used as a performance benchmark for this test scenario. The end-to-end delay and packet loss ratio experienced by each flow should be within an acceptable range for real-time multimedia applications.</li>
+<li>Multiple uplink RTP-based media flows: overall bandwidth usage by all media flows should not be significantly lower than that experienced by the same number of concurrent uplink TCP flows. In other words, the behavior of multiple concurrent TCP flows will be used as a performance benchmark for this test scenario.</li>
+<li>Multiple bi-directional RTP-based media flows with dynamic background traffic carrying CBR flows over UDP: the media flows are expected to adapt in a timely fashion to the changes in available bandwidth introduced by the arrival/departure of background traffic.</li>
+<li>Multiple bi-directional RTP-based media flows with dynamic background traffic over TCP: during the presence of TCP background flows, the overall bandwidth usage by all media flows should not be significantly lower than those achieved by the same number of bi-directional TCP flows. In other words, the behavior of multiple concurrent TCP flows will be used as a performance benchmark for this test scenario.  All downlink media flows are expected to obtain similar bandwidth as each other.  The throughput of each media flow is expected to decrease upon the arrival of TCP background traffic and, conversely, increase upon their departure. Both reactions should occur in a timely fashion, for example, within 10s of seconds.</li>
+<li>Varying number of bi-directional RTP-based media flows: the test results for varying values of N -- while keeping all other parameters constant -- is expected to show steady and stable per-flow throughput for each value of N. The average throughput of all media flows is expected to stay constant around the maximum rate when N is small, then gradually decrease with increasing value of N till it reaches the minimum allowed rate, beyond which the offered load to the Wi-Fi network exceeds its capacity (i.e., with a very large value of N).</li>
+</ul>
+<h1 id="rfc.section.3.3">
+<a href="#rfc.section.3.3">3.3.</a> Other Potential Test Cases</h1>
+<h1 id="rfc.section.3.3.1">
+<a href="#rfc.section.3.3.1">3.3.1.</a> <a href="#sec-edca-wmm-usage" id="sec-edca-wmm-usage">EDCA/WMM usage</a>
+</h1>
+<p id="rfc.section.3.3.1.p.1">The EDCA/WMM mechanism defines prioritized QoS for four traffic classes (or Access Categories). RTP-based real-time media flows should achieve better performance in terms of lower delay and fewer packet losses with EDCA/WMM enabled when competing against non-interactive background traffic such as file transfers. When most of the traffic over Wi-Fi is dominated by media, however, turning on WMM may degrade performance since all media flows now attempt to access the wireless transmission medium more aggressively, thereby causing more frequent collisions and collision-induced losses. This is a topic worthy of further investigation.</p>
+<h1 id="rfc.section.3.3.2">
+<a href="#rfc.section.3.3.2">3.3.2.</a> <a href="#sec-legacy-effects" id="sec-legacy-effects">Effect of heterogeneous link rates</a>
+</h1>
+<p id="rfc.section.3.3.2.p.1">As discussed in <a href="#Heusse2003" class="xref">[Heusse2003]</a>, the presence of clients operating over slow PHY-layer link rates (e.g., a legacy 802.11b device) connected to a modern network may adversely impact the overall performance of the network.  Additional test cases can be devised to evaluate the effect of clients with heterogeneous link rates on the performance of the candidate congestion control algorithm. Such test cases, for instance, can specify that the PHY-layer link rates for all clients span over a wide range (e.g., 2Mbps to 54Mbps) for investigating its effect on the congestion control behavior of the real-time interactive applications.</p>
+<h1 id="rfc.section.4">
+<a href="#rfc.section.4">4.</a> <a href="#IANA" id="IANA">IANA Considerations</a>
+</h1>
+<p id="rfc.section.4.p.1">This memo includes no request to IANA.</p>
+<h1 id="rfc.section.5">
+<a href="#rfc.section.5">5.</a> <a href="#Security" id="Security">Security Considerations</a>
+</h1>
+<p id="rfc.section.5.p.1">The security considerations in <a href="#I-D.ietf-rmcat-eval-criteria" class="xref">[I-D.ietf-rmcat-eval-criteria]</a> and the relevant congestion control algorithms apply.  The principles for congestion control are described in <a href="#RFC2914" class="xref">[RFC2914]</a>, and in particular, any new method must implement safeguards to avoid congestion collapse of the Internet.</p>
+<p id="rfc.section.5.p.2">Given the difficulty of deterministic wireless testing, it is recommended and expected that the tests described in this document would be done via simulations.  However, in the case where these test cases are carried out in a testbed setting, the evaluation should take place in a controlled lab environment. In the testbed, the applications, simulators and network nodes ought to be well-behaved and should not impact the desired results.  It is important to take appropriate caution to avoid leaking non-responsive traffic with unproven congestion avoidance behavior onto the open Internet.</p>
+<h1 id="rfc.section.6">
+<a href="#rfc.section.6">6.</a> Contributors</h1>
+<p id="rfc.section.6.p.1">The following individuals contributed to the design, implementation, and verification of the proposed test cases during earlier stages of this work. They have helped to validate and substantially improve this specification. </p>
+<p id="rfc.section.6.p.2">Ingemar Johansson, &lt;ingemar.s.johansson@ericsson.com&gt; of Ericsson AB contributing to the description and validation of cellular test cases during the earlier stage of this draft.</p>
+<p id="rfc.section.6.p.3">Wei-Tian Tan, &lt;dtan2@cisco.com&gt;, of Cisco Systems designed and set up a Wi-Fi testbed for evaluating parallel video conferencing streams, based upon which proposed Wi-Fi test cases are described. He also recommended additional test cases to consider, such as the impact of EDCA/WMM usage. </p>
+<p id="rfc.section.6.p.4">Michael A. Ramalho, &lt;mar42@cornell.edu&gt; of AcousticComms Consulting (previously at Cisco Systems) applied learnings from Cisco's internal experimentation to the early versions of the draft. He also worked on validating the proposed test cases in a VM-based lab setting.</p>
+<h1 id="rfc.section.7">
+<a href="#rfc.section.7">7.</a> <a href="#Acknowledgments" id="Acknowledgments">Acknowledgments</a>
+</h1>
+<p id="rfc.section.7.p.1">The authors would like to thank Tomas Frankkila, Magnus Westerlund, Kristofer Sandlund, Sergio Mena de la Cruz, and Mirja Kuehlewind for their valuable inputs and review comments regarding this draft.</p>
+<h1 id="rfc.references">
+<a href="#rfc.references">8.</a> References</h1>
+<h1 id="rfc.references.1">
+<a href="#rfc.references.1">8.1.</a> Normative References</h1>
+<table><tbody>
+<tr>
+<td class="reference"><b id="HO-deploy-3GPP">[HO-deploy-3GPP]</b></td>
+<td class="top">
+<a>TS 25.814, 3GPP.</a>, "<a href="http://www.3gpp.org/ftp/specs/archive/25_series/25.814/25814-710.zip">Physical layer aspects for evolved Universal Terrestrial Radio Access (UTRA)</a>", October 2006.</td>
+</tr>
+<tr>
+<td class="reference"><b id="I-D.ietf-rmcat-eval-criteria">[I-D.ietf-rmcat-eval-criteria]</b></td>
+<td class="top">
+<a>Singh, V.</a>, <a>Ott, J.</a> and <a>S. Holmer</a>, "<a href="https://tools.ietf.org/html/draft-ietf-rmcat-eval-criteria-12">Evaluating Congestion Control for Interactive Real-time Media</a>", Internet-Draft draft-ietf-rmcat-eval-criteria-12, February 2020.</td>
+</tr>
+<tr>
+<td class="reference"><b id="I-D.ietf-rmcat-eval-test">[I-D.ietf-rmcat-eval-test]</b></td>
+<td class="top">
+<a>Sarker, Z.</a>, <a>Singh, V.</a>, <a>Zhu, X.</a> and <a>M. Ramalho</a>, "<a href="https://tools.ietf.org/html/draft-ietf-rmcat-eval-test-10">Test Cases for Evaluating RMCAT Proposals</a>", Internet-Draft draft-ietf-rmcat-eval-test-10, May 2019.</td>
+</tr>
+<tr>
+<td class="reference"><b id="IEEE802.11">[IEEE802.11]</b></td>
+<td class="top">
+<a>IEEE</a>, "<a>Standard for Information technology--Telecommunications and information exchange between systems Local and metropolitan area networks--Specific requirements Part 11: Wireless LAN Medium Access Control (MAC) and Physical Layer (PHY) Specifications</a>", 2012.</td>
+</tr>
+<tr>
+<td class="reference"><b id="NS3WiFi">[NS3WiFi]</b></td>
+<td class="top">"<a href="https://www.nsnam.org/doxygen/classns3_1_1_yans_wifi_channel.html">Wi-Fi Channel Model in ns-3 Simulator</a>"</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC5681">[RFC5681]</b></td>
+<td class="top">
+<a>Allman, M.</a>, <a>Paxson, V.</a> and <a>E. Blanton</a>, "<a href="https://tools.ietf.org/html/rfc5681">TCP Congestion Control</a>", RFC 5681, DOI 10.17487/RFC5681, September 2009.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC8174">[RFC8174]</b></td>
+<td class="top">
+<a>Leiba, B.</a>, "<a href="https://tools.ietf.org/html/rfc8174">Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words</a>", BCP 14, RFC 8174, DOI 10.17487/RFC8174, May 2017.</td>
+</tr>
+</tbody></table>
+<h1 id="rfc.references.2">
+<a href="#rfc.references.2">8.2.</a> Informative References</h1>
+<table><tbody>
+<tr>
+<td class="reference"><b id="Heusse2003">[Heusse2003]</b></td>
+<td class="top">
+<a>Heusse, M.</a>, <a>Rousseau, F.</a>, <a>Berger-Sabbatel, G.</a> and <a>A. Duda</a>, "<a>Performance anomaly of 802.11b</a>", in Proc. 23th Annual Joint Conference of the IEEE Computer and Communications Societies, (INFOCOM'03), March 2003.</td>
+</tr>
+<tr>
+<td class="reference"><b id="HO-def-3GPP">[HO-def-3GPP]</b></td>
+<td class="top">
+<a title="3GPP">TR 21.905, 3GPP.</a>, "<a href="http://www.3gpp.org/ftp/specs/archive/21_series/21.905/21905-940.zip">Vocabulary for 3GPP Specifications</a>", December 2009.</td>
+</tr>
+<tr>
+<td class="reference"><b id="HO-LTE-3GPP">[HO-LTE-3GPP]</b></td>
+<td class="top">
+<a title="3GPP">TS 36.331, 3GPP.</a>, "<a href="http://www.3gpp.org/ftp/specs/archive/36_series/36.331/36331-990.zip">E-UTRA- Radio Resource Control (RRC); Protocol specification</a>", December 2011.</td>
+</tr>
+<tr>
+<td class="reference"><b id="HO-UMTS-3GPP">[HO-UMTS-3GPP]</b></td>
+<td class="top">
+<a title="3GPP">TS 25.331, 3GPP.</a>, "<a href="http://www.3gpp.org/ftp/specs/archive/25_series/25.331/25331-990.zip">Radio Resource Control (RRC); Protocol specification</a>", December 2011.</td>
+</tr>
+<tr>
+<td class="reference"><b id="NS-2">[NS-2]</b></td>
+<td class="top">"<a href="http://nsnam.sourceforge.net/wiki/index.php/Main_Page">ns-2</a>", December 2014.</td>
+</tr>
+<tr>
+<td class="reference"><b id="NS-3">[NS-3]</b></td>
+<td class="top">"<a href="https://www.nsnam.org/">ns-3 Network Simulator</a>"</td>
+</tr>
+<tr>
+<td class="reference"><b id="QoS-3GPP">[QoS-3GPP]</b></td>
+<td class="top">
+<a>TS 23.203, 3GPP.</a>, "<a href="http://www.3gpp.org/ftp/specs/archive/23_series/23.203/23203-990.zip">Policy and charging control architecture</a>", June 2011.</td>
+</tr>
+<tr>
+<td class="reference"><b id="RFC2914">[RFC2914]</b></td>
+<td class="top">
+<a>Floyd, S.</a>, "<a href="https://tools.ietf.org/html/rfc2914">Congestion Control Principles</a>", BCP 41, RFC 2914, DOI 10.17487/RFC2914, September 2000.</td>
+</tr>
+</tbody></table>
+<h1 id="rfc.authors"><a href="#rfc.authors">Authors' Addresses</a></h1>
+<div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Zaheduzzaman Sarker</span> 
+	  <span class="n hidden">
+		<span class="family-name">Sarker</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Ericsson AB</span>
+	<span class="adr">
+	  <span class="vcardline">Laboratoriegr&#228;nd 11</span>
+
+	  <span class="vcardline">
+		<span class="locality">Lule&#229;</span>,  
+		<span class="region"></span>
+		<span class="code">97753</span>
+	  </span>
+	  <span class="country-name vcardline">Sweden</span>
+	</span>
+	<span class="vcardline">Phone: +46 107173743</span>
+
+<span class="vcardline">EMail: <a href="mailto:zaheduzzaman.sarker@ericsson.com">zaheduzzaman.sarker@ericsson.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Xiaoqing Zhu</span> 
+	  <span class="n hidden">
+		<span class="family-name">Zhu</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Cisco Systems</span>
+	<span class="adr">
+	  <span class="vcardline">12515 Research Blvd., Building 4</span>
+
+	  <span class="vcardline">
+		<span class="locality">Austin</span>,  
+		<span class="region">TX</span> 
+		<span class="code">78759</span>
+	  </span>
+	  <span class="country-name vcardline">USA</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:xiaoqzhu@cisco.com">xiaoqzhu@cisco.com</a></span>
+
+  </address>
+</div><div class="avoidbreak">
+  <address class="vcard">
+	<span class="vcardline">
+	  <span class="fn">Jiantao Fu</span> 
+	  <span class="n hidden">
+		<span class="family-name">Fu</span>
+	  </span>
+	</span>
+	<span class="org vcardline">Cisco Systems</span>
+	<span class="adr">
+	  <span class="vcardline">771 Alder Drive</span>
+
+	  <span class="vcardline">
+		<span class="locality">Milpitas</span>,  
+		<span class="region">CA</span> 
+		<span class="code">95035</span>
+	  </span>
+	  <span class="country-name vcardline">USA</span>
+	</span>
+	<span class="vcardline">EMail: <a href="mailto:jianfu@cisco.com">jianfu@cisco.com</a></span>
+
+  </address>
+</div>
+
+</body>
+</html>
